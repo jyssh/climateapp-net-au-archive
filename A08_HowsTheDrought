@@ -90,7 +90,7 @@
                                 <ul class="nav navbar-nav navbar-right">
 
                                     <li class="main-menu-item main-home"><a href="/">Home</a></li>
-                                    <li class="main-menu-item main-about"><a href="/About">About</a></li>
+                                    <li class="main-menu-item main-about"><a href="/About/Overview">About</a></li>
                                     <li class="main-menu-item large-screen-only main-analyses">
                                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Analyses<span class="caret"></span></a>
                                         <ul class="dropdown-menu large-screen-only">

@@ -62,7 +62,7 @@
                                 <ul class="nav navbar-nav navbar-right">
 
                                     <li class="main-menu-item main-home"><a href="/">Home</a></li>
-                                    <li class="main-menu-item main-about"><a href="/About">About</a></li>
+                                    <li class="main-menu-item main-about"><a href="/About/Overview">About</a></li>
                                     <li class="main-menu-item large-screen-only main-analyses">
                                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Analyses<span class="caret"></span></a>
                                         <ul class="dropdown-menu large-screen-only">
@@ -119,7 +119,7 @@
         <div class="metis-sidebar">
             <div class="metis-sidebar-nav" style="margin-top:10px; ">
                 <ul class="metismenu" id="about-metismenu">
-                    <li class="about-overview"><a href="/About">Overview</a></li>
+                    <li class="about-overview"><a href="/About/Overview">Overview</a></li>
                     <li>
                         <a href="#">Analysis Info<span class="glyphicon arrow"></span></a>
                         <ul>

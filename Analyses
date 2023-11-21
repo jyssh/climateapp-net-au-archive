@@ -183,10 +183,10 @@
         <div class="col-sm-6"><p class="analysis-title">  What Trend? </p></div>
         <div class="col-sm-6 analysis-logo"><img src="/Content/Images/ClimateLogoSmall2.png" /></div>
     </div>
-    <div class="loading-message  animated rollIn">
+    <div class="loading-message  animated rollIn" style="display: none;">
         <div style="margin-top: 40px;"><p style="text-align: center; font-size: 1.4em;color:blue">Preparing analysis...</p><p style="text-align: center; font-size: 1.0em;">Please wait while we retrieve your settings.</p><p style="text-align: center;"><i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i></p></div>
     </div>
-    <div class="analysis-content">
+    <div class="analysis-content analysis-content-ready">
         <div class="row">
             <div class="col-md-12">
                 <div class="question-panel" id="analysis-inputs"></div>

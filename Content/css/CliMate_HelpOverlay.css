@@ -1,0 +1,105 @@
+﻿
+
+/* The Overlay (background) */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */    
+    height: 100%;
+    width: 100%;
+
+    position: fixed; /* Stay in place */
+    z-index: 999999; /* Sit on top */
+    left: -100%;
+    top: 0;
+    
+    background-color: rgb(99, 147, 252); /* Black fallback color */
+    background-color: rgba(99, 147, 252,0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+    position: relative;
+    top: 120px; /* 25% from the top */
+    bottom: auto;
+    width: 60%; /* 100% width */
+    margin-left: auto;
+    margin-right: auto;
+    background: white;
+    border-radius: 20px;
+    padding: 20px 60px;
+    text-align: left; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+      -webkit-box-shadow: 7px 10px 30px -13px rgba(0,0,0,0.9);
+    -moz-box-shadow: 7px 10px 30px -13px rgba(0,0,0,0.9);
+    box-shadow: 7px 10px 30px -13px rgba(0,0,0,0.9);
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 24px;
+    color: rgb(99, 147, 252);
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+#help-content img {
+    max-width: 100%;
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover, .overlay a:focus {
+    color: #9ab615;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    color: white;
+}
+
+#overlay-header {
+   
+    color: rgb(99, 147, 252);
+    margin-bottom: 20px;
+}
+
+#overlay-logo {
+    background: white;
+    width: 210px;
+    padding: 3px;
+    float: right;
+
+}
+
+/*.overlay p {
+    font-size: 1.2em;
+    
+}*/
+
+#intro-text {
+    max-width: 480px;
+    
+    font-size: 1.2em;
+    color: #6863ce;
+}
+
+#main-menu-filter-container  .btn-filter-text {
+    font-size: 1.4em;
+}
+
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}

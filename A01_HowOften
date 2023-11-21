@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>CliMate: How Often?</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/Content/Images/PageIcons/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/Content/Images/PageIcons/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/Content/Images/PageIcons/apple-touch-icon-57-precomposed.png">
+   
+    <link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+    <link href="/Content/css/Site.css" rel="stylesheet" />
+    
+
+
+    <link href="/Plugins/jQuery-dataTables-1.10.12/media/css/jquery.dataTables.min.css" rel="stylesheet"/>
+    <link href="/Plugins/metisMenu-master/dist/metisMenu.css" rel="stylesheet"/>
+    <link href="/Content/css/CliMate_Metis.css" rel="stylesheet"/>
+    <link href="/Content/css/CliMate_HelpOverlay.css" rel="stylesheet"/>
+    <link href="/Content/css/animate.css" rel="stylesheet" />
+    
+    <link href="/Content/css/CliMate_Analysis.css" rel="stylesheet" />
+    <link href="/Content/css/CliMate_SelectLocationDialog.css" rel="stylesheet" />
+
+    <style>
+        .btn-sidebar {
+            font-size: 0.8em; width: 120px; margin: 6px;
+        }
+
+    </style>
+
+
+</head>
+<body>
+    <div class="container-narrow container">
+        <div class="navbar navbar-default navbar-fixed-top masthead">
+            <div class="container-narrow" id="navbar-container">
+                <div class="row" style="margin-right: 6px; margin-left: 6px;">
+                    <div class="navbar-header col-sm-3">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="brand" href="/"> </a>
+                    </div>
+                    <div class="col-sm-9">
+                        <div class="navbar-collapse collapse">
+                            <div class="row">
+                                <div class=" login_menu">
+                                    <section id="login" class="user-profile">
+                                        <form action="/Account/LogOff" class="navbar-right" id="logoutForm" method="post"><input name="__RequestVerificationToken" type="hidden" value="nvF5IUNi9kh6WGiqH0JhaPAsW5KsDhmSB0BqjQ7NHLYygcVLwJD7yCZ0srhwEcTUQI-Ttnch0W4FTgjkeqw5DNiX22eP8mOFew1t-asHJSRRj9iHG_72vKgtlETznlhoHLX-RDyUy04zCRtbE7RsxQ2" />    <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a href="/Manage" title="Manage">dalerschilling@yahoo.com.au</a>
+        </li>
+        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+    </ul>
+</form>
+                                    </section>
+                                </div>
+                            </div>
+                            <div class="row" id="main-menu">
+                                <ul class="nav navbar-nav navbar-right">
+
+                                    <li class="main-menu-item main-home"><a href="/">Home</a></li>
+                                    <li class="main-menu-item main-about"><a href="/About">About</a></li>
+                                    <li class="main-menu-item large-screen-only main-analyses">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Analyses<span class="caret"></span></a>
+                                        <ul class="dropdown-menu large-screen-only">
+                                            <li class="analysis-a3 "><a href="/A03_HowsTheSeason">How&#39;s the Season?</a></li>
+                                            <li class="analysis-a1 "><a href="/A01_HowOften">How Often?</a></li>
+                                            <li class="analysis-a4 "><a href="/A04_HowWetN">How Wet/Nitrate?</a></li>
+                                            <li class="analysis-a9 "><a href="/A09_WhatYield">Potential Yield?</a></li>
+                                            <li class="analysis-a8 "><a href="/A08_HowsTheDrought">Drought?</a></li>
+                                            <li class="analysis-a2 "><a href="/A02_HowHotCold">How Hot/Cold?</a></li>
+                                            <li class="analysis-a5 "><a href="/A05_HowLikely">How Likely?</a></li>
+                                            <li class="analysis-a6 "><a href="/A06_HowsENSO">How&#39;s El Nino?</a></li>
+                                            <li class="analysis-a7 "><a href="/A07_HowsThePast">How&#39;s the Past?</a></li>
+                                            <li class="analysis-a10 "><a href="/A10_WhatTrend">What Trend?</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="analysis-a3 small-screen-only"><a href="/A03_HowsTheSeason">How&#39;s the Season?</a></li>
+                                    <li class="analysis-a1 small-screen-only"><a href="/A01_HowOften">How Often?</a></li>
+                                    <li class="analysis-a4 small-screen-only"><a href="/A04_HowWetN">How Wet/Nitrate?</a></li>
+                                    <li class="analysis-a9 small-screen-only"><a href="/A09_WhatYield">Potential Yield?</a></li>
+                                    <li class="analysis-a8 small-screen-only"><a href="/A08_HowsTheDrought">Drought?</a></li>
+                                    <li class="analysis-a2 small-screen-only"><a href="/A02_HowHotCold">How Hot/Cold?</a></li>
+                                    <li class="analysis-a5 small-screen-only"><a href="/A05_HowLikely">How Likely?</a></li>
+                                    <li class="analysis-a6 small-screen-only"><a href="/A06_HowsENSO">How&#39;s El Nino?</a></li>
+                                    <li class="analysis-a7 small-screen-only"><a href="/A07_HowsThePast">How&#39;s the Past?</a></li>
+                                    <li class="analysis-a10 small-screen-only"><a href="/A10_WhatTrend">What Trend?</a></li>
+                                    <li class="main-menu-item main-news"><a href="/News">News</a></li>
+                                    <li class="main-menu-item main-library"><a href="/LIbrary">Library</a></li>
+                                    <li class="main-menu-item main-links"><a href="/Links">Links</a></li>
+                                    <li class="main-menu-item main-contact"><a href="/WebContact">Contact</a></li>
+
+
+
+                                </ul>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="body">
+
+            
+            <section class="content-wrapper main-content clear-fix">
+
+                
+
+<div id="map-tooltip" style="display: none"></div>
+
+<div class="row clearfix">
+    <div class="col-md-2 large-display-menu-system">
+        <div >
+            <div class="metis-sidebar">
+                <nav class="metis-sidebar-nav" style="margin-top: 10px;">
+                    <ul class="metismenu"  id="analysis-metismenu">
+                        <li class="analysis-a3"><a href="/A03_HowsTheSeason">How&#39;s the Season?</a></li>
+                        <li class="analysis-a1"><a href="/A01_HowOften">How Often?</a></li>
+                        <li class="analysis-a4"><a href="/A04_HowWetN">How Wet/Nitrate?</a></li>
+                        <li class="analysis-a9"><a href="/A09_WhatYield">Potential Yield?</a></li>
+                        <li class="analysis-a8"><a href="/A08_HowsTheDrought">Drought?</a></li>
+                        <li class="analysis-a2"><a href="/A02_HowHotCold">How Hot/Cold?</a></li>
+                        
+                        <li class="analysis-a7"><a href="/A07_HowsThePast">How&#39;s the Past?</a></li>
+                        <li class="analysis-a10"><a href="/A10_WhatTrend">What Trend?</a></li>
+
+
+                    </ul>
+                </nav><!--/.well -->
+            </div><!--/span-->
+            <p style="font-size: 0.7em; line-height: 1em;color: silver; text-align: center; margin-top: 20px;">
+                Version: 2.0.8619.25385
+                <br/>
+                Dated: 07/08/2023</p>
+            <br />
+            <div style="text-align: center;">
+                <button class="btn btn-info btn-sidebar" onclick="javascript:getHelp();" ><i class="fa fa-question-circle" aria-hidden="true"></i> Help</button><br/>
+                <button class="btn btn-success btn-sidebar" onclick="javascript:sendFeedback();" > <i class="fa fa-envelope-o" aria-hidden="true"></i> Feedback</button>
+                
+            </div>
+            <div id="analytics-controls"></div>
+        </div>
+    </div>
+    <div class="col-md-10 col-xs-12">
+        
+        <!-- Right (content) side -->
+        <section class="content-block" role="main">
+
+            <section>
+
+                
+
+
+
+
+
+
+
+<div class="analysis-page">
+    <div class="row">
+        <div class="col-md-6"><p class="analysis-title">How Often? </p></div>
+        <div class="col-md-6 analysis-logo"><img src="/Content/Images/ClimateLogoSmall2.png"  /></div>
+    </div>
+    <div class="loading-message animated rollIn">
+        <div style="margin-top: 40px;"><p style="text-align: center; font-size: 1.4em;color:blue">Preparing analysis...</p><p style="text-align: center; font-size: 1.0em;">Please wait while we retrieve your settings.</p><p style="text-align: center;"><i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i></p></div>
+    </div>
+    <div class="analysis-content" >
+        <div class="row question-container-1">
+            <div class="col-sm-6 equalise">
+                <div class="question-panel" id="analysis-inputs" style="height: 100%"></div>
+            </div>
+            <div class="col-sm-6 equalise">
+                <div class="answer-panel " style="margin-top: auto; margin-bottom: auto; height: 100%;">
+                    <div class="answer" id="Answer1"></div>
+                    <div class="firegauge-container" id="FireGauge1" style="margin-top: 15px"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div id="Chart2" style="width: 100%;"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div id="Chart1" style="width: 100%;"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div id="HowDoWeKnowThis" class="howdoweknowthis-panel"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div id="Footer" class="footer-panel"></div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXR_I4pEIGjerJX6goxPaeZNVWE5lVVSU">
+
+</script>
+<style>
+    .ui-widget button.btn-select-state {
+        padding: 2px;
+        margin: 0px;
+        font-size: 10pt;
+    }
+    .btn-qld {
+        background: maroon;
+        color: gold;
+    }
+     .btn-nsw {
+        background: skyblue;
+        color: white;
+    }
+
+    .btn-vic {
+        background: navy;
+        color: silver;
+    }
+
+    .btn-nt {
+        background: #E65A00;
+        color: white;
+    }
+
+    .btn-sa {
+        background: red;
+        color: gold;
+    }
+
+    .btn-wa {
+        background: black;
+        color: gold;
+    }
+    .btn-tas {
+        background: #006A4E;
+        color: yellow;
+    }
+
+    .spinner-div {
+        text-align: center;
+        width: 100%;
+        /*position: absolute;
+        left: 0;
+        top: 0;*/
+
+    }
+    .select-location-dialog { z-index: 3 !important ;}
+
+
+
+
+</style>
+<div id="select-location-dialog" class="climateapp-dialog" title="Select a climate location..." style="display: none; table-layout:fixed;width: 100%;">
+
+    <div class="container" style="width: 99%">
+        <div id="select-location-dialog-tabs" style="min-height:300px">
+            <ul>
+                <li><a href="#location-dialog-tabs-1"><i class="fa fa-heart" aria-hidden="true" style="color: red;"></i> Select/Edit Favourites</a></li>
+                <li><a href="#location-dialog-tabs-2"><i class="fa fa-search" aria-hidden="true"  style="color: blue;"></i> Search</a></li>
+                <li><a href="#location-dialog-tabs-3"><i class="fa fa-globe" aria-hidden="true"  style="color: green;"></i> <span id="map-tab-caption">From Map <i class="fa fa-spinner fa-spin fa-fw"></i></span></a></li>
+              
+            </ul>
+
+            <div id="location-dialog-tabs-1">
+                
+                
+                <div class="row" style="position: relative;">
+                    <div class="spinner-div" style="display: none;">
+                        <p><i class="fa fa-spinner fa-spin fa-3x fa-fw"></i></p>
+                        <p>Processing Geolocation...</p>
+                        <p>Please wait</p>
+                        <p><button class="btn btn-success" onclick="javascript:continueWithoutGeolocation();">Continue without<br/>Geolocation...</button></p>
+                        
+                    </div>
+                    <table id="favourites-table" class="table table-striped" style="width: 100%; display: none;">
+                        <thead>
+                        <tr>
+                            <th style="width: 65%">Station Name</th>
+                            
+                            <th style="width: 10%">State</th>
+                            <th style="width: 10%">Elev.</th>
+                            <th style="width: 10%">Dist</th>
+                            <th style="width: 5%"></th>
+                        </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="location-dialog-tabs-2">
+                <div class="row" style="position: relative;">
+                    <div class="spinner-div" style="display: none;">
+                        <p><i class="fa fa-spinner fa-spin fa-3x fa-fw"></i></p>
+                        <p>Processing Geolocation...</p>
+                        <p>Please wait</p>
+                        <p><button class="btn btn-success" onclick="javascript: continueWithoutGeolocation();">Continue without<br />Geolocation...</button></p>
+                    </div>
+                    <table id="search-table" class="table table-striped" style="width: 100%;display:none;">
+                        <thead>
+                        <tr>
+                            <th style="width: 65%">Station Name</th>
+                            
+                            <th style="width: 10%">State</th>
+                            <th style="width: 10%">Elev.</th>
+                            <th style="width: 10%">Dist</th>
+                            <th style="width: 5%"></th>
+                        </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+
+                </div>
+            </div>
+            <div id="location-dialog-tabs-3">
+                <div style="float: right">
+                    <button class="btn btn-default btn-select-state btn-qld"  onclick="javascript: selectQLD();">QLD</button>
+                    <button class="btn btn-default btn-select-state btn-nsw"  onclick="javascript: selectNSW();">NSW</button>
+                    <button class="btn btn-default btn-select-state btn-sa"  onclick="javascript: selectSA();">SA</button>
+                    <button class="btn btn-default btn-select-state btn-vic"  onclick="javascript: selectVIC();">VIC</button>
+                    <button class="btn btn-default btn-select-state btn-wa"  onclick="javascript: selectWA();">WA</button>
+                    <button class="btn btn-default btn-select-state btn-tas"  onclick="javascript: selectTAS();">TAS</button>
+                    <button class="btn btn-default btn-select-state btn-nt"  onclick="javascript: selectNT();">NT</button>
+                </div>
+                <p>Click a location to select...</p>
+                
+                <div id="climate-stations-map" style="height: 380px;"></div>
+
+            </div>
+        </div>
+        <div id="update-all-checkbox-container" style="display: none;">
+        <input type="checkbox" name="allLocations"  id="update-all-checkbox" style="margin-top: 12px;  "><label for="allLocations" style="margin-left: 8px;">Update all analyses with this location</label>
+        </div>
+        
+    </div>
+</div>
+
+
+
+
+
+            </section>
+        </section>
+    </div>
+</div>
+
+<div id="feedback-dialog" class="climateapp-dialog" title="Send us some feedback..." style="display: none;">
+    <textarea style="width: 100%; height: 350px;" id="user-feedback-text"></textarea>
+
+
+</div>
+
+<!-- The overlay -->
+<div id="myNav" class="overlay">
+
+
+    <!-- Button to close the overlay navigation -->
+    <a href="javascript:void(0)" class="closebtn" onclick="closeHelp()">&times;</a>
+
+    <!-- Overlay content -->
+    <div class="overlay-content">
+        <div id="overlay-header">
+            
+            <img  id="overlay-logo" src="/Content/Images/ClimateLogoSmall.png" />
+            
+            <h2 id="help-title">Help is at hand</h2>
+        </div>
+        <img id="help-image"/>
+        <div id="help-content"></div>
+            
+        <div style="text-align: center;">
+            <a href="#" onclick="javascript:closeHelp();"><i class="fa fa-times-circle" aria-hidden="true"></i> Close</a>
+        </div>
+    </div>
+</div>
+
+
+            </section>
+        </div>
+
+        <div class="footer">
+            <br />
+            <img src="/Content/Images/MCV_logo.jpg" style="display:block;margin:0 auto" />
+            <p style="text-align:center; font-size:0.8em">&copy; Commonwealth of Australia 2023 </p>
+        </div>
+    </div>
+    
+    <div class="ajax_spinner">
+        <div id="calculating_caption"></div>
+    </div>
+    
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="/Scripts/CliMate_Tools.js"></script>
+<script src="/bundles/modernizr?v=inCVuEFe6J4Q07A0AcRsbJic_UE5MwpRMNGcOtk94TE1"></script>
+
+    
+    <script src="/Plugins/metisMenu-master/dist/metisMenu.min.js"></script>
+    <script src="/Plugins/jQuery-dataTables-1.10.12/media/js/jquery.dataTables.min.js"></script>
+    <script src="/Scripts/CliMate_FeedbackDialog.js"></script>
+
+    
+
+    <script src="/Scripts/CliMate_SelectLocationDialog.js"></script>
+    <script src="/Scripts/Climate_InputsUI.js"></script>
+    <script src="/Scripts/CliMate_Outputs_UI.js"></script>
+    <script src="/Scripts/CliMate_Outputs_FireGauge.js"></script>
+    <script src="/Scripts/CliMate_Outputs_FlotChart.js"></script>
+    <script src="/Scripts/CliMate_Calculations.js"></script>
+    <script src="/Plugins/flot-0.8.3/flot/jquery.flot.min.js"></script>
+    <script src="/Plugins/flot-axislabels-master/jquery.flot.axislabels.js"></script>
+    <script src="/Plugins/flot-0.8.3/flot/jquery.flot.resize.js"></script>
+    <script src="/Plugins/dates/date.js"></script>
+    <script>
+        var mydatasource = {"InputConfig":{"Location":{"Id":"9bf35c8a-d2a7-4701-9093-6ee3bc82335f","Items":[{"Key":"ABERDEEN (ROSSGOLE)","Value":"63a804e2-e348-4288-ab69-9427741f000e","OrderIndex":0,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"MERINGUR","Value":"6521ca20-1ddb-4d9a-884a-59dd5da0480a","OrderIndex":0,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"WAGGA WAGGA AGRICULTURAL INSTITUTE","Value":"3457371d-f70f-4502-bb6b-2db1f56862f0","OrderIndex":0,"parentId":"00000000-0000-0000-0000-000000000000"}],"Label":"at","Identifier":"Location","Type":"DataRecord","parentId":"00000000-0000-0000-0000-000000000000"},"DataType":{"Id":"f7ad212c-43c9-46f8-9a2e-a761dd45525c","Items":[{"Key":"Rainfall","Value":"0","OrderIndex":0,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"Consecutive Max.Temps","Value":"1","OrderIndex":1,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"Consecutive Min.Temps","Value":"2","OrderIndex":2,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"Solar radiation","Value":"4","OrderIndex":3,"parentId":"00000000-0000-0000-0000-000000000000"}],"Label":"","Type":"EnumeratedInput","DefaultValue":0,"Name":"DataType","Units":"","parentId":"00000000-0000-0000-0000-000000000000"},"EqualityType":{"Id":"7710c3d0-8f86-49be-884d-2a294db43ee5","Items":[{"Key":"less than","Value":"0","OrderIndex":0,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"more than","Value":"1","OrderIndex":1,"parentId":"00000000-0000-0000-0000-000000000000"}],"Label":"","Type":"EnumeratedInput","DefaultValue":1,"Name":"EqualityType","Units":"","parentId":"00000000-0000-0000-0000-000000000000"},"RainfallThreshold":{"Id":"33befd2f-d716-4f0a-a7a5-bd317d212780","Name":"RainfallThreshold","DefaultValue":25,"Label":"Rainfall Threshold","Max":100,"Max2":1000,"Min":5,"Step":5,"Step2":10,"Units":"mm","Type":"ValueInput","parentId":"00000000-0000-0000-0000-000000000000"},"MaxTempThreshold":{"Id":"5b69852b-ddce-4c0f-ae4b-6fbd2f91268e","Name":"MaxTempThreshold","DefaultValue":30,"Label":"Maximum Temperature","Max":50,"Max2":null,"Min":20,"Step":1,"Step2":null,"Units":"°C","Type":"ValueInput","parentId":"00000000-0000-0000-0000-000000000000"},"MinTempThreshold":{"Id":"1141384c-c245-4f76-979b-cbfe3c1532e1","Name":"MinTempThreshold","DefaultValue":0,"Label":"Minimum Temperature","Max":15,"Max2":null,"Min":-10,"Step":1,"Step2":null,"Units":"°C","Type":"ValueInput","parentId":"00000000-0000-0000-0000-000000000000"},"RadiationThreshold":{"Id":"93dfa428-6be7-49da-910b-17aca8ddf78f","Name":"RadiationThreshold","DefaultValue":2800,"Label":"Solar Radiation","Max":15000,"Max2":null,"Min":100,"Step":100,"Step2":null,"Units":"MJ/m²","Type":"ValueInput","parentId":"00000000-0000-0000-0000-000000000000"},"Period":{"Id":"94095401-49d9-4963-97f8-42b76b45bc39","Name":"Period","Label":"over a","Units":" day period","Max":365,"Max2":731,"Min":1,"Step":1,"Step2":30,"Type":"PeriodInput","PeriodType":0,"DefaultValue":7,"parentId":"00000000-0000-0000-0000-000000000000"},"StartDay":{"Label":"between","Type":"DayInput","parentId":"00000000-0000-0000-0000-000000000000"},"StartMonth":{"Label":null,"Type":"MonthInput","Format":0,"parentId":"00000000-0000-0000-0000-000000000000"},"EndDay":{"Label":"and","Type":"DayInput","parentId":"00000000-0000-0000-0000-000000000000"},"EndMonth":{"Label":"","Type":"MonthInput","Format":0,"parentId":"00000000-0000-0000-0000-000000000000"},"YearsRange":{"Id":"31d9c2af-72d0-4fd7-8afe-4b3eff1ef851","Items":[{"Key":"1900 to present","Value":"0","OrderIndex":0,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1910 to present","Value":"1","OrderIndex":1,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1920 to present","Value":"2","OrderIndex":2,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1930 to present","Value":"3","OrderIndex":3,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1940 to present","Value":"4","OrderIndex":4,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1950 to present","Value":"5","OrderIndex":5,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1960 to present","Value":"6","OrderIndex":6,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1970 to present","Value":"7","OrderIndex":7,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1980 to present","Value":"8","OrderIndex":8,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1990 to present","Value":"9","OrderIndex":9,"parentId":"00000000-0000-0000-0000-000000000000"}],"Label":"for years","Type":"EnumeratedInput","DefaultValue":8,"Name":"YearsRange","Units":null,"parentId":"00000000-0000-0000-0000-000000000000"}},"InputValues":{"EqualityType":1,"RainfallThreshold":85,"MaxTempThreshold":32,"MinTempThreshold":15,"RadiationThreshold":2800,"Period":8,"StartDay":1,"StartMonth":8,"EndDay":31,"EndMonth":10,"Id":"9e1d329e-f33f-4f2f-9d95-55916bc3f255","DataType":2,"Location":"63a804e2-e348-4288-ab69-9427741f000e","LocationName":"ABERDEEN (ROSSGOLE)","YearsRange":6,"getDataUnits":"°C"},"Outputs":{"Question1":{"Text":"How often do we receive...","Identifier":null,"Type":"SimpleText"},"Answer1":{"Text":"\u003ci class=\u0027fa fa-spinner fa-spin fa-fw\u0027\u003e\u003c/i\u003e Calculating, Please wait...","Identifier":null,"Type":"SimpleText"},"HowDoWeKnowThis":{"Text":"By examining daily records for your selected site.\u003cbr\u003eAn \"event\" may be recorded several times each year in the specified time window.\nNote: Use with care if extracting recent (within a month) rainfall data  as interpolation between sites may be applied awaiting data from the specific raingauge site (i.e. not updated daily).\n","Identifier":null,"Type":"SimpleText"},"FooterText":{"Text":"","Identifier":null,"Type":"SimpleText"},"FireGauge1":{"Size":0,"Title":null,"Caption":null,"Footer":" of  years,\u003cbr/\u003e times/yr","Value":null,"MaxValue":50,"MinValue":0,"Labels":["Rarely","Sometimes","Half yrs","Regularly","Mostly"],"FillColors":["#fd8b8b","#ffb579","#fefe71","#8effab","#6bb1ff"],"FontColors":["#ff0000","#ff7200","#a7a744","#00c20d","#0077fb"],"Sizes":[10,10,10,10,10],"Identifier":null,"Type":"FireGauge"},"Chart1":{"legend":{"show":false,"labelBoxBorderColor":"none","noColumns":1,"position":"ne","margin":10,"backgroundColor":"white","backgroundOpacity":0.66},"xaxis":{"mode":null,"monthNames":null,"timeformat":null,"show":true,"tickLength":0,"tickSize":null,"axisLabelUseCanvas":true,"axisLabelFontSizePixels":12,"axisLabelPadding":5,"min":null,"max":null,"ticks":null,"minTickSize":null,"axisLabel":null,"font":{"size":16,"color":"black"}},"LegendPlaceholder":null,"yaxes":[{"position":"left","labelWidth":null,"show":true,"tickLength":null,"tickSize":null,"axisLabelUseCanvas":true,"axisLabelFontSizePixels":12,"axisLabelPadding":5,"min":null,"max":null,"ticks":null,"minTickSize":null,"axisLabel":"Minimum temperature (°C)","font":{"size":16,"color":"black"}}],"Title":"Highest average 8 day Minimum temperature (1 Aug to 31 Oct)","Footer":"Note: Avg.Temps exceeding the threshold do not necessarily indicate consecutive days exceeding the threshold.","Height":300,"YAxisLabel":null,"grid":{"hoverable":true,"clickable":true,"backgroundColor":"white","markings":[{"color":"#fff7b6","lineWidth":0,"xaxis":{"from":1900,"to":1910},"yaxis":null},{"color":"#fff7b6","lineWidth":0,"xaxis":{"from":1920,"to":1930},"yaxis":null},{"color":"#fff7b6","lineWidth":0,"xaxis":{"from":1940,"to":1950},"yaxis":null},{"color":"#fff7b6","lineWidth":0,"xaxis":{"from":1960,"to":1970},"yaxis":null},{"color":"#fff7b6","lineWidth":0,"xaxis":{"from":1980,"to":1990},"yaxis":null},{"color":"#fff7b6","lineWidth":0,"xaxis":{"from":2000,"to":2010},"yaxis":null},{"color":"#fff7b6","lineWidth":0,"xaxis":{"from":2020,"to":2030},"yaxis":null}]},"Data":[],"Annotations":null,"DataUnits":null,"DataUnits2":null,"Identifier":null,"Type":"FlotChart"},"Chart2":{"legend":{"show":false,"labelBoxBorderColor":"none","noColumns":1,"position":"ne","margin":10,"backgroundColor":"white","backgroundOpacity":0.66},"xaxis":{"mode":null,"monthNames":null,"timeformat":null,"show":true,"tickLength":0,"tickSize":null,"axisLabelUseCanvas":true,"axisLabelFontSizePixels":12,"axisLabelPadding":5,"min":null,"max":null,"ticks":null,"minTickSize":null,"axisLabel":null,"font":{"size":16,"color":"black"}},"LegendPlaceholder":null,"yaxes":[{"position":"left","labelWidth":null,"show":true,"tickLength":null,"tickSize":null,"axisLabelUseCanvas":true,"axisLabelFontSizePixels":12,"axisLabelPadding":5,"min":null,"max":null,"ticks":null,"minTickSize":null,"axisLabel":"Times/year","font":{"size":16,"color":"black"}}],"Title":"Times \u003e 15°C Minimum temperature occurs over 8 ,  1 Aug-31 Oct (92 days)\u003cbr\u003eABERDEEN (ROSSGOLE)","Footer":null,"Height":300,"YAxisLabel":null,"grid":{"hoverable":true,"clickable":true,"backgroundColor":"white","markings":[{"color":"#fff7b6","lineWidth":0,"xaxis":{"from":1900,"to":1910},"yaxis":null},{"color":"#fff7b6","lineWidth":0,"xaxis":{"from":1920,"to":1930},"yaxis":null},{"color":"#fff7b6","lineWidth":0,"xaxis":{"from":1940,"to":1950},"yaxis":null},{"color":"#fff7b6","lineWidth":0,"xaxis":{"from":1960,"to":1970},"yaxis":null},{"color":"#fff7b6","lineWidth":0,"xaxis":{"from":1980,"to":1990},"yaxis":null},{"color":"#fff7b6","lineWidth":0,"xaxis":{"from":2000,"to":2010},"yaxis":null},{"color":"#fff7b6","lineWidth":0,"xaxis":{"from":2020,"to":2030},"yaxis":null}]},"Data":[],"Annotations":null,"DataUnits":"","DataUnits2":null,"Identifier":null,"Type":"FlotChart"}}};
+        var calculationsUrl = '/A01_HowOften/Calculate';
+
+        $(function() {
+           
+            initLocationSelector();
+            generateInputsUI();
+            generateOutputsUI();
+            calculate(mydatasource, calculationsUrl);
+        });
+
+
+        function generateInputsUI() {
+            addQuestion("Question1");
+            //Row1 ******************************
+            var row = 1;
+            addInputEditor("DataType", row, 5,5);
+            addInputEditor("EqualityType", row, 4,4);
+            addInputEditor("RainfallThreshold", row, 3,3); // will be hidden when inactive
+            addInputEditor("MaxTempThreshold", row, 3,3); // will be hidden when inactive
+            addInputEditor("MinTempThreshold", row, 3,3); // will be hidden when inactive
+            addInputEditor("RadiationThreshold", row, 3,3); // will be hidden when inactive
+
+
+            //Row2 ******************************
+            ++row;
+            addInputLabel("Period", row, 5, 5,"right");
+            addInputEditor("Period", row, 7,7);
+
+            //Row3 ******************************
+            ++row;
+            addInputLabel("Location", row, 5,5, "right");
+            addInputEditor("Location", row, 7,7);
+
+            //Row4 ******************************
+            ++row;
+            addInputLabel("StartDay", row, 5,5, "right");
+            addInputEditor("StartDay", row, 3,3);
+            addInputEditor("StartMonth", row, 4,4);
+
+            //Row5 ******************************
+            ++row;
+            addInputLabel("EndDay", row, 5, 5,"right");
+            addInputEditor("EndDay", row, 3,3);
+            addInputEditor("EndMonth", row, 4,4);
+
+            //Row6 ******************************
+            ++row;
+            addInputLabel("YearsRange", row, 5,5);
+            addInputEditor("YearsRange", row, 7,7);
+            //*************************************
+            hideShowThresholdSelectors();
+            //*************************************
+            $(".input-control").change(function() {
+               
+                if (updateInputValue(mydatasource, $(this))) {
+                    var identifier =  $(this).attr("id");
+                    hideShowThresholdSelectors();
+                    refeshPeriodSelector();
+                    if (identifier === "StartMonth") {
+                        rebuildDaySelector("StartDay", "StartMonth");
+                    }else if (identifier === "EndMonth") {
+                        rebuildDaySelector("EndDay", "EndMonth");
+                    }
+
+                   
+                    calculate(mydatasource, calculationsUrl);
+                }
+            });
+        }
+
+
+        function generateOutputsUI() {
+            addOutput("Question1");
+            addOutput("Answer1");
+            addOutput("FireGauge1");
+            addOutput("Chart1");
+            addOutput("Chart2");
+            addOutput("HowDoWeKnowThis");
+            var bodyWidth = $("body").width();
+            if (bodyWidth < 700) {
+                $("#Chart1 .flotchart-canvas").css("height", "260px");
+                $("#Chart2 .flotchart-canvas").css("height", "260px");
+            }
+        }
+
+
+
+     
+        function refeshPeriodSelector() {
+            var inputs = mydatasource.InputValues;
+            var periodSize = getPeriodLimit();
+            if (inputs.Period > periodSize)
+                inputs.Period = periodSize;
+            rebuildPeriodSelector("Period", inputs.Period, 1, periodSize);
+        }
+
+        function getPeriodLimit() {
+            var inputs = mydatasource.InputValues;
+            var startday = Number(inputs.StartDay);
+            var startmonth = Number(inputs.StartMonth);
+            var startyear = 2011;
+            var endday = Number(inputs.EndDay);
+            var endmonth = Number(inputs.EndMonth);
+            var endyear = startyear;
+            if (endmonth < startmonth)
+                ++endyear;
+            else if (endmonth === startmonth && endday < startday) {
+                ++endyear;
+            }
+            var startdate = new Date(startyear, startmonth - 1, startday);
+            var enddate = new Date(endyear, endmonth - 1, endday);
+            var days = Math.round((enddate - startdate) / (1000 * 60 * 60 * 24)) + 1;
+            return days;
+
+        }
+
+        function hideShowThresholdSelectors() {
+            var datatype = Number(mydatasource.InputValues.DataType);
+            hideShowElement("RainfallThreshold", datatype === 0);
+            hideShowElement("MaxTempThreshold", datatype === 1);
+            hideShowElement("MinTempThreshold", datatype === 2);
+            hideShowElement("RadiationThreshold", datatype === 4);
+        }
+
+
+        function hideShowElement(selector, visible) {
+            if (visible)
+                $("#" + selector).parent().show();
+            else
+                $("#" + selector).parent().hide();
+        }
+
+
+    </script>
+
+
+    <script type="text/javascript">
+        $(function() {
+            var $metismenu = $("#analysis-metismenu");
+            var $selectedli = $(".analysis-a1");
+            var $parentlis = $selectedli.parents("li");
+            $selectedli.addClass("active");
+            $selectedli.addClass("selected");
+            $parentlis.addClass("active");
+            $metismenu.metisMenu();
+        });
+        window.addEventListener('resize', posFix, false);
+
+        function posFix() {
+            generateOutputsUI();
+
+        }
+
+        function sendFeedback() {
+            openFeedbackDialog("HowOften", "9e1d329e-f33f-4f2f-9d95-55916bc3f255");
+        }
+
+        function getHelp() {
+            $('.ajax_spinner').show();
+            $.getJSON("/Analyses/GetHelp",null, function (results) {
+                if (results.success) {
+                    $("#help-title").text(results.title);
+                    if (results.image && results.image.length > 0) {
+                        $("#help-image").attr('src', results.image);
+
+                    } else {
+                        $("#help-image").hide();
+                    }
+                    $("#help-content").html(results.content);
+                    $('.ajax_spinner').hide();
+                    openNav();
+                } else {
+                    $('.ajax_spinner').hide();
+                    custom_alert("Sorry - couldn't find any help for this analysis.", "Help not at hand...");
+                }
+                
+            });
+        }
+        function openNav() {
+           
+            //$("#myNav").css("width", "100%");
+            $("#myNav").css("left", "0");
+        }
+
+        function closeHelp() {
+            //$("#myNav").css("width","0%");
+            $("#myNav").css("left", "-100%");
+        }
+
+        function custom_alert(message, title) {
+            if (!title)
+                title = 'Alert';
+
+            if (!message)
+                message = 'No Message to Display.';
+
+            $('<div></div>').html(message).dialog({
+                title: title,
+                resizable: false,
+                modal: true,
+                buttons: {
+                    'Ok': function () {
+                        $(this).dialog('close');
+                    }
+                }
+            });
+        }
+
+    </script>
+
+
+    <script type="text/javascript">
+    $(function () {
+        var $selectedmainli = $(".main-analyses");
+        
+        $selectedmainli.addClass("active");
+        //if($selectedsubmenuli) {
+        //    $selectedsubmenuli.addClass("active");
+        //}
+    });
+    </script>
+   
+
+</body>
+</html>

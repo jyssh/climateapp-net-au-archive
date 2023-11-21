@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>CliMate: </title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/Content/Images/PageIcons/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/Content/Images/PageIcons/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/Content/Images/PageIcons/apple-touch-icon-57-precomposed.png">
+   
+    <link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+    <link href="/Content/css/Site.css" rel="stylesheet" />
+    
+
+    <link href="/Content/css/CliMate_Metis.css" rel="stylesheet" />
+    <link href="/Plugins/metisMenu-master/dist/metisMenu.min.css" rel="stylesheet" />
+    <link href="/Plugins/jQuery-dataTables-1.10.12/media/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+    
+
+
+
+</head>
+<body>
+    <div class="container-narrow container">
+        <div class="navbar navbar-default navbar-fixed-top masthead">
+            <div class="container-narrow" id="navbar-container">
+                <div class="row" style="margin-right: 6px; margin-left: 6px;">
+                    <div class="navbar-header col-sm-3">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="brand" href="/"> </a>
+                    </div>
+                    <div class="col-sm-9">
+                        <div class="navbar-collapse collapse">
+                            <div class="row">
+                                <div class=" login_menu">
+                                    <section id="login" class="user-profile">
+                                        <form action="/Account/LogOff" class="navbar-right" id="logoutForm" method="post"><input name="__RequestVerificationToken" type="hidden" value="2yyd2-9D3G2L9ZLMc9ZdvFz6-BuYlIlIMmDpEEaKNIyTwd57QEivCOa3qPk6-sxpclUQ6gyipi1TaxISxTP3joWi--jkzyYGCJTk5NaEyPXQjHtwa1G4pjtXJ6psSFxvBtmyRTSCzj1vJjGQ5Wc6Mg2" />    <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a href="/Manage" title="Manage">dalerschilling@yahoo.com.au</a>
+        </li>
+        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+    </ul>
+</form>
+                                    </section>
+                                </div>
+                            </div>
+                            <div class="row" id="main-menu">
+                                <ul class="nav navbar-nav navbar-right">
+
+                                    <li class="main-menu-item main-home"><a href="/">Home</a></li>
+                                    <li class="main-menu-item main-about"><a href="/About">About</a></li>
+                                    <li class="main-menu-item large-screen-only main-analyses">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Analyses<span class="caret"></span></a>
+                                        <ul class="dropdown-menu large-screen-only">
+                                            <li class="analysis-a3 "><a href="/A03_HowsTheSeason">How&#39;s the Season?</a></li>
+                                            <li class="analysis-a1 "><a href="/A01_HowOften">How Often?</a></li>
+                                            <li class="analysis-a4 "><a href="/A04_HowWetN">How Wet/Nitrate?</a></li>
+                                            <li class="analysis-a9 "><a href="/A09_WhatYield">Potential Yield?</a></li>
+                                            <li class="analysis-a8 "><a href="/A08_HowsTheDrought">Drought?</a></li>
+                                            <li class="analysis-a2 "><a href="/A02_HowHotCold">How Hot/Cold?</a></li>
+                                            <li class="analysis-a5 "><a href="/A05_HowLikely">How Likely?</a></li>
+                                            <li class="analysis-a6 "><a href="/A06_HowsENSO">How&#39;s El Nino?</a></li>
+                                            <li class="analysis-a7 "><a href="/A07_HowsThePast">How&#39;s the Past?</a></li>
+                                            <li class="analysis-a10 "><a href="/A10_WhatTrend">What Trend?</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="analysis-a3 small-screen-only"><a href="/A03_HowsTheSeason">How&#39;s the Season?</a></li>
+                                    <li class="analysis-a1 small-screen-only"><a href="/A01_HowOften">How Often?</a></li>
+                                    <li class="analysis-a4 small-screen-only"><a href="/A04_HowWetN">How Wet/Nitrate?</a></li>
+                                    <li class="analysis-a9 small-screen-only"><a href="/A09_WhatYield">Potential Yield?</a></li>
+                                    <li class="analysis-a8 small-screen-only"><a href="/A08_HowsTheDrought">Drought?</a></li>
+                                    <li class="analysis-a2 small-screen-only"><a href="/A02_HowHotCold">How Hot/Cold?</a></li>
+                                    <li class="analysis-a5 small-screen-only"><a href="/A05_HowLikely">How Likely?</a></li>
+                                    <li class="analysis-a6 small-screen-only"><a href="/A06_HowsENSO">How&#39;s El Nino?</a></li>
+                                    <li class="analysis-a7 small-screen-only"><a href="/A07_HowsThePast">How&#39;s the Past?</a></li>
+                                    <li class="analysis-a10 small-screen-only"><a href="/A10_WhatTrend">What Trend?</a></li>
+                                    <li class="main-menu-item main-news"><a href="/News">News</a></li>
+                                    <li class="main-menu-item main-library"><a href="/LIbrary">Library</a></li>
+                                    <li class="main-menu-item main-links"><a href="/Links">Links</a></li>
+                                    <li class="main-menu-item main-contact"><a href="/WebContact">Contact</a></li>
+
+
+
+                                </ul>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="body">
+
+            
+            <section class="content-wrapper main-content clear-fix">
+
+                
+
+
+<div class="row clearfix">
+    <div class="col-sm-3">
+        <div class="metis-sidebar">
+            <div class="metis-sidebar-nav" style="margin-top:10px; ">
+                <ul class="metismenu" id="about-metismenu">
+                    <li class="about-overview"><a href="/About">Overview</a></li>
+                    <li>
+                        <a href="#">Analysis Info<span class="glyphicon arrow"></span></a>
+                        <ul>
+                            <li class="about-A03"><a href="/About/About_A03_HowsTheSeason">(1) How&#39;s the Season?</a></li>
+                            <li class="about-A01"><a href="/About/About_A01_HowOften">(2) How Often?</a></li>
+                            <li class="about-A04"><a href="/About/About_A04_HowWetN">(3) How Wet/N?</a></li>
+                            <li class="about-A09"><a href="/About/About_A09_WhatYield">(4) Potential Yield?</a></li>
+                            <li class="about-A08"><a href="/About/About_A08_HowsTheDrought">(5) Drought?</a></li>
+                            <li class="about-A02"><a href="/About/About_A02_HowHotCold">(6) How Hot/Cold?</a></li>
+
+
+                            <li class="about-A05"><a href="/About/About_A05_HowLikely">(7) How Likely?</a></li>
+                            <li class="about-A06"><a href="/About/About_A06_HowsENSO">(8) How&#39;s El Nino?</a></li>
+                            <li class="about-A07"><a href="/About/About_A07_HowsThePast">(9) How&#39;s the Past?</a></li>
+
+
+                            <li class="about-A10"><a href="/About/About_A10_WhatTrend">(10) What Trend?</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="about-copyright"><a href="/About/Copyright">Copyright Information</a></li>
+                    <li class="about-disclaimer"><a href="/About/Disclaimer">Disclaimer</a></li>
+                    <li class="about-privacy"><a href="/About/Privacy">Privacy</a></li>
+                    <li class="about-eula"><a href="/About/EULA">EULA</a></li>
+                    <li class="about-developmentteam"><a href="/About/DevelopmentTeam">Development Team</a></li>
+                </ul>
+            </div><!--/.well -->
+        </div><!--/span-->
+        <br />
+        <br />
+        <div id="history"></div>
+    </div>
+    <div class="col-sm-9">
+        <!-- Right (content) side -->
+        <section class="content-block" role="main">
+            
+            <section>
+                
+
+
+<h2>How Often?</h2>
+<p style="font-weight: bold;color:gray"><p>Explore probabilities of future rainfall and temperature events based on past seasons.</p>
+</p>
+<h4></h4>
+<hr/>
+<p style="font-style: italic;color:fuchsia">Rainfall, temperature, radiation, heat sum, risk assessment</p>
+<p><p><strong>HowOften?</strong> allows you to explore probabilities of future rainfall and temperature events based on past seasons. It tests for a rainfall or temperature condition (greater than or less than), a specified threshold value in a set number of days for a period of month(s). It is designed for decision-makers who use probabilities of past rainfall and temperature conditions to manage business risk.</p>
+
+<p>It allows decision-makes to answer questions such as:</p>
+
+<ul>
+	<li>What is the change of a sowing event based on amount of rainfall over 5 days?</li>
+	<li>How often is a heat sum achieved in a set period of time?</li>
+	<li>What is the probability of temperature being below a critical level for germination or flowering?</li>
+	<li>What are the chances of a planting opportunity next month?</li>
+	<li>How often will I get enough rain to fill my soil profile (assuming a certain fallow efficiency)?</li>
+	<li>What are the chances of wet weather during harvest in November?</li>
+</ul>
+
+<h3>Inputs</h3>
+
+<p>HowOften? uses long-term rainfall data from SILO, (1949 to present for iOS versions and 1900- 2010 for stand-alone version) a specified variable (rainfall, temperature), a threshold value and a sample period. Long-term rainfall data for HowOften? (stand-alone) are downloaded within the program or accessed from the SILO data drill (<a href="http://www.apsim.info/How/HowOften/datadrill.htm">http://www.apsim.info/How/HowOften/datadrill.htm</a>)</p>
+
+<h3>Outputs</h3>
+
+<p>HowOften? presents results as a text answer, as a fire-risk chart and histograms showing time series of events and number of events recorded each year.</p>
+
+<h3>History</h3>
+
+<p>HowOften? was first developed by Steve Glanville and David Freebairn of theAgricultural Production Systems Research Unit in 1998 and updated on the iOS Smart Phone software &nbsp;for Managing Climate Variability Research and Development Program in 2012. The Queensland Department of Science, Industry, Tourism and Innovation (DSITI)&nbsp;maintain the Silo long term climate database. Silo base data is sourced from the Bureau of Meteorology.</p>
+
+<h3>References</h3>
+
+<p>Freebairn, D.M. and S.F. Glanville (1998). HOWOFTEN?. A computer program for calculating daily rainfall probabilities. Agricultural Production Systems Research Unit, QDNR -QDPI-CSIRO, Toowoomba, Queensland.</p>
+</p>
+
+
+            </section>
+        </section>
+    </div>
+</div>
+
+            </section>
+        </div>
+
+        <div class="footer">
+            <br />
+            <img src="/Content/Images/MCV_logo.jpg" style="display:block;margin:0 auto" />
+            <p style="text-align:center; font-size:0.8em">&copy; Commonwealth of Australia 2023 </p>
+        </div>
+    </div>
+    
+    <div class="ajax_spinner">
+        <div id="calculating_caption"></div>
+    </div>
+    
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="/Scripts/CliMate_Tools.js"></script>
+<script src="/bundles/modernizr?v=inCVuEFe6J4Q07A0AcRsbJic_UE5MwpRMNGcOtk94TE1"></script>
+
+    
+    <script src="/Plugins/metisMenu-master/dist/metisMenu.min.js"></script>
+    <script src="/Plugins/jQuery-dataTables-1.10.12/media/js/jquery.dataTables.min.js"></script>
+    
+    <script src="https://www.google.com/recaptcha/api.js?render=6LdOApcUAAAAAOiTPBqTRAw2kSOb6viPw1No0Hgq"></script>
+    <script>
+        grecaptcha.ready(function () {
+            grecaptcha.execute('6LdOApcUAAAAAOiTPBqTRAw2kSOb6viPw1No0Hgq', { action: 'homepage' }).then(function (token) {
+
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            var $metismenu = $("#about-metismenu");
+            var $selectedli = $(".about-A01");
+            var $parentlis = $selectedli.parents("li");
+            $selectedli.addClass("active");
+            $selectedli.addClass("selected");
+            $parentlis.addClass("active");
+            $metismenu.metisMenu();
+        })
+    </script>
+
+
+    <script type="text/javascript">
+    $(function () {
+        var $selectedmainli = $(".main-about");
+        
+        $selectedmainli.addClass("active");
+        //if($selectedsubmenuli) {
+        //    $selectedsubmenuli.addClass("active");
+        //}
+    });
+    </script>
+   
+
+</body>
+</html>

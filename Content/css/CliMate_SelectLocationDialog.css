@@ -1,0 +1,89 @@
+﻿#select-location-dialog {
+    font-size: 12pt;
+    z-index: 10;
+}
+
+#select-location-dialog table {
+    font-size: 10pt;
+}
+#select-location-dialog thead {
+    background: #545454;
+    color: white;
+}
+#select-location-dialog tbody tr:hover {
+    background: lightgoldenrodyellow;
+    cursor: pointer;
+
+}
+
+#select-location-dialog .dataTables_wrapper .dataTables_paginate .paginate_button {
+ 
+    padding: 0.2em 0.2em;
+}
+
+#climate-stations-map {
+    border: solid 1px #545454;
+    width: 100%;
+}
+
+/*#map-tooltip {
+    border: 1px solid black;
+    border-radius: 8px;
+    background: white;
+    position: absolute;
+    max-height: 50px;
+    width: auto;
+    padding: 5px;
+    z-index: 999999;
+}*/
+
+#map-tooltip {
+	position: absolute;
+    border: 1px solid white;
+	background: black;
+	border-radius: .4em;
+    max-height: 50px;
+    width: auto;
+    padding: 5px;
+    z-index: 999999;
+    color: lightpink;
+}
+
+#map-tooltip:after {
+	content: '';
+    
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-top-color: black;
+	border-bottom: 0;
+	margin-left: -25px;
+	margin-bottom: -20px;
+    
+}
+@media(max-width:600px) {
+    #select-location-dialog.ui-dialog-content {
+        padding: 0;
+    }
+
+    #select-location-dialog td {
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    }
+
+    #select-location-dialog  .ui-tabs .ui-tabs-nav .ui-tabs-anchor {
+    float: left;
+    padding: .4em 0.4em;
+        font-size: 0.9em;
+    text-decoration: none;
+}
+    #select-location-dialog table {
+        font-size: 0.7em;
+    }
+   
+}

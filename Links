@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>CliMate: Links</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/Content/Images/PageIcons/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/Content/Images/PageIcons/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/Content/Images/PageIcons/apple-touch-icon-57-precomposed.png">
+   
+    <link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+    <link href="/Content/css/Site.css" rel="stylesheet" />
+    
+
+</head>
+<body>
+    <div class="container-narrow container">
+        <div class="navbar navbar-default navbar-fixed-top masthead">
+            <div class="container-narrow" id="navbar-container">
+                <div class="row" style="margin-right: 6px; margin-left: 6px;">
+                    <div class="navbar-header col-sm-3">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="brand" href="/"> </a>
+                    </div>
+                    <div class="col-sm-9">
+                        <div class="navbar-collapse collapse">
+                            <div class="row">
+                                <div class=" login_menu">
+                                    <section id="login" class="user-profile">
+                                        <form action="/Account/LogOff" class="navbar-right" id="logoutForm" method="post"><input name="__RequestVerificationToken" type="hidden" value="5mh7vMTz5s_78zVwkD0BRXnY5jFscMwnOwdWEF8dnxKJ5jxLXuG_096U6z2gpE097WDdpUE-Fw_H5wdT0AXpSNInP1tp7L3QJAIjr8BHFyzcNAeVyfN-PLrQEbVvxVmCaUV0QLCJComPUDM7evXeFQ2" />    <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a href="/Manage" title="Manage">dalerschilling@yahoo.com.au</a>
+        </li>
+        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+    </ul>
+</form>
+                                    </section>
+                                </div>
+                            </div>
+                            <div class="row" id="main-menu">
+                                <ul class="nav navbar-nav navbar-right">
+
+                                    <li class="main-menu-item main-home"><a href="/">Home</a></li>
+                                    <li class="main-menu-item main-about"><a href="/About">About</a></li>
+                                    <li class="main-menu-item large-screen-only main-analyses">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Analyses<span class="caret"></span></a>
+                                        <ul class="dropdown-menu large-screen-only">
+                                            <li class="analysis-a3 "><a href="/A03_HowsTheSeason">How&#39;s the Season?</a></li>
+                                            <li class="analysis-a1 "><a href="/A01_HowOften">How Often?</a></li>
+                                            <li class="analysis-a4 "><a href="/A04_HowWetN">How Wet/Nitrate?</a></li>
+                                            <li class="analysis-a9 "><a href="/A09_WhatYield">Potential Yield?</a></li>
+                                            <li class="analysis-a8 "><a href="/A08_HowsTheDrought">Drought?</a></li>
+                                            <li class="analysis-a2 "><a href="/A02_HowHotCold">How Hot/Cold?</a></li>
+                                            <li class="analysis-a5 "><a href="/A05_HowLikely">How Likely?</a></li>
+                                            <li class="analysis-a6 "><a href="/A06_HowsENSO">How&#39;s El Nino?</a></li>
+                                            <li class="analysis-a7 "><a href="/A07_HowsThePast">How&#39;s the Past?</a></li>
+                                            <li class="analysis-a10 "><a href="/A10_WhatTrend">What Trend?</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="analysis-a3 small-screen-only"><a href="/A03_HowsTheSeason">How&#39;s the Season?</a></li>
+                                    <li class="analysis-a1 small-screen-only"><a href="/A01_HowOften">How Often?</a></li>
+                                    <li class="analysis-a4 small-screen-only"><a href="/A04_HowWetN">How Wet/Nitrate?</a></li>
+                                    <li class="analysis-a9 small-screen-only"><a href="/A09_WhatYield">Potential Yield?</a></li>
+                                    <li class="analysis-a8 small-screen-only"><a href="/A08_HowsTheDrought">Drought?</a></li>
+                                    <li class="analysis-a2 small-screen-only"><a href="/A02_HowHotCold">How Hot/Cold?</a></li>
+                                    <li class="analysis-a5 small-screen-only"><a href="/A05_HowLikely">How Likely?</a></li>
+                                    <li class="analysis-a6 small-screen-only"><a href="/A06_HowsENSO">How&#39;s El Nino?</a></li>
+                                    <li class="analysis-a7 small-screen-only"><a href="/A07_HowsThePast">How&#39;s the Past?</a></li>
+                                    <li class="analysis-a10 small-screen-only"><a href="/A10_WhatTrend">What Trend?</a></li>
+                                    <li class="main-menu-item main-news"><a href="/News">News</a></li>
+                                    <li class="main-menu-item main-library"><a href="/LIbrary">Library</a></li>
+                                    <li class="main-menu-item main-links"><a href="/Links">Links</a></li>
+                                    <li class="main-menu-item main-contact"><a href="/WebContact">Contact</a></li>
+
+
+
+                                </ul>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="body">
+
+            
+            <section class="content-wrapper main-content clear-fix">
+
+                
+
+
+<h3>Links</h3>
+    <div class="row">
+        <div class="col-xs-12">
+            
+            <h3>Climate Kelpie</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2" >
+            <div>
+                
+                <a class="linkURL" href="http://www.climatekelpie.com.au/"><img src="/Uploads/Images/Links/blue kelpie.jpg" alt="Climate Kelpie" style="width:100%"/></a>
+            </div>  
+        </div>
+        <div class="col-xs-10">
+            <a class="linkURL" href="http://www.climatekelpie.com.au/">http://www.climatekelpie.com.au/</a>
+            <div class="linkDescription"><p>Climate Kelpie connects you to tools and information about climate to support decision making in your business.</p>
+</div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-xs-12">
+            
+            <h3>Climate Services for Agriculture </h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2" >
+            <div>
+                
+                <a class="linkURL" href="https://climateservicesforag.indraweb.io"><img src="https://climateservicesforag.indraweb.io/assets/logos/csiro-logo.png" alt="Climate Services for Agriculture " style="width:100%"/></a>
+            </div>  
+        </div>
+        <div class="col-xs-10">
+            <a class="linkURL" href="https://climateservicesforag.indraweb.io">https://climateservicesforag.indraweb.io</a>
+            <div class="linkDescription"><p>The Climate Services for Agriculture (CSA) tool is being developed to help Australian farmers to adapt to climate variability and related trends and thereby increasing the viability of their businesses. Developed in collaboration between the Bureau of Meteorology and the CSIRO, the CSA platform has been made possible by funding from the Australian Government&#39;s Future Drought Fund (FDF).</p>
+</div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-xs-12">
+            
+            <h3>Managing Climate Variability Program</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2" >
+            <div>
+                
+                <a class="linkURL" href="http://managingclimate.gov.au/"><img src="/Uploads/Images/Links/mcv_portrait.png" alt="Managing Climate Variability Program" style="width:100%"/></a>
+            </div>  
+        </div>
+        <div class="col-xs-10">
+            <a class="linkURL" href="http://managingclimate.gov.au/">http://managingclimate.gov.au/</a>
+            <div class="linkDescription"><p>The&nbsp;<strong>Managing Climate Variability Program (MCVP)</strong>&nbsp;leads research and development program in Australia for providing climate knowledge to primary producers and natural resource managers.</p>
+
+<p>The MCVP activities aim for better forecasts, practical climate tools and products, and present&nbsp;case studies of people who are incorporating climate risk information into their business decisions.</p>
+</div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-xs-12">
+            
+            <h3>SILO climate data</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2" >
+            <div>
+                
+                <a class="linkURL" href="https://legacy.longpaddock.qld.gov.au/silo"><img src="/Uploads/Images/Links/Longpaddock.jpg" alt="SILO climate data" style="width:100%"/></a>
+            </div>  
+        </div>
+        <div class="col-xs-10">
+            <a class="linkURL" href="https://legacy.longpaddock.qld.gov.au/silo">https://legacy.longpaddock.qld.gov.au/silo</a>
+            <div class="linkDescription"><p>SILO is the data source for Australian CliMate.</p>
+
+<p>SILO is an enhanced climate database hosted by the Queensland Governments&#39;s&nbsp;Department of Science, Information Technology and&nbsp;Innovation (DSITI). SILO contains&nbsp;data from 1889 to yesterday&nbsp;in&nbsp;ready-to-use formats.</p>
+</div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-xs-12">
+            
+            <h3>The Long paddock</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2" >
+            <div>
+                
+                <a class="linkURL" href="https://beta.longpaddock.qld.gov.au/"><img src="/Uploads/Images/Links/The_Long_Paddock.jpg" alt="The Long paddock" style="width:100%"/></a>
+            </div>  
+        </div>
+        <div class="col-xs-10">
+            <a class="linkURL" href="https://beta.longpaddock.qld.gov.au/">https://beta.longpaddock.qld.gov.au/</a>
+            <div class="linkDescription"><p>Long Paddock is a product&nbsp;of the Drought and Climate Adaptation Program (DCAP) initiative including the&nbsp;Queensland Drought Mitigation Centre.</p>
+</div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-xs-12">
+            
+            <h3>Rainfall history analysis -south</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2" >
+            <div>
+                
+                <a class="linkURL" href="https://climatetool.forecasts4profit.com.au/"><img src="/Uploads/Images/Links/Climatedrivertool.jpg" alt="Rainfall history analysis -south" style="width:100%"/></a>
+            </div>  
+        </div>
+        <div class="col-xs-10">
+            <a class="linkURL" href="https://climatetool.forecasts4profit.com.au/">https://climatetool.forecasts4profit.com.au/</a>
+            <div class="linkDescription"><p>Climate drivers (El Nino-Southern Oscillation and Indian Ocean Dipole) for southern Australia.</p>
+</div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-xs-12">
+            
+            <h3>Regional weather and climate guides</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2" >
+            <div>
+                
+                <a class="linkURL" href="http://www.bom.gov.au/climate/climate-guides/"><img src="/Uploads/Images/Links/Climateandweather.jpg" alt="Regional weather and climate guides" style="width:100%"/></a>
+            </div>  
+        </div>
+        <div class="col-xs-10">
+            <a class="linkURL" href="http://www.bom.gov.au/climate/climate-guides/">http://www.bom.gov.au/climate/climate-guides/</a>
+            <div class="linkDescription"><p>Regional data on likelihood, severity and duration of key weather variables</p>
+</div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-xs-12">
+            
+            <h3>SoilWaterApp</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2" >
+            <div>
+                
+                <a class="linkURL" href="http://www.soilwaterapp.net.au/"><img src="/Uploads/Images/Links/SoilWaterLogo(thintext).png" alt="SoilWaterApp" style="width:100%"/></a>
+            </div>  
+        </div>
+        <div class="col-xs-10">
+            <a class="linkURL" href="http://www.soilwaterapp.net.au/">http://www.soilwaterapp.net.au/</a>
+            <div class="linkDescription"><p>SWApp is an iOS App which provides a ready estimate of plant available water (PAW) in the soil during&nbsp;fallows and crops.&nbsp;SWApp estimates soil water (PAW) using&nbsp;inputs from:</p>
+
+<ul>
+	<li>weather data from a nearby Bureau of Meteorology (BoM) sourced from the Silo (https://www.longpaddock.qld.gov.au/silo/);</li>
+	<li>rainfall data from a local rain gauge (manual entry);</li>
+	<li>rainfall data automatically uploaded from a Bluetooth enabled rain gauge (20m range);</li>
+	<li>a soil description best suited to your paddock; and</li>
+	<li>soil and crop cover conditions for each paddock.</li>
+</ul>
+</div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-xs-12">
+            
+            <h3>Climate and weather (BoM)</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2" >
+            <div>
+                
+                <a class="linkURL" href="http://www.bom.gov.au/climate/"><img src="/Uploads/Images/Links/Climateandweather.jpg" alt="Climate and weather (BoM)" style="width:100%"/></a>
+            </div>  
+        </div>
+        <div class="col-xs-10">
+            <a class="linkURL" href="http://www.bom.gov.au/climate/">http://www.bom.gov.au/climate/</a>
+            <div class="linkDescription"><p>A collection of Bureau of Meteorology information</p>
+</div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-xs-12">
+            
+            <h3>Water and Land (BoM)</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2" >
+            <div>
+                
+                <a class="linkURL" href="http://www.bom.gov.au/watl/"><img src="/Uploads/Images/Links/Water_and_the_Land.jpg" alt="Water and Land (BoM)" style="width:100%"/></a>
+            </div>  
+        </div>
+        <div class="col-xs-10">
+            <a class="linkURL" href="http://www.bom.gov.au/watl/">http://www.bom.gov.au/watl/</a>
+            <div class="linkDescription"><p>The Bureau&#39;s Water and the Land web site aims to provide an integrated suite of information for people involved in primary production, natural resource management, industry, trade and commerce.</p>
+</div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-xs-12">
+            
+            <h3>Drought info (BoM)</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2" >
+            <div>
+                
+                <a class="linkURL" href="http://www.bom.gov.au/climate/drought/drought.shtml "><img src="/Uploads/Images/Links/Droughticon.jpg" alt="Drought info (BoM)" style="width:100%"/></a>
+            </div>  
+        </div>
+        <div class="col-xs-10">
+            <a class="linkURL" href="http://www.bom.gov.au/climate/drought/drought.shtml ">http://www.bom.gov.au/climate/drought/drought.shtml </a>
+            <div class="linkDescription"><p>Bureau of Meteorology drought links</p>
+</div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-xs-12">
+            
+            <h3>Agriculture Victoria - weather and climate</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2" >
+            <div>
+                
+                <a class="linkURL" href="http://agriculture.vic.gov.au/agriculture/weather-and-climate"><img src="/Uploads/Images/Links/Vict ag.jpg" alt="Agriculture Victoria - weather and climate" style="width:100%"/></a>
+            </div>  
+        </div>
+        <div class="col-xs-10">
+            <a class="linkURL" href="http://agriculture.vic.gov.au/agriculture/weather-and-climate">http://agriculture.vic.gov.au/agriculture/weather-and-climate</a>
+            <div class="linkDescription"><p>Victorian grain growers can access seasonal climate risk information in one easy location. Newsletters describes seasonal outlooks, decision support tools estimate soil water and&nbsp;potential crop yields, and provide links and topical climate risk information.</p>
+</div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-xs-12">
+            
+            <h3>CottonInfo </h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2" >
+            <div>
+                
+                <a class="linkURL" href="https://www.cottoninfo.com.au/"><img src="/Uploads/Images/Links/cottoninfo.jpg" alt="CottonInfo " style="width:100%"/></a>
+            </div>  
+        </div>
+        <div class="col-xs-10">
+            <a class="linkURL" href="https://www.cottoninfo.com.au/">https://www.cottoninfo.com.au/</a>
+            <div class="linkDescription"><p>CottonInfo issues an e-newsletter on a topic&nbsp;important to cotton growers -&nbsp;from weather to water management and&nbsp;energy use efficiency, to&nbsp;biosecurity and&nbsp;stewardship</p>
+</div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-xs-12">
+            
+            <h3>DPIRD (WA) DSS tools</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2" >
+            <div>
+                
+                <a class="linkURL" href="https://www.agric.wa.gov.au/tools"><img src="/Uploads/Images/Links/WA logo.jpg" alt="DPIRD (WA) DSS tools" style="width:100%"/></a>
+            </div>  
+        </div>
+        <div class="col-xs-10">
+            <a class="linkURL" href="https://www.agric.wa.gov.au/tools">https://www.agric.wa.gov.au/tools</a>
+            <div class="linkDescription"><p>The Department of Primary Industries and Regional Development, Western Australia provides easy access for decision making.</p>
+</div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-xs-12">
+            
+            <h3>World wind animation</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2" >
+            <div>
+                
+                <a class="linkURL" href="https://earth.nullschool.net/#current/wind/surface/level/orthographic"><img src="/Uploads/Images/Links/wind_icon.jpg" alt="World wind animation" style="width:100%"/></a>
+            </div>  
+        </div>
+        <div class="col-xs-10">
+            <a class="linkURL" href="https://earth.nullschool.net/#current/wind/surface/level/orthographic">https://earth.nullschool.net/#current/wind/surface/level/orthographic</a>
+            <div class="linkDescription"><p>A bird eye view of what is happening across our globe.</p>
+</div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-xs-12">
+            
+            <h3>COLA 14 day precipitation forecast</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2" >
+            <div>
+                
+                <a class="linkURL" href="http://wxmaps.org/pix/prec7.html"><img src="/Uploads/Images/Links/Precipforecasticon.jpg" alt="COLA 14 day precipitation forecast" style="width:100%"/></a>
+            </div>  
+        </div>
+        <div class="col-xs-10">
+            <a class="linkURL" href="http://wxmaps.org/pix/prec7.html">http://wxmaps.org/pix/prec7.html</a>
+            <div class="linkDescription"><p>COLA is a scientific research center established to improve understanding and prediction of Earth&#39;s climate variations on seasonal, interannual, and decadal scales, with a special emphasis on the interactions between Earth&#39;s atmosphere, oceans, and land surfaces.</p>
+</div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-xs-12">
+            
+            <h3>100 Years of Australian Rainfall</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2" >
+            <div>
+                
+                <a class="linkURL" href="http://www.bushmantanks.com.au/100-years-of-australian-rainfall"><img src="/Uploads/Images/Links/Bushmap.jpg" alt="100 Years of Australian Rainfall" style="width:100%"/></a>
+            </div>  
+        </div>
+        <div class="col-xs-10">
+            <a class="linkURL" href="http://www.bushmantanks.com.au/100-years-of-australian-rainfall">http://www.bushmantanks.com.au/100-years-of-australian-rainfall</a>
+            <div class="linkDescription"><p>A set of simple national climate descriptions prepared by CleverClicks&nbsp;for Bushman Tanks using data from the Bureau of Meteorology.</p>
+</div>
+        </div>
+    </div>
+    <br />
+
+
+            </section>
+        </div>
+
+        <div class="footer">
+            <br />
+            <img src="/Content/Images/MCV_logo.jpg" style="display:block;margin:0 auto" />
+            <p style="text-align:center; font-size:0.8em">&copy; Commonwealth of Australia 2023 </p>
+        </div>
+    </div>
+    
+    <div class="ajax_spinner">
+        <div id="calculating_caption"></div>
+    </div>
+    
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="/Scripts/CliMate_Tools.js"></script>
+<script src="/bundles/modernizr?v=inCVuEFe6J4Q07A0AcRsbJic_UE5MwpRMNGcOtk94TE1"></script>
+
+    
+    <script src="https://www.google.com/recaptcha/api.js?render=6LdOApcUAAAAAOiTPBqTRAw2kSOb6viPw1No0Hgq"></script>
+    <script>
+        grecaptcha.ready(function () {
+            grecaptcha.execute('6LdOApcUAAAAAOiTPBqTRAw2kSOb6viPw1No0Hgq', { action: 'links' }).then(function (token) {
+
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+    $(function () {
+        var $selectedmainli = $(".");
+        
+        $selectedmainli.addClass("active");
+        //if($selectedsubmenuli) {
+        //    $selectedsubmenuli.addClass("active");
+        //}
+    });
+    </script>
+   
+
+</body>
+</html>

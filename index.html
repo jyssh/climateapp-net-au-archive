@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>CliMate: Home Page</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/Content/Images/PageIcons/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/Content/Images/PageIcons/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/Content/Images/PageIcons/apple-touch-icon-57-precomposed.png">
+   
+    <link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+    <link href="/Content/css/Site.css" rel="stylesheet" />
+    
+   
+
+
+
+</head>
+<body>
+    <div class="container-narrow container">
+        <div class="navbar navbar-default navbar-fixed-top masthead">
+            <div class="container-narrow" id="navbar-container">
+                <div class="row" style="margin-right: 6px; margin-left: 6px;">
+                    <div class="navbar-header col-sm-3">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="brand" href="/"> </a>
+                    </div>
+                    <div class="col-sm-9">
+                        <div class="navbar-collapse collapse">
+                            <div class="row">
+                                <div class=" login_menu">
+                                    <section id="login" class="user-profile">
+                                        <form action="/Account/LogOff" class="navbar-right" id="logoutForm" method="post"><input name="__RequestVerificationToken" type="hidden" value="bvNMZEjyGAK4ZiKd0gFJsL1_AucCZji-MHWifKgo8lKj1AvnRTQN8kmdnJAIbrfIh4NNJo0l3oKHYmkr3eqa5BFodpwOPVZ0witJNLXs4LPoyFc7ejgGxXakcGYA3vz4l6UF5XB2w__H5umtJAuJ3A2" />    <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a href="/Manage" title="Manage">dalerschilling@yahoo.com.au</a>
+        </li>
+        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+    </ul>
+</form>
+                                    </section>
+                                </div>
+                            </div>
+                            <div class="row" id="main-menu">
+                                <ul class="nav navbar-nav navbar-right">
+
+                                    <li class="main-menu-item main-home"><a href="/">Home</a></li>
+                                    <li class="main-menu-item main-about"><a href="/About">About</a></li>
+                                    <li class="main-menu-item large-screen-only main-analyses">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Analyses<span class="caret"></span></a>
+                                        <ul class="dropdown-menu large-screen-only">
+                                            <li class="analysis-a3 "><a href="/A03_HowsTheSeason">How&#39;s the Season?</a></li>
+                                            <li class="analysis-a1 "><a href="/A01_HowOften">How Often?</a></li>
+                                            <li class="analysis-a4 "><a href="/A04_HowWetN">How Wet/Nitrate?</a></li>
+                                            <li class="analysis-a9 "><a href="/A09_WhatYield">Potential Yield?</a></li>
+                                            <li class="analysis-a8 "><a href="/A08_HowsTheDrought">Drought?</a></li>
+                                            <li class="analysis-a2 "><a href="/A02_HowHotCold">How Hot/Cold?</a></li>
+                                            <li class="analysis-a5 "><a href="/A05_HowLikely">How Likely?</a></li>
+                                            <li class="analysis-a6 "><a href="/A06_HowsENSO">How&#39;s El Nino?</a></li>
+                                            <li class="analysis-a7 "><a href="/A07_HowsThePast">How&#39;s the Past?</a></li>
+                                            <li class="analysis-a10 "><a href="/A10_WhatTrend">What Trend?</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="analysis-a3 small-screen-only"><a href="/A03_HowsTheSeason">How&#39;s the Season?</a></li>
+                                    <li class="analysis-a1 small-screen-only"><a href="/A01_HowOften">How Often?</a></li>
+                                    <li class="analysis-a4 small-screen-only"><a href="/A04_HowWetN">How Wet/Nitrate?</a></li>
+                                    <li class="analysis-a9 small-screen-only"><a href="/A09_WhatYield">Potential Yield?</a></li>
+                                    <li class="analysis-a8 small-screen-only"><a href="/A08_HowsTheDrought">Drought?</a></li>
+                                    <li class="analysis-a2 small-screen-only"><a href="/A02_HowHotCold">How Hot/Cold?</a></li>
+                                    <li class="analysis-a5 small-screen-only"><a href="/A05_HowLikely">How Likely?</a></li>
+                                    <li class="analysis-a6 small-screen-only"><a href="/A06_HowsENSO">How&#39;s El Nino?</a></li>
+                                    <li class="analysis-a7 small-screen-only"><a href="/A07_HowsThePast">How&#39;s the Past?</a></li>
+                                    <li class="analysis-a10 small-screen-only"><a href="/A10_WhatTrend">What Trend?</a></li>
+                                    <li class="main-menu-item main-news"><a href="/News">News</a></li>
+                                    <li class="main-menu-item main-library"><a href="/LIbrary">Library</a></li>
+                                    <li class="main-menu-item main-links"><a href="/Links">Links</a></li>
+                                    <li class="main-menu-item main-contact"><a href="/WebContact">Contact</a></li>
+
+
+
+                                </ul>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="body">
+
+            
+    <section class="featured" >
+   
+        <div class="content-wrapper" style="text-align:center">
+            <div class="row">
+                <h1>Australian CliMate</h1>
+                    <h2 style="font-family: 'Shadows Into Light', cursive; margin-top: -5px;">Climate analysis for decision makers</h2>
+            </div>
+         
+            <div class="row">
+                <div class="col-md-6">
+
+                    <img src="/Content/Images/Feature3.png" style="width: 100%; max-width: 535px; "/>
+                </div>
+                <div class="col-md-6">
+                    <p style="text-align:right" class="lead"><p><em>Question focused analyses for </em>exploration of&nbsp;weather&nbsp;data across Australia.</p>
+
+<p>Also available for&nbsp;iOS and Android devices.</p>
+
+<p>&nbsp;</p>
+</p>
+                    <div class="row" style="text-align:center">
+                        <p>
+                            <a href="https://itunes.apple.com/au/app/australian-climate/id582572607?ls=1&mt=8"><img id="heading-title" src="/Content/Images/Download_on_the_App_Store_Badge_US-UK_135x40.png" width="160"  alt="App Store Resource Center" /></a>
+                        </p>
+                        <p>
+                            <a href="https://play.google.com/store/apps/details?id=au.net.climate.climate"><img id="heading-title" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" width="180" alt="Google Play Store" /></a>
+                        </p>
+                        <p>
+                            OR
+                        </p>
+                        <p>
+                            <a class="btn btn-large btn-success" style="font-size: 1.3em" href="/Analyses">Start Now!</a>
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+            <section class="content-wrapper main-content clear-fix">
+
+                
+
+
+
+<br />
+
+
+
+<div class="row">
+        <div id="HomeNews">
+
+            <div class="col-xs-12">
+                <h2>Latest news</h2>
+
+    <div class="row">
+        <div class="col-xs-2" style="text-align:center">
+<a href="/News/Details/724b94f9-089f-4af6-b9fc-2e7316d40014" style="display:inline;"><img alt="Australian CliMate is shutting down on Dec 1 after 10 years’ service" src="/Uploads/Images/News/Feature3.png" style="max-height:100px;max-width:100%" /></a>                      
+                    
+        </div>
+        <div class="col-xs-10">
+            <div class="postTitle"> <b><a href="/news/Details/724b94f9-089f-4af6-b9fc-2e7316d40014">Australian CliMate is shutting down on Dec 1 after 10 years’ service</a></b> <span> 01 Nov 2023</span></div>
+
+            <div class="postBody">It is a great disappointment to announce that&nbsp;Australian CliMate&nbsp;will be discontinued from 1st&nbsp;December 2023.&nbsp;With &gt; 20,000 registered users since its first release in 2013 and ...</div>
+        </div>
+        
+    </div>
+    <br />
+            </div>
+        </div>
+        <br />
+</div>
+<hr />
+
+<div class="row">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="analysis-preview-well well" style="background-image: linear-gradient(to bottom,#ffffff 0,#f5f5f5 100%);">
+                            <h2 style="font-family: 'Shadows Into Light', cursive; margin-top: -5px;">How&#39;s the Season?</h2>
+                            <div class="AnalysisPreview">
+                                <img class="AnalysisPreviewImage" src=/Uploads/Images/Cms/A3_HowsTheSeason_500x500.png />
+                                <div>
+                                    <p class="supported_data_types">Rain, temperature, radiation</p>
+                                    <p><p>Track the current season&#39;s progress compared to past seasons.</p>
+</p>
+                                    <p style="text-align: center">
+                                        <a class="btn btn-success" href="A03_HowsTheSeason">
+                                            <i class="icon-share-alt icon-white"></i>Run Analysis...
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="analysis-preview-well well" style="background-image: linear-gradient(to bottom,#ffffff 0,#f5f5f5 100%);">
+                            <h2 style="font-family: 'Shadows Into Light', cursive; margin-top: -5px;">How Often?</h2>
+                            <div class="AnalysisPreview">
+                                <img class="AnalysisPreviewImage" src=/Uploads/Images/Cms/A1_HowsOften_500x500.png />
+                                <div>
+                                    <p class="supported_data_types">Rainfall, temperature, radiation, heat sum, risk assessment</p>
+                                    <p><p>Explore probabilities of future rainfall and temperature events based on past seasons.</p>
+</p>
+                                    <p style="text-align: center">
+                                        <a class="btn btn-success" href="A01_HowOften">
+                                            <i class="icon-share-alt icon-white"></i>Run Analysis...
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="analysis-preview-well well" style="background-image: linear-gradient(to bottom,#ffffff 0,#f5f5f5 100%);">
+                            <h2 style="font-family: 'Shadows Into Light', cursive; margin-top: -5px;">How Wet/Nitrate?</h2>
+                            <div class="AnalysisPreview">
+                                <img class="AnalysisPreviewImage" src=/Uploads/Images/Cms/A4_HowWetN_500x500.png />
+                                <div>
+                                    <p class="supported_data_types">Soil water &amp; nitrate</p>
+                                    <p><p>Assess how soil water and nitrate have changed over the current fallow season.</p>
+</p>
+                                    <p style="text-align: center">
+                                        <a class="btn btn-success" href="A04_HowWetN">
+                                            <i class="icon-share-alt icon-white"></i>Run Analysis...
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="analysis-preview-well well" style="background-image: linear-gradient(to bottom,#ffffff 0,#f5f5f5 100%);">
+                            <h2 style="font-family: 'Shadows Into Light', cursive; margin-top: -5px;">Yield Potential?</h2>
+                            <div class="AnalysisPreview">
+                                <img class="AnalysisPreviewImage" src=/Uploads/Images/Cms/A09_PotentialYield_500x500.png />
+                                <div>
+                                    <p class="supported_data_types">crop yield</p>
+                                    <p><p>Yield potential based on water supply (soil water + in_crop rain) and water use efficiency.</p>
+</p>
+                                    <p style="text-align: center">
+                                        <a class="btn btn-success" href="A09_WhatYield">
+                                            <i class="icon-share-alt icon-white"></i>Run Analysis...
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="analysis-preview-well well" style="background-image: linear-gradient(to bottom,#ffffff 0,#f5f5f5 100%);">
+                            <h2 style="font-family: 'Shadows Into Light', cursive; margin-top: -5px;">Drought?</h2>
+                            <div class="AnalysisPreview">
+                                <img class="AnalysisPreviewImage" src=/Uploads/Images/Cms/A08_HowsTheDrought_500x500.png />
+                                <div>
+                                    <p class="supported_data_types">Drought, percentiles, rainfall deficit, residence period</p>
+                                    <p><p>Drought? provides a monthly update of drought status using the Drought Percentile Method.</p>
+</p>
+                                    <p style="text-align: center">
+                                        <a class="btn btn-success" href="A08_HowsTheDrought">
+                                            <i class="icon-share-alt icon-white"></i>Run Analysis...
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="analysis-preview-well well" style="background-image: linear-gradient(to bottom,#ffffff 0,#f5f5f5 100%);">
+                            <h2 style="font-family: 'Shadows Into Light', cursive; margin-top: -5px;">How Hot/Cold?</h2>
+                            <div class="AnalysisPreview">
+                                <img class="AnalysisPreviewImage" src=/Uploads/Images/Cms/A2_HowsHotCold_500x500.png />
+                                <div>
+                                    <p class="supported_data_types">Cold &amp; heat stress</p>
+                                    <p><p>Assess the chance of heat-stress and cold-stress events for any day of the year.</p>
+</p>
+                                    <p style="text-align: center">
+                                        <a class="btn btn-success" href="A02_HowHotCold">
+                                            <i class="icon-share-alt icon-white"></i>Run Analysis...
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="analysis-preview-well well" style="background-image: linear-gradient(to bottom,#ffffff 0,#f5f5f5 100%);">
+                            <h2 style="font-family: 'Shadows Into Light', cursive; margin-top: -5px;">How&#39;s the Past?</h2>
+                            <div class="AnalysisPreview">
+                                <img class="AnalysisPreviewImage" src=/Uploads/Images/Cms/A7_HowsThePast_500x500.png />
+                                <div>
+                                    <p class="supported_data_types">Rain, temperature &amp; radiation</p>
+                                    <p><p>Review historical monthly and annual rainfall, temperature and solar radiation patterns.</p>
+</p>
+                                    <p style="text-align: center">
+                                        <a class="btn btn-success" href="A07_HowsThePast">
+                                            <i class="icon-share-alt icon-white"></i>Run Analysis...
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="analysis-preview-well well" style="background-image: linear-gradient(to bottom,#ffffff 0,#f5f5f5 100%);">
+                            <h2 style="font-family: 'Shadows Into Light', cursive; margin-top: -5px;">What Trend?</h2>
+                            <div class="AnalysisPreview">
+                                <img class="AnalysisPreviewImage" src=/Uploads/Images/Cms/A10_WhatTrend_500x500.png />
+                                <div>
+                                    <p class="supported_data_types">rainfall, temperature, solar radiation</p>
+                                    <p><p>Explore trends in meteorological data over&nbsp;different periods in recent history (1900 onwards)..</p>
+</p>
+                                    <p style="text-align: center">
+                                        <a class="btn btn-success" href="A10_WhatTrend">
+                                            <i class="icon-share-alt icon-white"></i>Run Analysis...
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+</div>
+         
+<br />
+<br />
+
+            </section>
+        </div>
+
+        <div class="footer">
+            <br />
+            <img src="/Content/Images/MCV_logo.jpg" style="display:block;margin:0 auto" />
+            <p style="text-align:center; font-size:0.8em">&copy; Commonwealth of Australia 2023 </p>
+        </div>
+    </div>
+    
+    <div class="ajax_spinner">
+        <div id="calculating_caption"></div>
+    </div>
+    
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="/Scripts/CliMate_Tools.js"></script>
+<script src="/bundles/modernizr?v=inCVuEFe6J4Q07A0AcRsbJic_UE5MwpRMNGcOtk94TE1"></script>
+
+    
+    <script src="https://www.google.com/recaptcha/api.js?render=6LdOApcUAAAAAOiTPBqTRAw2kSOb6viPw1No0Hgq"></script>
+    <script>
+        grecaptcha.ready(function () {
+            grecaptcha.execute('6LdOApcUAAAAAOiTPBqTRAw2kSOb6viPw1No0Hgq', { action: 'homepage' }).then(function (token) {
+
+            });
+        });
+    </script>
+
+
+    <script type="text/javascript">
+    $(function () {
+        var $selectedmainli = $(".main-home");
+        
+        $selectedmainli.addClass("active");
+        //if($selectedsubmenuli) {
+        //    $selectedsubmenuli.addClass("active");
+        //}
+    });
+    </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>CliMate: Library</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/Content/Images/PageIcons/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/Content/Images/PageIcons/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/Content/Images/PageIcons/apple-touch-icon-57-precomposed.png">
+   
+    <link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+    <link href="/Content/css/Site.css" rel="stylesheet" />
+    
+
+</head>
+<body>
+    <div class="container-narrow container">
+        <div class="navbar navbar-default navbar-fixed-top masthead">
+            <div class="container-narrow" id="navbar-container">
+                <div class="row" style="margin-right: 6px; margin-left: 6px;">
+                    <div class="navbar-header col-sm-3">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="brand" href="/"> </a>
+                    </div>
+                    <div class="col-sm-9">
+                        <div class="navbar-collapse collapse">
+                            <div class="row">
+                                <div class=" login_menu">
+                                    <section id="login" class="user-profile">
+                                        <form action="/Account/LogOff" class="navbar-right" id="logoutForm" method="post"><input name="__RequestVerificationToken" type="hidden" value="4WSjxRUySca5j7MNOJugndwmKfNld1i4vnXxrQlC4skQ7XDcsM54TGjqgzAkP6fbNn4VSxwWURllzU02QeQpfHKXkSnEsyRBA3ayruSWNstsUszXe9Mxu8J5AA60Pdpg_8vwkEM4iV3I0K79xlxjDQ2" />    <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a href="/Manage" title="Manage">dalerschilling@yahoo.com.au</a>
+        </li>
+        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+    </ul>
+</form>
+                                    </section>
+                                </div>
+                            </div>
+                            <div class="row" id="main-menu">
+                                <ul class="nav navbar-nav navbar-right">
+
+                                    <li class="main-menu-item main-home"><a href="/">Home</a></li>
+                                    <li class="main-menu-item main-about"><a href="/About">About</a></li>
+                                    <li class="main-menu-item large-screen-only main-analyses">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Analyses<span class="caret"></span></a>
+                                        <ul class="dropdown-menu large-screen-only">
+                                            <li class="analysis-a3 "><a href="/A03_HowsTheSeason">How&#39;s the Season?</a></li>
+                                            <li class="analysis-a1 "><a href="/A01_HowOften">How Often?</a></li>
+                                            <li class="analysis-a4 "><a href="/A04_HowWetN">How Wet/Nitrate?</a></li>
+                                            <li class="analysis-a9 "><a href="/A09_WhatYield">Potential Yield?</a></li>
+                                            <li class="analysis-a8 "><a href="/A08_HowsTheDrought">Drought?</a></li>
+                                            <li class="analysis-a2 "><a href="/A02_HowHotCold">How Hot/Cold?</a></li>
+                                            <li class="analysis-a5 "><a href="/A05_HowLikely">How Likely?</a></li>
+                                            <li class="analysis-a6 "><a href="/A06_HowsENSO">How&#39;s El Nino?</a></li>
+                                            <li class="analysis-a7 "><a href="/A07_HowsThePast">How&#39;s the Past?</a></li>
+                                            <li class="analysis-a10 "><a href="/A10_WhatTrend">What Trend?</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="analysis-a3 small-screen-only"><a href="/A03_HowsTheSeason">How&#39;s the Season?</a></li>
+                                    <li class="analysis-a1 small-screen-only"><a href="/A01_HowOften">How Often?</a></li>
+                                    <li class="analysis-a4 small-screen-only"><a href="/A04_HowWetN">How Wet/Nitrate?</a></li>
+                                    <li class="analysis-a9 small-screen-only"><a href="/A09_WhatYield">Potential Yield?</a></li>
+                                    <li class="analysis-a8 small-screen-only"><a href="/A08_HowsTheDrought">Drought?</a></li>
+                                    <li class="analysis-a2 small-screen-only"><a href="/A02_HowHotCold">How Hot/Cold?</a></li>
+                                    <li class="analysis-a5 small-screen-only"><a href="/A05_HowLikely">How Likely?</a></li>
+                                    <li class="analysis-a6 small-screen-only"><a href="/A06_HowsENSO">How&#39;s El Nino?</a></li>
+                                    <li class="analysis-a7 small-screen-only"><a href="/A07_HowsThePast">How&#39;s the Past?</a></li>
+                                    <li class="analysis-a10 small-screen-only"><a href="/A10_WhatTrend">What Trend?</a></li>
+                                    <li class="main-menu-item main-news"><a href="/News">News</a></li>
+                                    <li class="main-menu-item main-library"><a href="/LIbrary">Library</a></li>
+                                    <li class="main-menu-item main-links"><a href="/Links">Links</a></li>
+                                    <li class="main-menu-item main-contact"><a href="/WebContact">Contact</a></li>
+
+
+
+                                </ul>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="body">
+
+            
+            <section class="content-wrapper main-content clear-fix">
+
+                
+
+<link href="/Content/css/CliMate_Library.css" rel="stylesheet" />
+
+<h2>Australian CliMate Reference Library</h2>
+<p style="color:gray">Here you will find a range of documents, presentations and videos relating to the Australian CliMate.</p>
+<hr />
+
+<div class="filters-button-group button-group js-radio-button-group">
+    <button class="button is-checked" data-filter="*">Show All</button>
+    <button class="button" data-filter=".Document">Show Documents</button>
+    <button class="button" data-filter=".Presentation">Show Presentations</button>
+    <button class="button" data-filter=".Video">Show Videos</button>
+    <button class="button" data-filter=".Other">Show Other</button>
+
+</div>
+
+<div class="grid">
+        <div class="library-item transition Document " data-id="b779e173-4929-4c2e-ac29-66babf17064b" data-fileurl="/Uploads/Documents/EvaluationClimate2018.pdf" data-category="transition">
+
+            <div class="library-icon"></div>
+
+            <img class="library-img" src="/Uploads/Images/Library/eval_pic.jpg" />
+
+            <div class="library-text-container">
+                <p class="library-title">Evaluation of CliMate (Starasts 2018)</p>
+                <div class="library-description"><p>Independent assessment of user experiences by Dr Ann Statarsts 2018</p>
+</div>
+
+            </div>
+
+        </div>
+        <div class="library-item transition Document " data-id="aa71e4de-4251-4af1-9bcb-a6f9bda50fb5" data-fileurl="/Uploads/Documents/Green date note.pdf" data-category="transition">
+
+            <div class="library-icon"></div>
+
+            <img class="library-img" src="/Uploads/Images/Library/factsheet.jpg" />
+
+            <div class="library-text-container">
+                <p class="library-title">Green dates estimation</p>
+                <div class="library-description"><p>A note on using CliMatr to estimate "green dates" </p>
+</div>
+
+            </div>
+
+        </div>
+        <div class="library-item transition Document " data-id="41e009da-c784-432b-9371-5061c318b8aa" data-fileurl="/Uploads/Documents/170621 Australian CliMate Factsheet.pdf" data-category="transition">
+
+            <div class="library-icon"></div>
+
+            <img class="library-img" src="/Uploads/Images/Library/factsheet.jpg" />
+
+            <div class="library-text-container">
+                <p class="library-title">CliMate analyses</p>
+                <div class="library-description"><p>Detail on the 10 analyses within CliMate</p>
+</div>
+
+            </div>
+
+        </div>
+        <div class="library-item transition Presentation " data-id="bc4f3fe2-62e1-4760-ad06-75a996a85999" data-fileurl="/Uploads/Documents/Managing risk tools.pdf" data-category="transition">
+
+            <div class="library-icon"></div>
+
+            <img class="library-img" src="/Uploads/Images/Library/Risk.jpg" />
+
+            <div class="library-text-container">
+                <p class="library-title">Understanding risk</p>
+                <div class="library-description"><p>A presentation on better underestanding risk using CliMate</p>
+</div>
+
+            </div>
+
+        </div>
+        <div class="library-item transition Document " data-id="d1caa6ae-6c50-41d8-902f-138784ca3afd" data-fileurl="/Uploads/Documents/Risk analysis N Australia.pdf" data-category="transition">
+
+            <div class="library-icon"></div>
+
+            <img class="library-img" src="/Uploads/Images/Library/Risk icon.jpg" />
+
+            <div class="library-text-container">
+                <p class="library-title">Northern Australia risk analysis</p>
+                <div class="library-description"><p>Application of CliMate in risk analysys with examples for northern Australia</p>
+</div>
+
+            </div>
+
+        </div>
+        <div class="library-item transition Document " data-id="3e741098-1b67-4fa4-b471-3d9d4b94fc04" data-fileurl="/Uploads/Documents/GRDC 2016 using climate and weather data objectively.pdf" data-category="transition">
+
+            <div class="library-icon"></div>
+
+            <img class="library-img" src="/Uploads/Images/Library/weathermapicon.jpg" />
+
+            <div class="library-text-container">
+                <p class="library-title">Using climate information</p>
+                <div class="library-description"><p>Factsheet from GRDC</p>
+</div>
+
+            </div>
+
+        </div>
+        <div class="library-item transition Document " data-id="c06a3cad-7ccb-4860-a2ad-1d989058dfe8" data-fileurl="/Uploads/Documents/DSS observations .pdf" data-category="transition">
+
+            <div class="library-icon"></div>
+
+            <img class="library-img" src="/Uploads/Images/Library/DSS.jpg" />
+
+            <div class="library-text-container">
+                <p class="library-title">Observations on decision support tools</p>
+                <div class="library-description"><p>Features of useful decision support tools</p>
+</div>
+
+            </div>
+
+        </div>
+        <div class="library-item transition Document " data-id="eaf4d133-2b2c-41e9-b63b-9a98b386a8c9" data-fileurl="/Uploads/Documents/CliMate 2012.pdf" data-category="transition">
+
+            <div class="library-icon"></div>
+
+            <img class="library-img" src="/Uploads/Images/Library/CliMate2012.jpg" />
+
+            <div class="library-text-container">
+                <p class="library-title">App description </p>
+                <div class="library-description"></div>
+
+            </div>
+
+        </div>
+        <div class="library-item transition Document " data-id="60caa58f-da65-44c5-8593-74e5ae21163e" data-fileurl="/Uploads/Documents/Jeffrey et al2001.pdf" data-category="transition">
+
+            <div class="library-icon"></div>
+
+            <img class="library-img" src="/Uploads/Images/Library/Silo.jpg" />
+
+            <div class="library-text-container">
+                <p class="library-title">Silo data source I</p>
+                <div class="library-description"><p>SILO is an enhanced climate database hosted by the Queensland Department of Environment and Science (DES). Silo's unique feature is that it provides continuous records of daily variables, well suited to use in models and decision support tools.</p>
+
+<p>In order to create continuous long-term records, a series of algorithms are applied to infill data gaps.</p>
+
+<p>Jeffrey, S.J., Carter, J.O., Moodie, K.B. and Beswick, A.R. 2001. Using spa- tial interpolation to construct a comprehensive archive of Australian climate data. Environ. Model. Software, 66, 309-30</p>
+
+<p> </p>
+</div>
+
+            </div>
+
+        </div>
+        <div class="library-item transition Document " data-id="ad68a863-e4b4-47cc-ad97-f546ff5238f1" data-fileurl="/Uploads/Documents/Jeffrey 2006 Silo update.pdf" data-category="transition">
+
+            <div class="library-icon"></div>
+
+            <img class="library-img" src="/Uploads/Images/Library/Silo.jpg" />
+
+            <div class="library-text-container">
+                <p class="library-title">Silo data source II</p>
+                <div class="library-description"><p>Methods note. S Jeffrey, 2006. Error analysis for the interpolation of monthly rainfall used in the generation of SILO rainfall datasets</p>
+</div>
+
+            </div>
+
+        </div>
+        <div class="library-item transition Document " data-id="652dbc71-c9ba-4835-a76e-989af53d129c" data-fileurl="/Uploads/Documents/Jones et al 2009 High quality spatial climate data Australia.pdf" data-category="transition">
+
+            <div class="library-icon"></div>
+
+            <img class="library-img" src="/Uploads/Images/Library/map.jpg" />
+
+            <div class="library-text-container">
+                <p class="library-title">Data sources III</p>
+                <div class="library-description"><p>High-quality spatial climate data-sets for Australia. Jones A., Wang W., Fawcett R. 2009 Australian Meteorological and Oceanographic Journal 58: 233-248</p>
+
+<p> </p>
+
+<p> </p>
+</div>
+
+            </div>
+
+        </div>
+        <div class="library-item transition Document " data-id="c0c2349f-7e31-484a-a7b1-dc119abbaab0" data-fileurl="/Uploads/Documents/Willitrain4thed2017.pdf" data-category="transition">
+
+            <div class="library-icon"></div>
+
+            <img class="library-img" src="/Uploads/Images/Library/weathermap.jpg" />
+
+            <div class="library-text-container">
+                <p class="library-title">Will It rain?</p>
+                <div class="library-description"><p>Effects of the Southern Oscillation and El Nino on Australia (4th edition 2017)</p>
+</div>
+
+            </div>
+
+        </div>
+        <div class="library-item transition Document " data-id="9448da8b-c381-437a-8aaa-b2d2c4b1a7ca" data-fileurl="/Uploads/Documents/Masters-of-the-Climate2005.pdf" data-category="transition">
+
+            <div class="library-icon"></div>
+
+            <img class="library-img" src="/Uploads/Images/Library/mcv_portrait.png" />
+
+            <div class="library-text-container">
+                <p class="library-title">Drought case studies</p>
+                <div class="library-description"><p>Masters of the climate 2005</p>
+</div>
+
+            </div>
+
+        </div>
+        <div class="library-item transition Document " data-id="ff520441-551c-4b20-a945-55271e381ac9" data-fileurl="/Uploads/Documents/Testing water balance model in CliMate.pdf" data-category="transition">
+
+            <div class="library-icon"></div>
+
+            <img class="library-img" src="/Uploads/Images/Library/SWApp.jpg" />
+
+            <div class="library-text-container">
+                <p class="library-title">Howwet’s water balance model</p>
+                <div class="library-description"><p>Soil water model used in Howwet? analysis</p>
+
+<p>Robinson JB Freebairn DM. 2016. Estimating changes in Plant Available Soil Water in broadacre cropping in Australia Proceedings of the 2017 Agronomy Australia Conference, 24 – 28 September 2016, Ballarat, Australia. www.agronomyconference.com </p>
+</div>
+
+            </div>
+
+        </div>
+        <div class="library-item transition Document " data-id="6bc12f31-357a-424b-b879-07f46ba40e86" data-fileurl="/Uploads/Documents/GRDC 2009 WUE north factsheet.pdf" data-category="transition">
+
+            <div class="library-icon"></div>
+
+            <img class="library-img" src="/Uploads/Images/Library/GRDC.jpg" />
+
+            <div class="library-text-container">
+                <p class="library-title">WUE north</p>
+                <div class="library-description"><p>Water Use Efficiency Factsheet (GRDC northern region)</p>
+
+<p>Increasing the amount of water stored in fallows is an important strategy in managing the risks associated with highly variable rainfall in the northern region to improve water use efficiency and potential crop yields. 2009</p>
+</div>
+
+            </div>
+
+        </div>
+        <div class="library-item transition Document " data-id="46b60201-bd21-4470-a24e-647b545b5cfa" data-fileurl="/Uploads/Documents/GRDC 2009 WUE factsheet South west.pdf" data-category="transition">
+
+            <div class="library-icon"></div>
+
+            <img class="library-img" src="/Uploads/Images/Library/GRDC.jpg" />
+
+            <div class="library-text-container">
+                <p class="library-title">WUE south &amp; west</p>
+                <div class="library-description"><p>Water Use Efficiency Factsheet (GRDC south and West regions)</p>
+
+<p>Increasing the amount of water stored in fallows is an important strategy in managing the risks associated with highly variable rainfall in the northern region to improve water use efficiency and potential crop yields. 2009</p>
+</div>
+
+            </div>
+
+        </div>
+        <div class="library-item transition Document " data-id="821a991e-a7b2-46d6-926c-f64ee4e5e517" data-fileurl="/Uploads/Documents/200706 Green days.xlsx" data-category="transition">
+
+            <div class="library-icon"></div>
+
+            <img class="library-img" src="/Uploads/Images/Library/Risk icon.jpg" />
+
+            <div class="library-text-container">
+                <p class="library-title">Green dates estimation</p>
+                <div class="library-description"><p>Green dates calulator</p>
+</div>
+
+            </div>
+
+        </div>
+</div>
+
+
+            </section>
+        </div>
+
+        <div class="footer">
+            <br />
+            <img src="/Content/Images/MCV_logo.jpg" style="display:block;margin:0 auto" />
+            <p style="text-align:center; font-size:0.8em">&copy; Commonwealth of Australia 2023 </p>
+        </div>
+    </div>
+    
+    <div class="ajax_spinner">
+        <div id="calculating_caption"></div>
+    </div>
+    
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="/Scripts/CliMate_Tools.js"></script>
+<script src="/bundles/modernizr?v=inCVuEFe6J4Q07A0AcRsbJic_UE5MwpRMNGcOtk94TE1"></script>
+
+    
+
+    <script src="/Scripts/CliMate_LibraryObjects.js"></script>
+    <script src="/Plugins/Isotope/isotope.pkgd.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LdOApcUAAAAAOiTPBqTRAw2kSOb6viPw1No0Hgq"></script>
+    <script>
+        grecaptcha.ready(function () {
+            grecaptcha.execute('6LdOApcUAAAAAOiTPBqTRAw2kSOb6viPw1No0Hgq', { action: 'library' }).then(function (token) {
+
+            });
+        });
+    </script>
+
+    <script>
+
+        $(document).ready(function () {
+            setupIsotope();
+            setupItemClickEvents();
+        });
+
+
+
+    </script>
+
+    <script type="text/javascript">
+    $(function () {
+        var $selectedmainli = $(".main-library");
+        
+        $selectedmainli.addClass("active");
+        //if($selectedsubmenuli) {
+        //    $selectedsubmenuli.addClass("active");
+        //}
+    });
+    </script>
+   
+
+</body>
+</html>

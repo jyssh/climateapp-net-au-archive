@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>CliMate: Drought?</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/Content/Images/PageIcons/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/Content/Images/PageIcons/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/Content/Images/PageIcons/apple-touch-icon-57-precomposed.png">
+   
+    <link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+    <link href="/Content/css/Site.css" rel="stylesheet" />
+    
+
+
+    <link href="/Plugins/jQuery-dataTables-1.10.12/media/css/jquery.dataTables.min.css" rel="stylesheet"/>
+    <link href="/Plugins/metisMenu-master/dist/metisMenu.css" rel="stylesheet"/>
+    <link href="/Content/css/CliMate_Metis.css" rel="stylesheet"/>
+    <link href="/Content/css/CliMate_HelpOverlay.css" rel="stylesheet"/>
+    <link href="/Content/css/animate.css" rel="stylesheet" />
+    
+    <link href="/Content/css/CliMate_Analysis.css" rel="stylesheet" />
+    <link href="/Content/css/CliMate_SelectLocationDialog.css" rel="stylesheet" />
+    <style>
+        #Table1 td {
+            text-align: center;
+            font-size: 10pt;
+        }
+         #Table1 th {
+            text-align: center;
+           font-size: 10pt;
+        }
+
+         thead {
+             background: #545454;
+            color: white;
+         }
+         table {
+             border: 1px solid #545454;
+         }
+    </style>
+
+    <style>
+        .btn-sidebar {
+            font-size: 0.8em; width: 120px; margin: 6px;
+        }
+
+    </style>
+
+
+</head>
+<body>
+    <div class="container-narrow container">
+        <div class="navbar navbar-default navbar-fixed-top masthead">
+            <div class="container-narrow" id="navbar-container">
+                <div class="row" style="margin-right: 6px; margin-left: 6px;">
+                    <div class="navbar-header col-sm-3">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="brand" href="/"> </a>
+                    </div>
+                    <div class="col-sm-9">
+                        <div class="navbar-collapse collapse">
+                            <div class="row">
+                                <div class=" login_menu">
+                                    <section id="login" class="user-profile">
+                                        <form action="/Account/LogOff" class="navbar-right" id="logoutForm" method="post"><input name="__RequestVerificationToken" type="hidden" value="-52qdvhD8s7oslWIZdn3VyJXj4XhnKX26uB7NL2L5nlfIoiRiYtbH4Z_gTDUq-Zw1FulxYapnDXqBGhLgXEIfpwx79z49cHlYRGLOHKyxkqSOpstp-WHXegO4rpfLFVZJ877os4RvdIV6Vr7Qffn4w2" />    <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a href="/Manage" title="Manage">dalerschilling@yahoo.com.au</a>
+        </li>
+        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+    </ul>
+</form>
+                                    </section>
+                                </div>
+                            </div>
+                            <div class="row" id="main-menu">
+                                <ul class="nav navbar-nav navbar-right">
+
+                                    <li class="main-menu-item main-home"><a href="/">Home</a></li>
+                                    <li class="main-menu-item main-about"><a href="/About">About</a></li>
+                                    <li class="main-menu-item large-screen-only main-analyses">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Analyses<span class="caret"></span></a>
+                                        <ul class="dropdown-menu large-screen-only">
+                                            <li class="analysis-a3 "><a href="/A03_HowsTheSeason">How&#39;s the Season?</a></li>
+                                            <li class="analysis-a1 "><a href="/A01_HowOften">How Often?</a></li>
+                                            <li class="analysis-a4 "><a href="/A04_HowWetN">How Wet/Nitrate?</a></li>
+                                            <li class="analysis-a9 "><a href="/A09_WhatYield">Potential Yield?</a></li>
+                                            <li class="analysis-a8 "><a href="/A08_HowsTheDrought">Drought?</a></li>
+                                            <li class="analysis-a2 "><a href="/A02_HowHotCold">How Hot/Cold?</a></li>
+                                            <li class="analysis-a5 "><a href="/A05_HowLikely">How Likely?</a></li>
+                                            <li class="analysis-a6 "><a href="/A06_HowsENSO">How&#39;s El Nino?</a></li>
+                                            <li class="analysis-a7 "><a href="/A07_HowsThePast">How&#39;s the Past?</a></li>
+                                            <li class="analysis-a10 "><a href="/A10_WhatTrend">What Trend?</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="analysis-a3 small-screen-only"><a href="/A03_HowsTheSeason">How&#39;s the Season?</a></li>
+                                    <li class="analysis-a1 small-screen-only"><a href="/A01_HowOften">How Often?</a></li>
+                                    <li class="analysis-a4 small-screen-only"><a href="/A04_HowWetN">How Wet/Nitrate?</a></li>
+                                    <li class="analysis-a9 small-screen-only"><a href="/A09_WhatYield">Potential Yield?</a></li>
+                                    <li class="analysis-a8 small-screen-only"><a href="/A08_HowsTheDrought">Drought?</a></li>
+                                    <li class="analysis-a2 small-screen-only"><a href="/A02_HowHotCold">How Hot/Cold?</a></li>
+                                    <li class="analysis-a5 small-screen-only"><a href="/A05_HowLikely">How Likely?</a></li>
+                                    <li class="analysis-a6 small-screen-only"><a href="/A06_HowsENSO">How&#39;s El Nino?</a></li>
+                                    <li class="analysis-a7 small-screen-only"><a href="/A07_HowsThePast">How&#39;s the Past?</a></li>
+                                    <li class="analysis-a10 small-screen-only"><a href="/A10_WhatTrend">What Trend?</a></li>
+                                    <li class="main-menu-item main-news"><a href="/News">News</a></li>
+                                    <li class="main-menu-item main-library"><a href="/LIbrary">Library</a></li>
+                                    <li class="main-menu-item main-links"><a href="/Links">Links</a></li>
+                                    <li class="main-menu-item main-contact"><a href="/WebContact">Contact</a></li>
+
+
+
+                                </ul>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="body">
+
+            
+            <section class="content-wrapper main-content clear-fix">
+
+                
+
+<div id="map-tooltip" style="display: none"></div>
+
+<div class="row clearfix">
+    <div class="col-md-2 large-display-menu-system">
+        <div >
+            <div class="metis-sidebar">
+                <nav class="metis-sidebar-nav" style="margin-top: 10px;">
+                    <ul class="metismenu"  id="analysis-metismenu">
+                        <li class="analysis-a3"><a href="/A03_HowsTheSeason">How&#39;s the Season?</a></li>
+                        <li class="analysis-a1"><a href="/A01_HowOften">How Often?</a></li>
+                        <li class="analysis-a4"><a href="/A04_HowWetN">How Wet/Nitrate?</a></li>
+                        <li class="analysis-a9"><a href="/A09_WhatYield">Potential Yield?</a></li>
+                        <li class="analysis-a8"><a href="/A08_HowsTheDrought">Drought?</a></li>
+                        <li class="analysis-a2"><a href="/A02_HowHotCold">How Hot/Cold?</a></li>
+                        
+                        <li class="analysis-a7"><a href="/A07_HowsThePast">How&#39;s the Past?</a></li>
+                        <li class="analysis-a10"><a href="/A10_WhatTrend">What Trend?</a></li>
+
+
+                    </ul>
+                </nav><!--/.well -->
+            </div><!--/span-->
+            <p style="font-size: 0.7em; line-height: 1em;color: silver; text-align: center; margin-top: 20px;">
+                Version: 2.0.8619.25385
+                <br/>
+                Dated: 07/08/2023</p>
+            <br />
+            <div style="text-align: center;">
+                <button class="btn btn-info btn-sidebar" onclick="javascript:getHelp();" ><i class="fa fa-question-circle" aria-hidden="true"></i> Help</button><br/>
+                <button class="btn btn-success btn-sidebar" onclick="javascript:sendFeedback();" > <i class="fa fa-envelope-o" aria-hidden="true"></i> Feedback</button>
+                
+            </div>
+            <div id="analytics-controls"></div>
+        </div>
+    </div>
+    <div class="col-md-10 col-xs-12">
+        
+        <!-- Right (content) side -->
+        <section class="content-block" role="main">
+
+            <section>
+
+                
+
+
+
+
+<div class="analysis-page">
+    <div class="row">
+        <div class="col-sm-6"><p class="analysis-title">Drought? </p></div>
+        <div class="col-sm-6 analysis-logo"><img src="/Content/Images/ClimateLogoSmall2.png" /></div>
+    </div>
+    <div class="loading-message  animated rollIn">
+        <div style="margin-top: 40px;"><p style="text-align: center; font-size: 1.4em;color:blue">Preparing analysis...</p><p style="text-align: center; font-size: 1.0em;">Please wait while we retrieve your settings.</p><p style="text-align: center;"><i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i></p></div>
+    </div>
+    <div class="analysis-content">
+        <div class="row" id="inputs-answer-panel">
+
+        </div>
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-sm-12">
+                <div id="Chart1" style="width: 100%;"></div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-12">
+                <div id="Chart2" style="width: 100%;"></div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-12">
+                <div id="Table1" style="width: 100%;"></div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-12">
+                <div id="HowDoWeKnowThis" class="howdoweknowthis-panel"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div id="Footer" class="footer-panel"></div>
+            </div>
+        </div>
+    </div>
+    
+    </div>
+
+
+<script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXR_I4pEIGjerJX6goxPaeZNVWE5lVVSU">
+
+</script>
+<style>
+    .ui-widget button.btn-select-state {
+        padding: 2px;
+        margin: 0px;
+        font-size: 10pt;
+    }
+    .btn-qld {
+        background: maroon;
+        color: gold;
+    }
+     .btn-nsw {
+        background: skyblue;
+        color: white;
+    }
+
+    .btn-vic {
+        background: navy;
+        color: silver;
+    }
+
+    .btn-nt {
+        background: #E65A00;
+        color: white;
+    }
+
+    .btn-sa {
+        background: red;
+        color: gold;
+    }
+
+    .btn-wa {
+        background: black;
+        color: gold;
+    }
+    .btn-tas {
+        background: #006A4E;
+        color: yellow;
+    }
+
+    .spinner-div {
+        text-align: center;
+        width: 100%;
+        /*position: absolute;
+        left: 0;
+        top: 0;*/
+
+    }
+    .select-location-dialog { z-index: 3 !important ;}
+
+
+
+
+</style>
+<div id="select-location-dialog" class="climateapp-dialog" title="Select a climate location..." style="display: none; table-layout:fixed;width: 100%;">
+
+    <div class="container" style="width: 99%">
+        <div id="select-location-dialog-tabs" style="min-height:300px">
+            <ul>
+                <li><a href="#location-dialog-tabs-1"><i class="fa fa-heart" aria-hidden="true" style="color: red;"></i> Select/Edit Favourites</a></li>
+                <li><a href="#location-dialog-tabs-2"><i class="fa fa-search" aria-hidden="true"  style="color: blue;"></i> Search</a></li>
+                <li><a href="#location-dialog-tabs-3"><i class="fa fa-globe" aria-hidden="true"  style="color: green;"></i> <span id="map-tab-caption">From Map <i class="fa fa-spinner fa-spin fa-fw"></i></span></a></li>
+              
+            </ul>
+
+            <div id="location-dialog-tabs-1">
+                
+                
+                <div class="row" style="position: relative;">
+                    <div class="spinner-div" style="display: none;">
+                        <p><i class="fa fa-spinner fa-spin fa-3x fa-fw"></i></p>
+                        <p>Processing Geolocation...</p>
+                        <p>Please wait</p>
+                        <p><button class="btn btn-success" onclick="javascript:continueWithoutGeolocation();">Continue without<br/>Geolocation...</button></p>
+                        
+                    </div>
+                    <table id="favourites-table" class="table table-striped" style="width: 100%; display: none;">
+                        <thead>
+                        <tr>
+                            <th style="width: 65%">Station Name</th>
+                            
+                            <th style="width: 10%">State</th>
+                            <th style="width: 10%">Elev.</th>
+                            <th style="width: 10%">Dist</th>
+                            <th style="width: 5%"></th>
+                        </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="location-dialog-tabs-2">
+                <div class="row" style="position: relative;">
+                    <div class="spinner-div" style="display: none;">
+                        <p><i class="fa fa-spinner fa-spin fa-3x fa-fw"></i></p>
+                        <p>Processing Geolocation...</p>
+                        <p>Please wait</p>
+                        <p><button class="btn btn-success" onclick="javascript: continueWithoutGeolocation();">Continue without<br />Geolocation...</button></p>
+                    </div>
+                    <table id="search-table" class="table table-striped" style="width: 100%;display:none;">
+                        <thead>
+                        <tr>
+                            <th style="width: 65%">Station Name</th>
+                            
+                            <th style="width: 10%">State</th>
+                            <th style="width: 10%">Elev.</th>
+                            <th style="width: 10%">Dist</th>
+                            <th style="width: 5%"></th>
+                        </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+
+                </div>
+            </div>
+            <div id="location-dialog-tabs-3">
+                <div style="float: right">
+                    <button class="btn btn-default btn-select-state btn-qld"  onclick="javascript: selectQLD();">QLD</button>
+                    <button class="btn btn-default btn-select-state btn-nsw"  onclick="javascript: selectNSW();">NSW</button>
+                    <button class="btn btn-default btn-select-state btn-sa"  onclick="javascript: selectSA();">SA</button>
+                    <button class="btn btn-default btn-select-state btn-vic"  onclick="javascript: selectVIC();">VIC</button>
+                    <button class="btn btn-default btn-select-state btn-wa"  onclick="javascript: selectWA();">WA</button>
+                    <button class="btn btn-default btn-select-state btn-tas"  onclick="javascript: selectTAS();">TAS</button>
+                    <button class="btn btn-default btn-select-state btn-nt"  onclick="javascript: selectNT();">NT</button>
+                </div>
+                <p>Click a location to select...</p>
+                
+                <div id="climate-stations-map" style="height: 380px;"></div>
+
+            </div>
+        </div>
+        <div id="update-all-checkbox-container" style="display: none;">
+        <input type="checkbox" name="allLocations"  id="update-all-checkbox" style="margin-top: 12px;  "><label for="allLocations" style="margin-left: 8px;">Update all analyses with this location</label>
+        </div>
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+            </section>
+        </section>
+    </div>
+</div>
+
+<div id="feedback-dialog" class="climateapp-dialog" title="Send us some feedback..." style="display: none;">
+    <textarea style="width: 100%; height: 350px;" id="user-feedback-text"></textarea>
+
+
+</div>
+
+<!-- The overlay -->
+<div id="myNav" class="overlay">
+
+
+    <!-- Button to close the overlay navigation -->
+    <a href="javascript:void(0)" class="closebtn" onclick="closeHelp()">&times;</a>
+
+    <!-- Overlay content -->
+    <div class="overlay-content">
+        <div id="overlay-header">
+            
+            <img  id="overlay-logo" src="/Content/Images/ClimateLogoSmall.png" />
+            
+            <h2 id="help-title">Help is at hand</h2>
+        </div>
+        <img id="help-image"/>
+        <div id="help-content"></div>
+            
+        <div style="text-align: center;">
+            <a href="#" onclick="javascript:closeHelp();"><i class="fa fa-times-circle" aria-hidden="true"></i> Close</a>
+        </div>
+    </div>
+</div>
+
+
+            </section>
+        </div>
+
+        <div class="footer">
+            <br />
+            <img src="/Content/Images/MCV_logo.jpg" style="display:block;margin:0 auto" />
+            <p style="text-align:center; font-size:0.8em">&copy; Commonwealth of Australia 2023 </p>
+        </div>
+    </div>
+    
+    <div class="ajax_spinner">
+        <div id="calculating_caption"></div>
+    </div>
+    
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="/Scripts/CliMate_Tools.js"></script>
+<script src="/bundles/modernizr?v=inCVuEFe6J4Q07A0AcRsbJic_UE5MwpRMNGcOtk94TE1"></script>
+
+    
+    <script src="/Plugins/metisMenu-master/dist/metisMenu.min.js"></script>
+    <script src="/Plugins/jQuery-dataTables-1.10.12/media/js/jquery.dataTables.min.js"></script>
+    <script src="/Scripts/CliMate_FeedbackDialog.js"></script>
+
+    
+
+
+    <script src="/Scripts/CliMate_SelectLocationDialog.js"></script>
+    <script src="/Scripts/Climate_InputsUI.js"></script>
+    <script src="/Scripts/CliMate_Outputs_UI.js"></script>
+    <script src="/Scripts/CliMate_Outputs_FireGauge.js"></script>
+    <script src="/Scripts/CliMate_Outputs_Table.js"></script>
+    <script src="/Scripts/CliMate_Outputs_FlotChart.js"></script>
+    <script src="/Scripts/CliMate_Calculations.js"></script>
+    <script src="/Plugins/flot-0.8.3/flot/jquery.flot.js"></script>
+    <script src="/Plugins/flot-axislabels-master/jquery.flot.axislabels.js"></script>
+    <script src="/Plugins/flot-0.8.3/flot/jquery.flot.time.min.js"></script>
+    <script src="/Plugins/flot-labels-master/jquery.flot.labels.js"></script>
+    <script type="text/javascript" src="/Plugins/flot-0.8.3/flot/jquery.flot.fillbetween.js"></script>
+    <script src="/Plugins/flot-0.8.3/flot/jquery.flot.resize.js"></script>
+    <script src="/Plugins/flot_highlightseries/flot.highlightseries.js"></script>
+    <script>
+        var mydatasource = {"InputConfig":{"Location":{"Id":"66a2471e-0a00-4318-9cb3-a92f35932387","Items":[{"Key":"ABERDEEN (ROSSGOLE)","Value":"63a804e2-e348-4288-ab69-9427741f000e","OrderIndex":0,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"MERINGUR","Value":"6521ca20-1ddb-4d9a-884a-59dd5da0480a","OrderIndex":0,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"WAGGA WAGGA AGRICULTURAL INSTITUTE","Value":"3457371d-f70f-4502-bb6b-2db1f56862f0","OrderIndex":0,"parentId":"00000000-0000-0000-0000-000000000000"}],"Label":"at","Identifier":"Location","Type":"DataRecord","parentId":"00000000-0000-0000-0000-000000000000"},"DroughtType":{"Id":"00000000-0000-0000-0000-000000000000","Items":[{"Key":"6mths","Value":"ec2a60de-4d48-4c55-92fc-f7ba751f5018","OrderIndex":0,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"9mths","Value":"237ea01a-06d2-4125-9047-2c1d6ce7e86c","OrderIndex":0,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1yr","Value":"d0a0c181-07b1-4a42-acf9-1501835998b0","OrderIndex":0,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"2yr","Value":"2b200421-d0ea-4c1b-8105-cfa108370b88","OrderIndex":0,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"3yrs","Value":"39d53bd8-1366-49ce-9187-75a595a2ba3b","OrderIndex":0,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"4yrs","Value":"7c4e308c-6035-4a43-baaa-dea443de2fe1","OrderIndex":0,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"5yrs","Value":"d0e3b59a-1731-4bb7-a754-5e25aff52996","OrderIndex":0,"parentId":"00000000-0000-0000-0000-000000000000"}],"Label":"assessed over","Type":"EnumeratedInput","DefaultValue":0,"Name":null,"Units":null,"parentId":"00000000-0000-0000-0000-000000000000"},"RankType":{"Id":"f3561120-8705-45a4-8387-3538269ee48e","Items":[{"Key":"by Duration","Value":"0","OrderIndex":0,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"by Depth","Value":"1","OrderIndex":1,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"by Depth \u0026 Duration","Value":"2","OrderIndex":2,"parentId":"00000000-0000-0000-0000-000000000000"}],"Label":"ranked","Type":"EnumeratedInput","DefaultValue":0,"Name":"RankType","Units":null,"parentId":"00000000-0000-0000-0000-000000000000"},"EnsoType":{"Id":"a5b6c343-30e1-4959-a381-db48caaa303b","Items":[{"Key":"Historal Conditions","Value":"3","OrderIndex":0,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"El Nino Conditions","Value":"0","OrderIndex":1,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"Neutral Conditions","Value":"2","OrderIndex":2,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"La Nina Conditions","Value":"1","OrderIndex":3,"parentId":"00000000-0000-0000-0000-000000000000"}],"Label":"predictions based on","Type":"EnumeratedInput","DefaultValue":3,"Name":"EnsoType","Units":null,"parentId":"00000000-0000-0000-0000-000000000000"},"YearsRange":{"Id":"fb932ad0-37bd-4bb6-bf6f-9bc4d2c0d07d","Items":[{"Key":"1900 to present","Value":"0","OrderIndex":0,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1910 to present","Value":"1","OrderIndex":1,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1920 to present","Value":"2","OrderIndex":2,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1930 to present","Value":"3","OrderIndex":3,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1940 to present","Value":"4","OrderIndex":4,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1950 to present","Value":"5","OrderIndex":5,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1960 to present","Value":"6","OrderIndex":6,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1970 to present","Value":"7","OrderIndex":7,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1980 to present","Value":"8","OrderIndex":8,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1990 to present","Value":"9","OrderIndex":9,"parentId":"00000000-0000-0000-0000-000000000000"}],"Label":"using","Type":"EnumeratedInput","DefaultValue":0,"Name":"YearsRange","Units":null,"parentId":"00000000-0000-0000-0000-000000000000"}},"InputValues":{"DroughtTarget":"6mths","DroughtType":"ec2a60de-4d48-4c55-92fc-f7ba751f5018","RankType":0,"EnsoType":3,"RunFullDroughtAnalysis":false,"Id":"e7a45f7c-6487-4eee-b3fc-387fef35dd67","DataType":0,"Location":"63a804e2-e348-4288-ab69-9427741f000e","LocationName":"ABERDEEN (ROSSGOLE)","YearsRange":0,"getDataUnits":"mm"},"Outputs":{"Question1":{"Text":"What is the drought status...","Identifier":null,"Type":"SimpleText"},"Answer1":{"Text":null,"Identifier":null,"Type":"SimpleText"},"Report":{"Text":null,"Identifier":null,"Type":"SimpleText"},"HowDoWeKnowThis":{"Text":"This analysis uses a \"Rainfall Percentile Method\". For the [DroughtTarget] residence period selected, rainfall for the previous [ResidenceTime] period  is expressed as a percentile of long term rainfall.\u003cbr\u003e A value less than [WarningLimit] is considered a \u003ci\u003edrought-warning\u003c/i\u003e, a value less than [DroughtLimit] is considered \u003ci\u003edrought.\u003c/i\u003e\n\u003cbr\u003e\u003ci\u003eResidence period\u003c/i\u003e is dependent on the enterprise. For example, an enterprise in a humid ‘safe’ area might be considered \u003ci\u003edroughted\u003c/i\u003e after a rainfall deficit lasting 3 months while an extensive grazing enterprise might expect several years of rainfall deficit before considering it \u003ci\u003edrought \u003c/i\u003e. Select Help for more detail. More information at \u003ca href=\u0027http://www.bom.gov.au/climate/drought/drought.shtml\u0027\u003eBoM drought\u003c/a\u003e ","Identifier":null,"Type":"SimpleText"},"FooterText":{"Text":"","Identifier":null,"Type":"SimpleText"},"FireGauge1":{"Size":0,"Title":null,"Caption":null,"Footer":null,"Value":null,"MaxValue":100,"MinValue":0,"Labels":["Drought    ","Warning","Normal"],"FillColors":["#f44248","#f4af41","#41f461"],"FontColors":["#ffffff","#ffffff","#ffffff"],"Sizes":[10,30,60],"Identifier":null,"Type":"FireGauge"},"Chart1":{"legend":{"show":false,"labelBoxBorderColor":"none","noColumns":1,"position":"ne","margin":10,"backgroundColor":"white","backgroundOpacity":0.66},"xaxis":{"mode":"time","monthNames":null,"timeformat":"%d %b\u003cbr/\u003e%Y","show":true,"tickLength":null,"tickSize":null,"axisLabelUseCanvas":true,"axisLabelFontSizePixels":12,"axisLabelPadding":5,"min":null,"max":null,"ticks":null,"minTickSize":[1,"month"],"axisLabel":null,"font":{"size":16,"color":"black"}},"LegendPlaceholder":null,"yaxes":[{"position":"left","labelWidth":40,"show":true,"tickLength":null,"tickSize":null,"axisLabelUseCanvas":true,"axisLabelFontSizePixels":12,"axisLabelPadding":5,"min":null,"max":null,"ticks":null,"minTickSize":null,"axisLabel":"Rainfall percentile (%)","font":{"size":16,"color":"black"}}],"Title":"Drought status for [DroughtTarget] residence period","Footer":null,"Height":300,"YAxisLabel":null,"grid":{"hoverable":true,"clickable":true,"backgroundColor":"white","markings":[{"color":"#fff7b6","lineWidth":0,"xaxis":{"from":1900,"to":1910},"yaxis":null},{"color":"#fff7b6","lineWidth":0,"xaxis":{"from":1920,"to":1930},"yaxis":null},{"color":"#fff7b6","lineWidth":0,"xaxis":{"from":1940,"to":1950},"yaxis":null},{"color":"#fff7b6","lineWidth":0,"xaxis":{"from":1960,"to":1970},"yaxis":null},{"color":"#fff7b6","lineWidth":0,"xaxis":{"from":1980,"to":1990},"yaxis":null},{"color":"#fff7b6","lineWidth":0,"xaxis":{"from":2000,"to":2010},"yaxis":null},{"color":"#fff7b6","lineWidth":0,"xaxis":{"from":2020,"to":2030},"yaxis":null}]},"Data":[],"Annotations":null,"DataUnits":"%-ile","DataUnits2":null,"Identifier":null,"Type":"FlotChart"},"Chart2":{"legend":{"show":false,"labelBoxBorderColor":"none","noColumns":1,"position":"ne","margin":10,"backgroundColor":"white","backgroundOpacity":0.66},"xaxis":{"mode":"time","monthNames":null,"timeformat":"%d %b\u003cbr/\u003e%Y","show":true,"tickLength":null,"tickSize":null,"axisLabelUseCanvas":true,"axisLabelFontSizePixels":12,"axisLabelPadding":5,"min":0,"max":0,"ticks":null,"minTickSize":[1,"month"],"axisLabel":null,"font":{"size":16,"color":"black"}},"LegendPlaceholder":null,"yaxes":[{"position":"left","labelWidth":40,"show":true,"tickLength":null,"tickSize":null,"axisLabelUseCanvas":true,"axisLabelFontSizePixels":12,"axisLabelPadding":5,"min":0,"max":0,"ticks":null,"minTickSize":null,"axisLabel":"Cum. rainfall (mm)","font":{"size":16,"color":"black"}}],"Title":"Cumulative rainfall going back [DroughtTarget] is at the ","Footer":null,"Height":300,"YAxisLabel":null,"grid":{"hoverable":true,"clickable":true,"backgroundColor":"white","markings":[{"color":"#808080","lineWidth":1,"xaxis":{"from":1.700416E+12,"to":1.700416E+12},"yaxis":null}]},"Data":[],"Annotations":null,"DataUnits":"mm","DataUnits2":null,"Identifier":null,"Type":"FlotChart"},"Table1":{"Title":"Historical Droughts ([YearsRange]) at [Location] for a [DroughtTarget] residence time.\u003cbr/\u003eSorted by [RankType] showing \u003cspan style=\u0027background:#ff6fcb\u0027\u003eEl Ninos\u003c/span\u003e and \u003cspan style=\u0027background:#6ee0fb\u0027\u003eLa Ninas\u003c/span\u003e","Footer":null,"Widths":[5,23,6,6,10,10,10,10,10,10],"HeaderRow":{"ControllerAction":null,"Guid":null,"Cells":["Rank","Drought Period","Drought Length (mths)","Drought Depth (%ile)","Drought Integral (%ile mths)","Warning Start","Warning Length (mths)","Warning ENSO State","Drought ENSO State","Actual Recovery Rainfall (mm)"],"BrushColor":null,"PenColor":null},"BodyRows":[],"Identifier":null,"Type":"Table"}}};
+        var fullanalysis = mydatasource.InputValues.RunFullDroughtAnalysis;
+        var calculationsUrl = '/A08_HowsTheDrought/Calculate';
+
+
+        $(function() {
+            initLocationSelector();
+            addInputsAnswerHtml();
+            generateInputsUI();
+            generateOutputsUI();
+            calculate(mydatasource, calculationsUrl);
+        });
+
+        function generateInputsUI() {
+            addQuestion("Question1");
+            //Row1 ******************************
+            var row = 1;
+            
+            
+            if (mydatasource.InputValues.RunFullDroughtAnalysis) {
+                addInputLabel("Location", row, 1,4);
+                addInputEditor("Location", row, 3,8);
+                addInputLabel("DroughtType", row, 2,4);
+                addInputEditor("DroughtType", row, 2,8);
+                addInputLabel("RankType", row, 1, 4);
+                addInputEditor("RankType", row, 3, 8);
+                //Row1 ******************************
+                ++row;
+                
+                addInputLabel("EnsoType", row, 5, 4);
+                addInputEditor("EnsoType", row, 3, 8);
+                addInputLabel("YearsRange", row, 1, 4);
+                addInputEditor("YearsRange", row, 3, 8);
+            } else {
+                addInputLabel("Location", row, 4,4);
+                addInputEditor("Location", row, 8,8);
+                ++row;
+                addInputLabel("DroughtType", row, 4,4);
+                addInputEditor("DroughtType", row, 8,8);
+                ++row;
+                addInputLabel("RankType", row, 4,4);
+                addInputEditor("RankType", row, 8,8);
+                ++row;
+                addInputLabel("YearsRange", row, 4,4);
+                addInputEditor("YearsRange", row, 8,8);    
+            }
+            ++row;
+            
+            //Change Events *********************
+            $(".input-control").change(function() {
+                if (updateInputValue(mydatasource, $(this))) {
+                    calculate(mydatasource, calculationsUrl);
+                }
+            });
+        }
+
+
+        function addInputsAnswerHtml() {
+            var html = "";
+            if (fullanalysis) {
+                html = html + "<div id='advanced-inputs'>";
+                html = html + "     <div class='row'>";
+                html = html + "          <div class='col-md-12'>";
+                html = html + "               <div class='question-panel' id='analysis-inputs'></div>";
+                html = html + "          </div>";
+                html = html + "     </div>";
+                html = html + "     <div class='row'>";
+                html = html + "          <div class='col-md-12'>";
+                html = html + "               <div class='answer-panel'>";
+                html = html + "                    <div class='row'>";
+                html = html + "                         <div class='col-md-12'>";
+                html = html + "                              <div class='answer' id='Answer1'></div>";
+                html = html + "                         </div>";
+                html = html + "                    </div>";
+                html = html + "                    <div class='row'>";
+                html = html + "               <div class='col-sm-6'>";
+                html = html + "                    <div class='firegauge-container' id='FireGauge1'></div>";
+                html = html + "               </div>";
+                html = html + "               <div class='col-sm-6'>";
+                html = html + "                    <div id='Report' style='margin-top: 6px;'></div>";
+                html = html + "               </div>";
+                html = html + "          </div>";
+                html = html + "     </div>";
+                html = html + "</div>";
+                html = html + "</div>";
+                html = html + "</div>";
+            } else {
+                html = html + "<div id='basic-inputs' class='question-container-8' >";
+                html = html + "     <div class='col-sm-6 equalise'>";
+                html = html + "          <div class='question-panel' id='analysis-inputs' style='height: 100%'></div>";
+                html = html + "     </div>";
+                html = html + "     <div class='col-sm-6 equalise'>";
+                html = html + "          <div class='answer-panel' style='margin-top: auto; margin-bottom: auto; height: 100%;'>";
+                html = html + "               <div class='answer' id='Answer1'></div>";
+                html = html + "               <div class='firegauge-container' id='FireGauge1' style='margin-top: 15px'></div>";
+                html = html + "          </div>";
+                html = html + "     </div>";
+                html = html + "</div>";
+            }
+            $("#inputs-answer-panel").html(html);
+        }
+
+        function generateOutputsUI() {
+            addOutput("Question1");
+            addOutput("Answer1");
+            addOutput("Report");
+            addOutput("FireGauge1");
+            var plot1=addOutput("Chart1");
+            addOutput("Chart2");
+            addOutput("Table1");
+            addOutput("HowDoWeKnowThis");
+           hideShowTableColums();
+            appendChartAnnotations(plot1);
+            $("#FireGauge1").css("margin-top", "0px");
+            var bodyWidth = $("body").width();
+            if (bodyWidth < 700) {
+                $("#Chart1 .flotchart-canvas").css("height", "260px");
+                $("#Chart2 .flotchart-canvas").css("height", "260px");
+            }
+
+        }
+        function appendChartAnnotations(plot1) {
+            var centerx;
+            var o1, o2;
+            var selector1= "#Chart1 .flotchart-canvas";
+            centerx = $(selector1).width() / 2.0-50;
+            o1 = plot1.pointOffset({ x: 2, y: 30 });
+            $(selector1).append('<div style="position:absolute;left:' + (70) + 'px;top:' + (o1.top) + 'px;color:white;font-size:16px;opacity:0.8">Warning Zone</div>');
+            o2 = plot1.pointOffset({ x: 2, y: 10 });
+            $(selector1).append('<div style="position:absolute;left:' + (70) + 'px;top:' + (o2.top) + 'px;color:white;font-size:16px;opacity:0.8">Drought Zone</div>');
+
+            
+        }
+
+        function hideShowTableColums() {
+            //var rank = Number(mydatasource.InputValues["RankType"]);
+            //(rank === 0) ? $(".col3").show() : $(".col3").hide();
+            //(rank === 1) ? $(".col2").show() : $(".col2").hide();
+            //(rank === 2) ? $(".col4").show() : $(".col4").hide();
+            var bodyWidth = $("body").width();
+            var width = (bodyWidth < 600) ? bodyWidth : 600;
+
+            if (bodyWidth < 600) {
+                $(".col5").hide();
+                $(".col6").hide();
+                $(".col7").hide();
+                $(".col8").hide();
+                $(".col9").hide();
+            } else {
+                $(".col5").show();
+                $(".col6").show();
+                $(".col7").show();
+                $(".col8").show();
+                $(".col9").show();
+                
+            }
+
+        }
+
+    </script>
+
+
+    <script type="text/javascript">
+        $(function() {
+            var $metismenu = $("#analysis-metismenu");
+            var $selectedli = $(".analysis-a8");
+            var $parentlis = $selectedli.parents("li");
+            $selectedli.addClass("active");
+            $selectedli.addClass("selected");
+            $parentlis.addClass("active");
+            $metismenu.metisMenu();
+        });
+        window.addEventListener('resize', posFix, false);
+
+        function posFix() {
+            generateOutputsUI();
+
+        }
+
+        function sendFeedback() {
+            openFeedbackDialog("HowsTheDrought", "e7a45f7c-6487-4eee-b3fc-387fef35dd67");
+        }
+
+        function getHelp() {
+            $('.ajax_spinner').show();
+            $.getJSON("/Analyses/GetHelp",null, function (results) {
+                if (results.success) {
+                    $("#help-title").text(results.title);
+                    if (results.image && results.image.length > 0) {
+                        $("#help-image").attr('src', results.image);
+
+                    } else {
+                        $("#help-image").hide();
+                    }
+                    $("#help-content").html(results.content);
+                    $('.ajax_spinner').hide();
+                    openNav();
+                } else {
+                    $('.ajax_spinner').hide();
+                    custom_alert("Sorry - couldn't find any help for this analysis.", "Help not at hand...");
+                }
+                
+            });
+        }
+        function openNav() {
+           
+            //$("#myNav").css("width", "100%");
+            $("#myNav").css("left", "0");
+        }
+
+        function closeHelp() {
+            //$("#myNav").css("width","0%");
+            $("#myNav").css("left", "-100%");
+        }
+
+        function custom_alert(message, title) {
+            if (!title)
+                title = 'Alert';
+
+            if (!message)
+                message = 'No Message to Display.';
+
+            $('<div></div>').html(message).dialog({
+                title: title,
+                resizable: false,
+                modal: true,
+                buttons: {
+                    'Ok': function () {
+                        $(this).dialog('close');
+                    }
+                }
+            });
+        }
+
+    </script>
+
+
+    <script type="text/javascript">
+    $(function () {
+        var $selectedmainli = $(".main-analyses");
+        
+        $selectedmainli.addClass("active");
+        //if($selectedsubmenuli) {
+        //    $selectedsubmenuli.addClass("active");
+        //}
+    });
+    </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,501 @@
+﻿
+
+.analysis-page {
+     position: relative;
+	margin-top: 10px;
+    margin-bottom: 20px;
+	max-width: 100%;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 30px;
+	padding-bottom: 60px;
+	background: white;
+	border: silver solid 1px;
+	-webkit-box-shadow: 0 0 6px rgba(0,0,0,0.3);
+	-moz-box-shadow: 0 0 6px rgba(0,0,0,0.3);
+	box-shadow: 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+    line-height: 1.2em;
+	text-rendering: optimizeLegibility;
+	text-shadow: none;
+}
+/*select option:first-child {
+    color: white;
+    background: black;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}*/
+
+
+.question-panel {
+    background-color: #fff4cf;
+    border: solid #e6ba1c 1px;
+    color: #9a7c10;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 12pt;
+}
+
+.question-panel .form-control {
+    /*color: #0063ff;*/
+    color: #007cff;
+}
+
+.question-panel .row {
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 4px;
+    margin-top: 4px;
+}
+
+.input-item {
+    padding-right: 2px;
+    padding-left: 2px;
+}
+
+.input-label {
+  
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.answer-panel {
+    
+}an
+
+.howdoweknowthis-panel {
+    
+}
+
+.question-panel .form-control {
+    padding: 3px 6px;
+    
+}
+
+.webimage-source {
+    font-size: 0.5em;
+    text-align: center;
+}
+
+
+
+.answer-panel {
+    background-color: #f4ffc1;
+    border: solid #afcb29 1px;
+    color: #74861c;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 20px;
+    
+}
+.howdoweknowthis-panel {
+    background-color: #ffe5dd;
+    border: solid #c2431b 1px;
+    color: #943b1f;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 0px;
+    margin-top: 25px;
+        line-height: 1.3em;
+}
+
+div#advanced-inputs {
+    padding: 20px;
+}
+
+.answer-text {
+    display: inline;
+}
+
+.simple-text-output {
+    line-height: 1.4em;
+}
+
+.hero-title {
+    font-size: 15pt;
+    font-family: inherit;
+    font-weight: bold;
+    color: black;
+    text-rendering: optimizelegibility;
+    
+}
+
+.output-title {
+    font-size: 14pt;
+    font-family: inherit;
+    font-weight: bold;
+    color: black;
+    text-rendering: optimizelegibility;
+    text-align: center;
+    
+}
+
+.heading-level-3 {
+    font-size: 12pt;
+}
+
+.input-label {
+    margin-top: 4px;
+    margin-left: 2px;
+    margin-right: 2px;
+    /*font-size: 1.1em;*/
+    color: black;
+   
+}
+
+.firegauge-container {
+    margin-top: 5px;
+    max-width: 350px;
+  
+    margin-left: auto;
+    margin-right: auto;
+}
+.firegauge-canvas {
+      margin-top: 16px;
+    max-height: 170px;
+    width: 100%;
+}
+
+.firegauge-caption {
+    font-size: 14pt;
+    font-family: inherit;
+    font-weight: bold;
+    color: black;
+    text-rendering: optimizelegibility;
+    text-align: center;
+}
+
+.firegauge-footer {
+    font-size: 13pt;
+    font-family: inherit;
+    text-rendering: optimizelegibility;
+    text-align: center;
+    color: black;
+}
+
+table.show-detail {
+    font-size: 14px;
+}
+
+table.show-detail thead tr {
+    background: #6393fc;
+    color: white;
+}
+
+table.dataTable thead th, table.dataTable thead td {
+    padding: 2px 2px;
+    
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    padding:2px;
+    
+}
+
+
+.flex-row {
+  display: flex; /* equal height of the children */
+    margin-bottom: 20px;
+}
+.flex-col {
+  flex: 1; /* additionally, equal width */
+  
+}
+
+
+.analysis-title {
+    text-align: left;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 2.3em;
+    margin-top: 10px;
+    margin-bottom:30px;
+}
+
+.analysis-logo {
+    text-align: right;
+    padding-top: 0px;
+}
+
+.analysis-logo img {
+    height: 50px;
+}
+
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    padding: 3px;
+}
+
+.flotchart-footer {
+ 
+    color: #909090;
+    font-size: 0.9em;
+    margin-left: 40px;
+}
+
+.question-container-1 {
+    max-height: 280px;
+        margin-bottom: 20px;
+}
+
+.question-container-1 .equalise{
+    height: 280px;
+}
+
+.question-container-2 {
+    max-height: 250px;
+        margin-bottom: 20px;
+}
+.question-container-2  .equalise{
+    height: 250px;
+}
+
+.question-container-3 {
+    max-height: 244px;
+        margin-bottom: 8px;
+}
+
+.question-container-3  .equalise{
+    height: 244px;
+}
+
+.question-container-8 .equalise{
+    height: 250px;
+}
+
+
+.question-container-9 {
+    max-height: 320px;
+        margin-bottom: 20px;
+}
+.question-container-9  .equalise{
+    height: 320px;
+}
+
+
+
+@media only screen and (max-width: 1000px) {
+
+   
+    .analysis-page {
+        margin-top: 2px;
+        padding-left: 10px;
+	    padding-right: 10px;
+	    padding-top: 10px;
+	    padding-bottom: 10px;
+    }
+
+
+    .large-display-menu-system {
+        display: none;
+    }
+
+    .question-container-1 {
+    max-height: 9999px;
+    }
+    .question-container-2 {
+        max-height: 9999px;
+    }
+
+    .question-container-3 {
+        max-height: 9999px;
+    }
+
+    .question-container-9 {
+        max-height: 9999px;
+    }
+
+    .question-container-1 .equalise{
+        height: inherit;
+    }
+
+
+
+    .question-container-2 .equalise{
+        height: inherit;
+    }
+
+    .question-container-3 .equalise{
+        height: inherit;
+    }
+
+    .question-container-9 .equalise{
+        height: inherit;
+    }
+    .question-container-8 .equalise{
+        height: inherit;
+    }
+
+     .analysis-title {
+      
+        font-size: 1.8em;
+        margin-top: 20px;
+        margin-bottom:20px;
+    }
+
+    .analysis-logo {
+        text-align: right;
+        padding-top: 0px;
+        display: none;
+    }
+
+}
+
+.analysis-content {
+    opacity: 0;
+}
+
+.analysis-content-ready {
+    
+    -webkit-animation: fadein 2s forwards; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 2s forwards; /* Firefox < 16 */
+        -ms-animation: fadein 2s forwards; /* Internet Explorer */
+         -o-animation: fadein 2s forwards; /* Opera < 12.1 */
+            animation: fadein 2s forwards;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
+
+@media only screen and (max-width: 500px) {
+    .container {
+        padding: 0px;
+    }
+    .navbar {
+        margin-bottom: 2px;
+    }
+    .col-xs-12 {
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+    .input-label {
+        font-size: 0.8em;
+        line-height: 2.5em;
+    }
+
+
+
+    .question-panel .form-control {
+  
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+    body {
+        padding-top: 50px;
+    }
+    #body {
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+    .analysis-title {
+        line-height: 1.2em;
+        padding: 0;
+        margin: 0;
+    }
+
+    .analysis-page {
+ 
+	/*margin-top: -30px;*/
+    margin-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 0px;
+	padding-bottom: 10px;
+	background: white;
+        border: 0;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none; 
+	border-radius: 0px;
+	-webkit-border-radius: 0px;
+    
+    }
+
+    .howdoweknowthis-text {
+    font-size: 12pt;
+    line-height: 15pt;
+}
+}
+
+/*.question-panel select {
+    color: red;
+    background-image: linear-gradient(45deg, transparent 50%, gray 50%), linear-gradient(135deg, gray 50%, transparent 50%), linear-gradient(to right, #ccc, #ccc);
+    background-position: calc(100% - 10px) calc(1em + 2px),calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+    background-size: 5px 5px, 5px 5px, 1px 1.5em;
+    background-repeat: no-repeat;
+
+}*/
+
+
+
+select#Location {
+    color: green;
+}
+
+select {
+
+    /* make arrow and background */
+
+    /*background:
+              linear-gradient(45deg, transparent 50%, blue 50%),
+              linear-gradient(135deg, blue 50%, transparent 50%),
+              linear-gradient(to right, skyblue, skyblue);
+    background-position:
+                       calc(100% - 21px) calc(1em + 2px),
+                       calc(100% - 16px) calc(1em + 2px),
+                       100% 0;
+    background-size:
+                   5px 5px,
+                   5px 5px,
+                   2.5em 2.5em;
+    background-repeat: no-repeat;*/
+
+    /* styling and reset */
+
+    border: thin solid blue;
+    /*font: 300 1em/100% "Helvetica Neue", Arial, sans-serif;*/
+    line-height: 1.5em;
+
+    text-align: center;
+    cursor: pointer; 
+    /* reset */
+
+    border-radius: 0;
+    margin: 0;      
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+}

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>CliMate: </title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/Content/Images/PageIcons/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/Content/Images/PageIcons/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/Content/Images/PageIcons/apple-touch-icon-57-precomposed.png">
+   
+    <link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+    <link href="/Content/css/Site.css" rel="stylesheet" />
+    
+
+    <link href="/Content/css/CliMate_Metis.css" rel="stylesheet" />
+    <link href="/Plugins/metisMenu-master/dist/metisMenu.min.css" rel="stylesheet" />
+    <link href="/Plugins/jQuery-dataTables-1.10.12/media/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+    
+
+
+
+</head>
+<body>
+    <div class="container-narrow container">
+        <div class="navbar navbar-default navbar-fixed-top masthead">
+            <div class="container-narrow" id="navbar-container">
+                <div class="row" style="margin-right: 6px; margin-left: 6px;">
+                    <div class="navbar-header col-sm-3">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="brand" href="/"> </a>
+                    </div>
+                    <div class="col-sm-9">
+                        <div class="navbar-collapse collapse">
+                            <div class="row">
+                                <div class=" login_menu">
+                                    <section id="login" class="user-profile">
+                                        <form action="/Account/LogOff" class="navbar-right" id="logoutForm" method="post"><input name="__RequestVerificationToken" type="hidden" value="6f1lq9esBZ_IksQEPuNK65gKutvL-E6paHF4NJRXFzMqRGnhfe5pQv_4ntzbtEfMAtIxjTdIeNKfkkYkw0pNXoHPBFNQN0_58aFmY1YkabAlzw3EB24c0xla0Jc6T6Ixpsk9qa0jXXuRpplZu7r6vg2" />    <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a href="/Manage" title="Manage">dalerschilling@yahoo.com.au</a>
+        </li>
+        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+    </ul>
+</form>
+                                    </section>
+                                </div>
+                            </div>
+                            <div class="row" id="main-menu">
+                                <ul class="nav navbar-nav navbar-right">
+
+                                    <li class="main-menu-item main-home"><a href="/">Home</a></li>
+                                    <li class="main-menu-item main-about"><a href="/About">About</a></li>
+                                    <li class="main-menu-item large-screen-only main-analyses">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Analyses<span class="caret"></span></a>
+                                        <ul class="dropdown-menu large-screen-only">
+                                            <li class="analysis-a3 "><a href="/A03_HowsTheSeason">How&#39;s the Season?</a></li>
+                                            <li class="analysis-a1 "><a href="/A01_HowOften">How Often?</a></li>
+                                            <li class="analysis-a4 "><a href="/A04_HowWetN">How Wet/Nitrate?</a></li>
+                                            <li class="analysis-a9 "><a href="/A09_WhatYield">Potential Yield?</a></li>
+                                            <li class="analysis-a8 "><a href="/A08_HowsTheDrought">Drought?</a></li>
+                                            <li class="analysis-a2 "><a href="/A02_HowHotCold">How Hot/Cold?</a></li>
+                                            <li class="analysis-a5 "><a href="/A05_HowLikely">How Likely?</a></li>
+                                            <li class="analysis-a6 "><a href="/A06_HowsENSO">How&#39;s El Nino?</a></li>
+                                            <li class="analysis-a7 "><a href="/A07_HowsThePast">How&#39;s the Past?</a></li>
+                                            <li class="analysis-a10 "><a href="/A10_WhatTrend">What Trend?</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="analysis-a3 small-screen-only"><a href="/A03_HowsTheSeason">How&#39;s the Season?</a></li>
+                                    <li class="analysis-a1 small-screen-only"><a href="/A01_HowOften">How Often?</a></li>
+                                    <li class="analysis-a4 small-screen-only"><a href="/A04_HowWetN">How Wet/Nitrate?</a></li>
+                                    <li class="analysis-a9 small-screen-only"><a href="/A09_WhatYield">Potential Yield?</a></li>
+                                    <li class="analysis-a8 small-screen-only"><a href="/A08_HowsTheDrought">Drought?</a></li>
+                                    <li class="analysis-a2 small-screen-only"><a href="/A02_HowHotCold">How Hot/Cold?</a></li>
+                                    <li class="analysis-a5 small-screen-only"><a href="/A05_HowLikely">How Likely?</a></li>
+                                    <li class="analysis-a6 small-screen-only"><a href="/A06_HowsENSO">How&#39;s El Nino?</a></li>
+                                    <li class="analysis-a7 small-screen-only"><a href="/A07_HowsThePast">How&#39;s the Past?</a></li>
+                                    <li class="analysis-a10 small-screen-only"><a href="/A10_WhatTrend">What Trend?</a></li>
+                                    <li class="main-menu-item main-news"><a href="/News">News</a></li>
+                                    <li class="main-menu-item main-library"><a href="/LIbrary">Library</a></li>
+                                    <li class="main-menu-item main-links"><a href="/Links">Links</a></li>
+                                    <li class="main-menu-item main-contact"><a href="/WebContact">Contact</a></li>
+
+
+
+                                </ul>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="body">
+
+            
+            <section class="content-wrapper main-content clear-fix">
+
+                
+
+
+<div class="row clearfix">
+    <div class="col-sm-3">
+        <div class="metis-sidebar">
+            <div class="metis-sidebar-nav" style="margin-top:10px; ">
+                <ul class="metismenu" id="about-metismenu">
+                    <li class="about-overview"><a href="/About">Overview</a></li>
+                    <li>
+                        <a href="#">Analysis Info<span class="glyphicon arrow"></span></a>
+                        <ul>
+                            <li class="about-A03"><a href="/About/About_A03_HowsTheSeason">(1) How&#39;s the Season?</a></li>
+                            <li class="about-A01"><a href="/About/About_A01_HowOften">(2) How Often?</a></li>
+                            <li class="about-A04"><a href="/About/About_A04_HowWetN">(3) How Wet/N?</a></li>
+                            <li class="about-A09"><a href="/About/About_A09_WhatYield">(4) Potential Yield?</a></li>
+                            <li class="about-A08"><a href="/About/About_A08_HowsTheDrought">(5) Drought?</a></li>
+                            <li class="about-A02"><a href="/About/About_A02_HowHotCold">(6) How Hot/Cold?</a></li>
+
+
+                            <li class="about-A05"><a href="/About/About_A05_HowLikely">(7) How Likely?</a></li>
+                            <li class="about-A06"><a href="/About/About_A06_HowsENSO">(8) How&#39;s El Nino?</a></li>
+                            <li class="about-A07"><a href="/About/About_A07_HowsThePast">(9) How&#39;s the Past?</a></li>
+
+
+                            <li class="about-A10"><a href="/About/About_A10_WhatTrend">(10) What Trend?</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="about-copyright"><a href="/About/Copyright">Copyright Information</a></li>
+                    <li class="about-disclaimer"><a href="/About/Disclaimer">Disclaimer</a></li>
+                    <li class="about-privacy"><a href="/About/Privacy">Privacy</a></li>
+                    <li class="about-eula"><a href="/About/EULA">EULA</a></li>
+                    <li class="about-developmentteam"><a href="/About/DevelopmentTeam">Development Team</a></li>
+                </ul>
+            </div><!--/.well -->
+        </div><!--/span-->
+        <br />
+        <br />
+        <div id="history"></div>
+    </div>
+    <div class="col-sm-9">
+        <!-- Right (content) side -->
+        <section class="content-block" role="main">
+            
+            <section>
+                
+
+
+<h2>Drought?</h2>
+<p style="font-weight: bold;color:gray"><p>Drought? provides a monthly update of drought status using the Drought Percentile Method.</p>
+</p>
+<h4></h4>
+<hr/>
+<p style="font-style: italic;color:fuchsia">Drought, percentiles, rainfall deficit, residence period</p>
+<p><p>Drought? provides a monthly update of drought status using the Percentile Decile method for a user-defined &ldquo;residence time&rdquo;. Previous droughts are categorised by intensity and/or duration and can be compared to ENSO conditions.</p>
+
+<p>An appropriate residence time is dependent on the issue of concern. For example, an intensive pasture in a humid climate might have a residence time of 6 months before a rainfall deficiency seriously impacts on productivity, as &ldquo;expected&rdquo; rainfall is reliable. An extensive grazing system which routinely relies on a reserve of standing forage might have a residence time of 1-3 years while a water reservoir may have a residence time of 2-5 years, depending on catchment size and water demands.</p>
+
+<p>An index value less than 40 percentile is considering a drought warning while a value below 10 percentile is considered drought for the Residence Time period under consideration.</p>
+
+<h3>How do we know this?</h3>
+
+<p>Analysis of rainfall is a simple and transparent way to desribe water deficiency. Drought in general means acute water shortage (<a href="http://www.bom.gov.au/climate/glossary/drought.shtml)">http://www.bom.gov.au/climate/glossary/drought.shtml)</a>. BoM drought maps highlight areas considered to be suffering from a serious or severe rainfall deficiency. Drought categories are assigned by first examining rainfall periods of three months or more for selected places throughout Australia to see whether they lie below the 10th percentile (lowest 10% of records). The terms serious and severe are defined by -</p>
+
+<ul>
+	<li><strong>Serious</strong> rainfall deficiency: rainfall lies above the lowest five per cent of recorded rainfall but below the lowest ten per cent for the period in question,</li>
+	<li><strong>Severe</strong> rainfall deficiency: rainfall is among the lowest five per cent for the period in question.</li>
+</ul>
+
+<p>The severity of a drought/wet is defined by the Bureau of Meteorology as:</p>
+
+<ul>
+	<li>Lowest on record - lowest since at least 1900 when data available.</li>
+	<li>Severe deficiency - rainfalls in the lowest 5% of historical totals.</li>
+	<li>Serious deficiency - rainfalls in the lowest 10% of historical totals, but not in the lowest 5%.</li>
+	<li>Very much below average - rainfalls in the lowest 10% of historical totals.</li>
+	<li>Below average - rainfalls in the lowest 30% of historical totals, but not in the lowest 10%.</li>
+</ul>
+
+<p>Source: <a href="http://poama.bom.gov.au/climate/drought/drought-definitions.html)">http://poama.bom.gov.au/climate/drought/drought-definitions.html)</a>.</p>
+
+<h3>Who this tool is for?</h3>
+
+<p>Landowners, managers and policy makers who are seeking an indication of drought status (alerts, degree of drought).</p>
+
+<h3>Questions this tool answers</h3>
+
+<p>What is the status of drought for your location and &quot;residence period&quot;using rainfall data from one of the BoM&rsquo;s 4,600 rainfall recording stations?</p>
+
+<h3>What this tool does</h3>
+
+<p>Drought? provides a monthly update of drought status using the Drought Percentile Method. Droughts can be categorised by intensity and/or duration and examined for whether they are related to ENSO conditions. A list of previous droughts is generated.</p>
+
+<p>An index value less than 40 percentile is considering a drought warning while a value below 10 percentile is considered drought for the Residence Time period under consideration.</p>
+
+<h3>Inputs</h3>
+
+<p>The period of interest, also known as the residence time (RT), which can be related to the issue under consideration. For example, an extensive perennial pasture where fodder is stored as standing dry matter might have an expectation of lasting 2 seasons (i.e. RT of 2 years) whereas an intensive pasture system in a favourable region might have an RT of 6 months.</p>
+
+<h3>Outputs</h3>
+
+<p>A time series of rainfall percentiles for the period of interest (6 and 9 months, 1, 2, 3 4, and 5 years) is presented along with a cumulative rainfall graph show the relative rainfall against long term values. A list of ranked previous droughts is presented. Depth, duration of depth and duration can be used to sort previous drought periods.</p>
+
+<h3>Reference</h3>
+
+<p>Abstract: The drought analysis in CliMate uses the Decile Method described in White et al. (1999). &nbsp;&ldquo;Rainfall deciles rank the rainfall over the period of interest in terms of the relative quantity of rain that fell in that period compared with the total distribution of all recorded rainfalls over the same period.</p>
+
+<p>The ranking of rainfall against the total record is expressed as a percentile of the total distribution. Thus rainfalls in the lowest 10 percentile, or lowest decile, are in the lowest 10% of all recorded rainfalls. Because this ranking is relative to the total distribution of rainfall over the time period of interest at a location, it is relative to the climatologically appropriate moisture supply at that location, as required by the definition of meteorological drought.</p>
+
+<p>Rainfall deciles are a non-parametric measure of drought since, unlike the standardised precipitation index, they are calculated without any assumptions about how rainfall is distributed in time. Moreover, they directly provide a normalised measure of dry and also wet conditions that can be compared between different sites and times. Deciles of 6-monthly rainfalls are closely connected to the Palmer Index and are as efficient in identifying periods of declared agricultural drought. In addition, rainfall deciles have a much higher spatial coherence than actual monthly rainfall totals. This is because deciles are essentially normalised departures from average conditions and are related to broad-scale synoptic patterns (Smith et al. 1992). The decile method is used in the Australian Drought Watch System and forms the basis for declaring drought and providing drought relief (White and O&rsquo;Meagher, 1995).&rdquo; White et al. 1999.</p>
+
+<p>There are many variations in definitions of drought and approaches to calculating drought indices. The Decile Method is used in CliMate as has common application in Australia, is relatively straight forward to estimate and provides very identical answers to the Standardised Precipitation Index and the Rainfall Depreciation Method gave identical results to the Decile Method. The greater simplicity of the decile method and the ease of understanding of rainfall rankings makes it well suited as a general drought indicator. Case studies have shown that seasonality has insignificant impact on rainfall rankings for rainfall periods &gt;12 months. For periods of &lt; 12 months, seasonality does have some impact does not affect the identification of drought periods (White et al 1999).</p>
+
+<p>Smith DI, Hutchinson MF, McArthur RJ (1992) &lsquo;Climatic and agricultural drought: Payments and Policy.&rsquo; RES 7. Centre for Resource and Environmental Studies, ANU, Canberra, 103 pp.</p>
+
+<p>White DM, G&rsquo;Meagher, B. (1995) &lsquo;Coping with exceptional droughts in Australia. &rsquo;Drought Network News, Vo1 7, p. 13-17.</p>
+
+<p>White, I., Falkland, T. and Scott, D. (1999) &ldquo;Droughts in Small Coral Islands&rdquo;, UNESCO-IHP Humid Tropics Programme, Public Works Department, Republic of Kiribati. Water Research Foundation of Australia Centre for Resource and Environmental Studies, Australian National University, Canberra</p>
+
+<p>&nbsp;</p>
+</p>
+
+
+            </section>
+        </section>
+    </div>
+</div>
+
+            </section>
+        </div>
+
+        <div class="footer">
+            <br />
+            <img src="/Content/Images/MCV_logo.jpg" style="display:block;margin:0 auto" />
+            <p style="text-align:center; font-size:0.8em">&copy; Commonwealth of Australia 2023 </p>
+        </div>
+    </div>
+    
+    <div class="ajax_spinner">
+        <div id="calculating_caption"></div>
+    </div>
+    
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="/Scripts/CliMate_Tools.js"></script>
+<script src="/bundles/modernizr?v=inCVuEFe6J4Q07A0AcRsbJic_UE5MwpRMNGcOtk94TE1"></script>
+
+    
+    <script src="/Plugins/metisMenu-master/dist/metisMenu.min.js"></script>
+    <script src="/Plugins/jQuery-dataTables-1.10.12/media/js/jquery.dataTables.min.js"></script>
+    
+    <script src="https://www.google.com/recaptcha/api.js?render=6LdOApcUAAAAAOiTPBqTRAw2kSOb6viPw1No0Hgq"></script>
+    <script>
+        grecaptcha.ready(function () {
+            grecaptcha.execute('6LdOApcUAAAAAOiTPBqTRAw2kSOb6viPw1No0Hgq', { action: 'homepage' }).then(function (token) {
+
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            var $metismenu = $("#about-metismenu");
+            var $selectedli = $(".about-A08");
+            var $parentlis = $selectedli.parents("li");
+            $selectedli.addClass("active");
+            $selectedli.addClass("selected");
+            $parentlis.addClass("active");
+            $metismenu.metisMenu();
+        })
+    </script>
+
+
+    <script type="text/javascript">
+    $(function () {
+        var $selectedmainli = $(".main-about");
+        
+        $selectedmainli.addClass("active");
+        //if($selectedsubmenuli) {
+        //    $selectedsubmenuli.addClass("active");
+        //}
+    });
+    </script>
+   
+
+</body>
+</html>

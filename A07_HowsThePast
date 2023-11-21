@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>CliMate: How&#39;s the Past?</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/Content/Images/PageIcons/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/Content/Images/PageIcons/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/Content/Images/PageIcons/apple-touch-icon-57-precomposed.png">
+   
+    <link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+    <link href="/Content/css/Site.css" rel="stylesheet" />
+    
+
+
+    <link href="/Plugins/jQuery-dataTables-1.10.12/media/css/jquery.dataTables.min.css" rel="stylesheet"/>
+    <link href="/Plugins/metisMenu-master/dist/metisMenu.css" rel="stylesheet"/>
+    <link href="/Content/css/CliMate_Metis.css" rel="stylesheet"/>
+    <link href="/Content/css/CliMate_HelpOverlay.css" rel="stylesheet"/>
+    <link href="/Content/css/animate.css" rel="stylesheet" />
+    
+    <link href="/Content/css/CliMate_Analysis.css" rel="stylesheet" />
+    <link href="/Content/css/CliMate_SelectLocationDialog.css" rel="stylesheet" />
+    <style>
+        #chart1-legend-placeholder {
+           
+            
+        }
+        #chart1-legend-placeholder table {
+            margin-left: auto;
+            margin-right: auto;
+            background: white;
+            border: 0.5px solid gray;
+            border-radius: 4px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    </style>
+
+    <style>
+        .btn-sidebar {
+            font-size: 0.8em; width: 120px; margin: 6px;
+        }
+
+    </style>
+
+
+</head>
+<body>
+    <div class="container-narrow container">
+        <div class="navbar navbar-default navbar-fixed-top masthead">
+            <div class="container-narrow" id="navbar-container">
+                <div class="row" style="margin-right: 6px; margin-left: 6px;">
+                    <div class="navbar-header col-sm-3">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="brand" href="/"> </a>
+                    </div>
+                    <div class="col-sm-9">
+                        <div class="navbar-collapse collapse">
+                            <div class="row">
+                                <div class=" login_menu">
+                                    <section id="login" class="user-profile">
+                                        <form action="/Account/LogOff" class="navbar-right" id="logoutForm" method="post"><input name="__RequestVerificationToken" type="hidden" value="LeWHjW1OFhnk-xW7s62d_aGjWOFkto36q11qRNYSQiGzsnZimIfc1VvLwi5_xyQTc7DZSMIfyxtlZWt68ojaXZvu252NPezRzKTgEezNY-cDmt-ygmZOkWGWJy3gtItWv9sZPuo-KaNFySuwmX2uGQ2" />    <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a href="/Manage" title="Manage">dalerschilling@yahoo.com.au</a>
+        </li>
+        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+    </ul>
+</form>
+                                    </section>
+                                </div>
+                            </div>
+                            <div class="row" id="main-menu">
+                                <ul class="nav navbar-nav navbar-right">
+
+                                    <li class="main-menu-item main-home"><a href="/">Home</a></li>
+                                    <li class="main-menu-item main-about"><a href="/About">About</a></li>
+                                    <li class="main-menu-item large-screen-only main-analyses">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Analyses<span class="caret"></span></a>
+                                        <ul class="dropdown-menu large-screen-only">
+                                            <li class="analysis-a3 "><a href="/A03_HowsTheSeason">How&#39;s the Season?</a></li>
+                                            <li class="analysis-a1 "><a href="/A01_HowOften">How Often?</a></li>
+                                            <li class="analysis-a4 "><a href="/A04_HowWetN">How Wet/Nitrate?</a></li>
+                                            <li class="analysis-a9 "><a href="/A09_WhatYield">Potential Yield?</a></li>
+                                            <li class="analysis-a8 "><a href="/A08_HowsTheDrought">Drought?</a></li>
+                                            <li class="analysis-a2 "><a href="/A02_HowHotCold">How Hot/Cold?</a></li>
+                                            <li class="analysis-a5 "><a href="/A05_HowLikely">How Likely?</a></li>
+                                            <li class="analysis-a6 "><a href="/A06_HowsENSO">How&#39;s El Nino?</a></li>
+                                            <li class="analysis-a7 "><a href="/A07_HowsThePast">How&#39;s the Past?</a></li>
+                                            <li class="analysis-a10 "><a href="/A10_WhatTrend">What Trend?</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="analysis-a3 small-screen-only"><a href="/A03_HowsTheSeason">How&#39;s the Season?</a></li>
+                                    <li class="analysis-a1 small-screen-only"><a href="/A01_HowOften">How Often?</a></li>
+                                    <li class="analysis-a4 small-screen-only"><a href="/A04_HowWetN">How Wet/Nitrate?</a></li>
+                                    <li class="analysis-a9 small-screen-only"><a href="/A09_WhatYield">Potential Yield?</a></li>
+                                    <li class="analysis-a8 small-screen-only"><a href="/A08_HowsTheDrought">Drought?</a></li>
+                                    <li class="analysis-a2 small-screen-only"><a href="/A02_HowHotCold">How Hot/Cold?</a></li>
+                                    <li class="analysis-a5 small-screen-only"><a href="/A05_HowLikely">How Likely?</a></li>
+                                    <li class="analysis-a6 small-screen-only"><a href="/A06_HowsENSO">How&#39;s El Nino?</a></li>
+                                    <li class="analysis-a7 small-screen-only"><a href="/A07_HowsThePast">How&#39;s the Past?</a></li>
+                                    <li class="analysis-a10 small-screen-only"><a href="/A10_WhatTrend">What Trend?</a></li>
+                                    <li class="main-menu-item main-news"><a href="/News">News</a></li>
+                                    <li class="main-menu-item main-library"><a href="/LIbrary">Library</a></li>
+                                    <li class="main-menu-item main-links"><a href="/Links">Links</a></li>
+                                    <li class="main-menu-item main-contact"><a href="/WebContact">Contact</a></li>
+
+
+
+                                </ul>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="body">
+
+            
+            <section class="content-wrapper main-content clear-fix">
+
+                
+
+<div id="map-tooltip" style="display: none"></div>
+
+<div class="row clearfix">
+    <div class="col-md-2 large-display-menu-system">
+        <div >
+            <div class="metis-sidebar">
+                <nav class="metis-sidebar-nav" style="margin-top: 10px;">
+                    <ul class="metismenu"  id="analysis-metismenu">
+                        <li class="analysis-a3"><a href="/A03_HowsTheSeason">How&#39;s the Season?</a></li>
+                        <li class="analysis-a1"><a href="/A01_HowOften">How Often?</a></li>
+                        <li class="analysis-a4"><a href="/A04_HowWetN">How Wet/Nitrate?</a></li>
+                        <li class="analysis-a9"><a href="/A09_WhatYield">Potential Yield?</a></li>
+                        <li class="analysis-a8"><a href="/A08_HowsTheDrought">Drought?</a></li>
+                        <li class="analysis-a2"><a href="/A02_HowHotCold">How Hot/Cold?</a></li>
+                        
+                        <li class="analysis-a7"><a href="/A07_HowsThePast">How&#39;s the Past?</a></li>
+                        <li class="analysis-a10"><a href="/A10_WhatTrend">What Trend?</a></li>
+
+
+                    </ul>
+                </nav><!--/.well -->
+            </div><!--/span-->
+            <p style="font-size: 0.7em; line-height: 1em;color: silver; text-align: center; margin-top: 20px;">
+                Version: 2.0.8619.25385
+                <br/>
+                Dated: 07/08/2023</p>
+            <br />
+            <div style="text-align: center;">
+                <button class="btn btn-info btn-sidebar" onclick="javascript:getHelp();" ><i class="fa fa-question-circle" aria-hidden="true"></i> Help</button><br/>
+                <button class="btn btn-success btn-sidebar" onclick="javascript:sendFeedback();" > <i class="fa fa-envelope-o" aria-hidden="true"></i> Feedback</button>
+                
+            </div>
+            <div id="analytics-controls"></div>
+        </div>
+    </div>
+    <div class="col-md-10 col-xs-12">
+        
+        <!-- Right (content) side -->
+        <section class="content-block" role="main">
+
+            <section>
+
+                
+
+
+
+
+
+
+<div class="analysis-page">
+    <div class="row">
+        <div class="col-md-6"><p class="analysis-title">How's the Past? </p></div>
+        <div class="col-md-6 analysis-logo"><img src="/Content/Images/ClimateLogoSmall2.png" /></div>
+    </div>
+    <div class="loading-message  animated rollIn">
+        <div style="margin-top: 40px;"><p style="text-align: center; font-size: 1.4em;color:blue">Preparing analysis...</p><p style="text-align: center; font-size: 1.0em;">Please wait while we retrieve your settings.</p><p style="text-align: center;"><i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i></p></div>
+    </div>
+<div class="analysis-content">
+    <div class="row " style="max-height: 280px;">
+        <div class="col-md-12 ">
+            <div class="question-panel" id="analysis-inputs" style="height: 100%"></div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="answer-panel">
+                <div class="row">
+                    <div class="answer col-md-12" id="Answer1"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="Chart1" style="width: 100%;"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="Table1" style="width: 100%;"></div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div style="text-align: right">
+        <select id="show-enso-colours" style="font-size: 0.8em; border-radius: 4px;"><option value="0">Status: Hiding ENSO colouring</option><option value="1">Status: Showing ENSO colouring</option></select>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div id="Calendar2" style="width: 100%; height: 1500px;"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div id="Calendar1" style="width: 100%; height: 800px;"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div id="HowDoWeKnowThis" class="howdoweknowthis-panel"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div id="Footer" class="footer-panel"></div>
+        </div>
+    </div>
+   
+</div>
+    </div>
+
+
+<script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXR_I4pEIGjerJX6goxPaeZNVWE5lVVSU">
+
+</script>
+<style>
+    .ui-widget button.btn-select-state {
+        padding: 2px;
+        margin: 0px;
+        font-size: 10pt;
+    }
+    .btn-qld {
+        background: maroon;
+        color: gold;
+    }
+     .btn-nsw {
+        background: skyblue;
+        color: white;
+    }
+
+    .btn-vic {
+        background: navy;
+        color: silver;
+    }
+
+    .btn-nt {
+        background: #E65A00;
+        color: white;
+    }
+
+    .btn-sa {
+        background: red;
+        color: gold;
+    }
+
+    .btn-wa {
+        background: black;
+        color: gold;
+    }
+    .btn-tas {
+        background: #006A4E;
+        color: yellow;
+    }
+
+    .spinner-div {
+        text-align: center;
+        width: 100%;
+        /*position: absolute;
+        left: 0;
+        top: 0;*/
+
+    }
+    .select-location-dialog { z-index: 3 !important ;}
+
+
+
+
+</style>
+<div id="select-location-dialog" class="climateapp-dialog" title="Select a climate location..." style="display: none; table-layout:fixed;width: 100%;">
+
+    <div class="container" style="width: 99%">
+        <div id="select-location-dialog-tabs" style="min-height:300px">
+            <ul>
+                <li><a href="#location-dialog-tabs-1"><i class="fa fa-heart" aria-hidden="true" style="color: red;"></i> Select/Edit Favourites</a></li>
+                <li><a href="#location-dialog-tabs-2"><i class="fa fa-search" aria-hidden="true"  style="color: blue;"></i> Search</a></li>
+                <li><a href="#location-dialog-tabs-3"><i class="fa fa-globe" aria-hidden="true"  style="color: green;"></i> <span id="map-tab-caption">From Map <i class="fa fa-spinner fa-spin fa-fw"></i></span></a></li>
+              
+            </ul>
+
+            <div id="location-dialog-tabs-1">
+                
+                
+                <div class="row" style="position: relative;">
+                    <div class="spinner-div" style="display: none;">
+                        <p><i class="fa fa-spinner fa-spin fa-3x fa-fw"></i></p>
+                        <p>Processing Geolocation...</p>
+                        <p>Please wait</p>
+                        <p><button class="btn btn-success" onclick="javascript:continueWithoutGeolocation();">Continue without<br/>Geolocation...</button></p>
+                        
+                    </div>
+                    <table id="favourites-table" class="table table-striped" style="width: 100%; display: none;">
+                        <thead>
+                        <tr>
+                            <th style="width: 65%">Station Name</th>
+                            
+                            <th style="width: 10%">State</th>
+                            <th style="width: 10%">Elev.</th>
+                            <th style="width: 10%">Dist</th>
+                            <th style="width: 5%"></th>
+                        </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="location-dialog-tabs-2">
+                <div class="row" style="position: relative;">
+                    <div class="spinner-div" style="display: none;">
+                        <p><i class="fa fa-spinner fa-spin fa-3x fa-fw"></i></p>
+                        <p>Processing Geolocation...</p>
+                        <p>Please wait</p>
+                        <p><button class="btn btn-success" onclick="javascript: continueWithoutGeolocation();">Continue without<br />Geolocation...</button></p>
+                    </div>
+                    <table id="search-table" class="table table-striped" style="width: 100%;display:none;">
+                        <thead>
+                        <tr>
+                            <th style="width: 65%">Station Name</th>
+                            
+                            <th style="width: 10%">State</th>
+                            <th style="width: 10%">Elev.</th>
+                            <th style="width: 10%">Dist</th>
+                            <th style="width: 5%"></th>
+                        </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+
+                </div>
+            </div>
+            <div id="location-dialog-tabs-3">
+                <div style="float: right">
+                    <button class="btn btn-default btn-select-state btn-qld"  onclick="javascript: selectQLD();">QLD</button>
+                    <button class="btn btn-default btn-select-state btn-nsw"  onclick="javascript: selectNSW();">NSW</button>
+                    <button class="btn btn-default btn-select-state btn-sa"  onclick="javascript: selectSA();">SA</button>
+                    <button class="btn btn-default btn-select-state btn-vic"  onclick="javascript: selectVIC();">VIC</button>
+                    <button class="btn btn-default btn-select-state btn-wa"  onclick="javascript: selectWA();">WA</button>
+                    <button class="btn btn-default btn-select-state btn-tas"  onclick="javascript: selectTAS();">TAS</button>
+                    <button class="btn btn-default btn-select-state btn-nt"  onclick="javascript: selectNT();">NT</button>
+                </div>
+                <p>Click a location to select...</p>
+                
+                <div id="climate-stations-map" style="height: 380px;"></div>
+
+            </div>
+        </div>
+        <div id="update-all-checkbox-container" style="display: none;">
+        <input type="checkbox" name="allLocations"  id="update-all-checkbox" style="margin-top: 12px;  "><label for="allLocations" style="margin-left: 8px;">Update all analyses with this location</label>
+        </div>
+        
+    </div>
+</div>
+
+
+
+
+
+
+            </section>
+        </section>
+    </div>
+</div>
+
+<div id="feedback-dialog" class="climateapp-dialog" title="Send us some feedback..." style="display: none;">
+    <textarea style="width: 100%; height: 350px;" id="user-feedback-text"></textarea>
+
+
+</div>
+
+<!-- The overlay -->
+<div id="myNav" class="overlay">
+
+
+    <!-- Button to close the overlay navigation -->
+    <a href="javascript:void(0)" class="closebtn" onclick="closeHelp()">&times;</a>
+
+    <!-- Overlay content -->
+    <div class="overlay-content">
+        <div id="overlay-header">
+            
+            <img  id="overlay-logo" src="/Content/Images/ClimateLogoSmall.png" />
+            
+            <h2 id="help-title">Help is at hand</h2>
+        </div>
+        <img id="help-image"/>
+        <div id="help-content"></div>
+            
+        <div style="text-align: center;">
+            <a href="#" onclick="javascript:closeHelp();"><i class="fa fa-times-circle" aria-hidden="true"></i> Close</a>
+        </div>
+    </div>
+</div>
+
+
+            </section>
+        </div>
+
+        <div class="footer">
+            <br />
+            <img src="/Content/Images/MCV_logo.jpg" style="display:block;margin:0 auto" />
+            <p style="text-align:center; font-size:0.8em">&copy; Commonwealth of Australia 2023 </p>
+        </div>
+    </div>
+    
+    <div class="ajax_spinner">
+        <div id="calculating_caption"></div>
+    </div>
+    
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="/Scripts/CliMate_Tools.js"></script>
+<script src="/bundles/modernizr?v=inCVuEFe6J4Q07A0AcRsbJic_UE5MwpRMNGcOtk94TE1"></script>
+
+    
+    <script src="/Plugins/metisMenu-master/dist/metisMenu.min.js"></script>
+    <script src="/Plugins/jQuery-dataTables-1.10.12/media/js/jquery.dataTables.min.js"></script>
+    <script src="/Scripts/CliMate_FeedbackDialog.js"></script>
+
+    
+    <script src="/Scripts/CliMate_SelectLocationDialog.js"></script>
+    <script src="/Scripts/Climate_InputsUI.js"></script>
+    <script src="/Scripts/CliMate_Outputs_UI.js"></script>
+    <script src="/Scripts/CliMate_Outputs_Table.js"></script>
+    <script src="/Scripts/CliMate_Outputs_Calendars.js"></script>
+    <script src="/Scripts/CliMate_Outputs_FlotChart.js"></script>
+    <script src="/Scripts/CliMate_Calculations.js"></script>
+    <script src="/Plugins/flot-0.8.3/flot/jquery.flot.min.js"></script>
+    <script src="/Plugins/flot-axislabels-master/jquery.flot.axislabels.js"></script>
+    <script src="/Plugins/flot-labels-master/jquery.flot.labels.js"></script>
+    <script src="/Plugins/flot-0.8.3/flot/jquery.flot.resize.js"></script>
+    <script>
+        var mydatasource = {"InputConfig":{"Location":{"Id":"b83fe627-41a5-44e7-b708-ede543e65d54","Items":[{"Key":"ABERDEEN (ROSSGOLE)","Value":"63a804e2-e348-4288-ab69-9427741f000e","OrderIndex":0,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"MERINGUR","Value":"6521ca20-1ddb-4d9a-884a-59dd5da0480a","OrderIndex":0,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"WAGGA WAGGA AGRICULTURAL INSTITUTE","Value":"3457371d-f70f-4502-bb6b-2db1f56862f0","OrderIndex":0,"parentId":"00000000-0000-0000-0000-000000000000"}],"Label":"at","Identifier":"Location","Type":"DataRecord","parentId":"00000000-0000-0000-0000-000000000000"},"DataType":{"Id":"91e19c09-cb91-4ad0-961b-fd8d3d3da068","Items":[{"Key":"Rainfall","Value":"0","OrderIndex":0,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"Evaporation","Value":"5","OrderIndex":1,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"Maximum Temperatures","Value":"1","OrderIndex":2,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"Minimum Temperatures","Value":"2","OrderIndex":3,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"Solar Radiation","Value":"4","OrderIndex":4,"parentId":"00000000-0000-0000-0000-000000000000"}],"Label":"focusing on","Type":"EnumeratedInput","DefaultValue":0,"Name":"DataType","Units":null,"parentId":"00000000-0000-0000-0000-000000000000"},"YearsRange":{"Id":"a25ae177-8352-46e7-a083-4db253ceb86e","Items":[{"Key":"1900 to present","Value":"0","OrderIndex":0,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1910 to present","Value":"1","OrderIndex":1,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1920 to present","Value":"2","OrderIndex":2,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1930 to present","Value":"3","OrderIndex":3,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1940 to present","Value":"4","OrderIndex":4,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1950 to present","Value":"5","OrderIndex":5,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1960 to present","Value":"6","OrderIndex":6,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1970 to present","Value":"7","OrderIndex":7,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1980 to present","Value":"8","OrderIndex":8,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1990 to present","Value":"9","OrderIndex":9,"parentId":"00000000-0000-0000-0000-000000000000"}],"Label":"for","Type":"EnumeratedInput","DefaultValue":9,"Name":"YearsRange","Units":null,"parentId":"00000000-0000-0000-0000-000000000000"},"ENSOState":{"Id":"85fba567-a72c-4567-9927-30d0ba531202","Items":[{"Key":"All years of data","Value":"3","OrderIndex":0,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"only El Nino Years","Value":"0","OrderIndex":1,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"only La Nina years","Value":"1","OrderIndex":2,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"only ENSO-Neutral years","Value":"2","OrderIndex":3,"parentId":"00000000-0000-0000-0000-000000000000"}],"Label":"based on","Type":"EnumeratedInput","DefaultValue":3,"Name":"ENSOState","Units":null,"parentId":"00000000-0000-0000-0000-000000000000"}},"InputValues":{"ENSOState":3,"Id":"b0ff9b85-2744-47ff-ae4e-f0ece2b0aed3","DataType":0,"Location":"63a804e2-e348-4288-ab69-9427741f000e","LocationName":"ABERDEEN (ROSSGOLE)","YearsRange":9,"getDataUnits":"mm"},"Outputs":{"Question1":{"Text":"What is the climate ...","Identifier":null,"Type":"SimpleText"},"Answer1":{"Text":"Monthly average: rain, evap., min/max temperature, [Location], ([YearsRange])","Identifier":null,"Type":"SimpleText"},"HowDoWeKnowThis":{"Text":"Using Silo\u0027s \u003ci\u003epatched point data\u003c/i\u003e ([YearsRange]) allows us to view long term statistics, monthly patterns and relationships with ENSO. Annual patterns are based on an Autumn to Autumn period (rather than Jan to Dec) so that they coincide with El Nino and La Nina patterns.\n\u003cbr\u003e\u003cb\u003eNote:\u003cb\u003e Should not be used to extract exact values for a specific location as some interpolation may have been applied.","Identifier":null,"Type":"SimpleText"},"FooterText":{"Text":"Note: Monthly SOI records (http://www.bom.gov.au/climate/current/SOIValues.txt) were last updated on 03 / 03 / 2017.","Identifier":null,"Type":"SimpleText"},"Chart1":{"legend":{"show":true,"labelBoxBorderColor":"none","noColumns":0,"position":"ne","margin":10,"backgroundColor":"white","backgroundOpacity":0.66},"xaxis":{"mode":null,"monthNames":null,"timeformat":null,"show":true,"tickLength":0,"tickSize":null,"axisLabelUseCanvas":true,"axisLabelFontSizePixels":12,"axisLabelPadding":5,"min":-1,"max":1,"ticks":[["0","Jan"],["1","Feb"],["2","Mar"],["3","Apr"],["4","May"],["5","Jun"],["6","Jul"],["7","Aug"],["8","Sep"],["9","Oct"],["10","Nov"],["11","Dec"]],"minTickSize":null,"axisLabel":null,"font":{"size":16,"color":"black"}},"LegendPlaceholder":"#chart1-legend-placeholder","yaxes":[{"position":"left","labelWidth":null,"show":true,"tickLength":null,"tickSize":null,"axisLabelUseCanvas":true,"axisLabelFontSizePixels":12,"axisLabelPadding":5,"min":0,"max":0,"ticks":null,"minTickSize":null,"axisLabel":"Rain/Evap (mm)","font":{"size":16,"color":"#0066ff"}},{"position":"right","labelWidth":null,"show":true,"tickLength":null,"tickSize":null,"axisLabelUseCanvas":true,"axisLabelFontSizePixels":12,"axisLabelPadding":5,"min":0,"max":0,"ticks":null,"minTickSize":null,"axisLabel":"Temperature(°C)","font":{"size":16,"color":"#fd795a"}}],"Title":null,"Footer":"\u003cdiv id=\u0027chart1-legend-placeholder\u0027\u003e\u003c/div\u003e","Height":350,"YAxisLabel":null,"grid":{"hoverable":true,"clickable":true,"backgroundColor":"white","markings":[]},"Data":[],"Annotations":null,"DataUnits":null,"DataUnits2":"°C","Identifier":null,"Type":"FlotChart"},"Table1":{"Title":null,"Footer":null,"Widths":[25,25,25,25,25,25,25,25],"HeaderRow":{"ControllerAction":null,"Guid":null,"Cells":["Variable","Min","Max","Avg"],"BrushColor":null,"PenColor":null},"BodyRows":[{"ControllerAction":null,"Guid":null,"Cells":["Rainfall","\u003ci class=\u0027fa fa-spinner fa-spin fa-fw\u0027\u003e\u003c/i\u003e","\u003ci class=\u0027fa fa-spinner fa-spin fa-fw\u0027\u003e\u003c/i\u003e","\u003ci class=\u0027fa fa-spinner fa-spin fa-fw\u0027\u003e\u003c/i\u003e"],"BrushColor":null,"PenColor":null},{"ControllerAction":null,"Guid":null,"Cells":["Max Temp","\u003ci class=\u0027fa fa-spinner fa-spin fa-fw\u0027\u003e\u003c/i\u003e","\u003ci class=\u0027fa fa-spinner fa-spin fa-fw\u0027\u003e\u003c/i\u003e","\u003ci class=\u0027fa fa-spinner fa-spin fa-fw\u0027\u003e\u003c/i\u003e"],"BrushColor":null,"PenColor":null}],"Identifier":null,"Type":"Table"},"Calendar1":{"Title":"Annual April-March [DataType] [DataAccumulationType]s for [Location] showing coinciding relationship with ENSO","Footer":null,"YearlyData":null,"ENSOData":null,"ENSOFilterState":0,"Max":100,"Min":0,"Average":50,"Units":"","StartYear":1900,"EndYear":2023,"Identifier":null,"Type":"YearlyCalendar"},"Calendar2":{"Title":"Monthly [DataType] [DataAccumulationType]s for [Location] from [YearsRange]","Footer":null,"StartYear":1950,"EndYear":2023,"StartIndex":-1,"Max":0,"Min":0,"Average":0,"Units":"","MonthlyData":null,"ENSOData":null,"ENSOFilterState":0,"MonthlyStats":null,"Identifier":null,"Type":"MonthlyCalendar"}}};
+        var calculationsUrl = '/A07_HowsThePast/Calculate';
+
+        $(function() {
+            initLocationSelector();
+            generateInputsUI();
+            generateOutputsUI();
+            initialiseShowENSOAssociationsCombo();
+            calculate(mydatasource, calculationsUrl);
+        });
+
+        function generateInputsUI() {
+            addQuestion("Question1");
+
+            //******************************
+            var row = 1;
+
+            addInputLabel("Location", row, 2, 4);
+            addInputEditor("Location", row, 4, 8);
+            addInputLabel("YearsRange", row, 2, 4);
+            addInputEditor("YearsRange", row, 4, 8);
+            //******************************
+            ++row;
+            addInputLabel("ENSOState", row, 2, 4);
+            addInputEditor("ENSOState", row, 4, 8);
+            addInputLabel("DataType", row, 2, 4);
+            addInputEditor("DataType", row, 4, 8);
+            //******************************
+
+            //Change Events *********************
+            $(".input-control").change(function() {
+                if (updateInputValue(mydatasource, $(this))) {
+                    calculate(mydatasource, calculationsUrl);
+                }
+            });
+        }
+
+        function generateOutputsUI() {
+            addOutput("Question1");
+            addOutput("Answer1");
+            addOutput("Chart1");
+            //  addOutput("Chart2");
+            addOutput("Table1");
+            addOutput("Calendar1");
+            addOutput("Calendar2");
+            addOutput("HowDoWeKnowThis");
+            var bodyWidth = $("body").width();
+            if (bodyWidth < 700) {
+                $("#Chart1 .flotchart-canvas").css("height", "260px");
+            }
+
+        }
+
+      
+
+        function initialiseShowENSOAssociationsCombo() {
+            var initial = getCookie("show-enso-colours");
+            if (Validate(initial)) {
+                $("#show-enso-colours").val(Number(initial));
+            }
+            $("#show-enso-colours").change(function() {
+                writeCookie("show-enso-colours", $(this).val());
+                addOutput("Calendar2");
+            });
+        }
+
+
+    </script>
+
+
+    <script type="text/javascript">
+        $(function() {
+            var $metismenu = $("#analysis-metismenu");
+            var $selectedli = $(".analysis-a7");
+            var $parentlis = $selectedli.parents("li");
+            $selectedli.addClass("active");
+            $selectedli.addClass("selected");
+            $parentlis.addClass("active");
+            $metismenu.metisMenu();
+        });
+        window.addEventListener('resize', posFix, false);
+
+        function posFix() {
+            generateOutputsUI();
+
+        }
+
+        function sendFeedback() {
+            openFeedbackDialog("HowsThePast", "b0ff9b85-2744-47ff-ae4e-f0ece2b0aed3");
+        }
+
+        function getHelp() {
+            $('.ajax_spinner').show();
+            $.getJSON("/Analyses/GetHelp",null, function (results) {
+                if (results.success) {
+                    $("#help-title").text(results.title);
+                    if (results.image && results.image.length > 0) {
+                        $("#help-image").attr('src', results.image);
+
+                    } else {
+                        $("#help-image").hide();
+                    }
+                    $("#help-content").html(results.content);
+                    $('.ajax_spinner').hide();
+                    openNav();
+                } else {
+                    $('.ajax_spinner').hide();
+                    custom_alert("Sorry - couldn't find any help for this analysis.", "Help not at hand...");
+                }
+                
+            });
+        }
+        function openNav() {
+           
+            //$("#myNav").css("width", "100%");
+            $("#myNav").css("left", "0");
+        }
+
+        function closeHelp() {
+            //$("#myNav").css("width","0%");
+            $("#myNav").css("left", "-100%");
+        }
+
+        function custom_alert(message, title) {
+            if (!title)
+                title = 'Alert';
+
+            if (!message)
+                message = 'No Message to Display.';
+
+            $('<div></div>').html(message).dialog({
+                title: title,
+                resizable: false,
+                modal: true,
+                buttons: {
+                    'Ok': function () {
+                        $(this).dialog('close');
+                    }
+                }
+            });
+        }
+
+    </script>
+
+
+    <script type="text/javascript">
+    $(function () {
+        var $selectedmainli = $(".main-analyses");
+        
+        $selectedmainli.addClass("active");
+        //if($selectedsubmenuli) {
+        //    $selectedsubmenuli.addClass("active");
+        //}
+    });
+    </script>
+   
+
+</body>
+</html>

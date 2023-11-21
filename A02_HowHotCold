@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>CliMate: How Hot/Cold?</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/Content/Images/PageIcons/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/Content/Images/PageIcons/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/Content/Images/PageIcons/apple-touch-icon-57-precomposed.png">
+   
+    <link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+    <link href="/Content/css/Site.css" rel="stylesheet" />
+    
+
+
+    <link href="/Plugins/jQuery-dataTables-1.10.12/media/css/jquery.dataTables.min.css" rel="stylesheet"/>
+    <link href="/Plugins/metisMenu-master/dist/metisMenu.css" rel="stylesheet"/>
+    <link href="/Content/css/CliMate_Metis.css" rel="stylesheet"/>
+    <link href="/Content/css/CliMate_HelpOverlay.css" rel="stylesheet"/>
+    <link href="/Content/css/animate.css" rel="stylesheet" />
+    
+    <link href="/Content/css/CliMate_Analysis.css" rel="stylesheet" />
+    <link href="/Content/css/CliMate_SelectLocationDialog.css" rel="stylesheet" />
+    <style>
+        td {
+            text-align: center;
+        }
+    </style>
+
+    <style>
+        .btn-sidebar {
+            font-size: 0.8em; width: 120px; margin: 6px;
+        }
+
+    </style>
+
+
+</head>
+<body>
+    <div class="container-narrow container">
+        <div class="navbar navbar-default navbar-fixed-top masthead">
+            <div class="container-narrow" id="navbar-container">
+                <div class="row" style="margin-right: 6px; margin-left: 6px;">
+                    <div class="navbar-header col-sm-3">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="brand" href="/"> </a>
+                    </div>
+                    <div class="col-sm-9">
+                        <div class="navbar-collapse collapse">
+                            <div class="row">
+                                <div class=" login_menu">
+                                    <section id="login" class="user-profile">
+                                        <form action="/Account/LogOff" class="navbar-right" id="logoutForm" method="post"><input name="__RequestVerificationToken" type="hidden" value="-L0-LEyy_Lv-LY-4f8rsRpqXa7Bm38BecJxGIk_xbbaWq5k7yJxsXwDdIlq0qDod5QslrWaJ_uMvdGw4TOz-teHVvRx_0G_IFP_T8JbsZNN0REKomtYUlZDab1mUWvLjEuLyX6VvnJD39CFn9cFGbQ2" />    <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a href="/Manage" title="Manage">dalerschilling@yahoo.com.au</a>
+        </li>
+        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+    </ul>
+</form>
+                                    </section>
+                                </div>
+                            </div>
+                            <div class="row" id="main-menu">
+                                <ul class="nav navbar-nav navbar-right">
+
+                                    <li class="main-menu-item main-home"><a href="/">Home</a></li>
+                                    <li class="main-menu-item main-about"><a href="/About">About</a></li>
+                                    <li class="main-menu-item large-screen-only main-analyses">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Analyses<span class="caret"></span></a>
+                                        <ul class="dropdown-menu large-screen-only">
+                                            <li class="analysis-a3 "><a href="/A03_HowsTheSeason">How&#39;s the Season?</a></li>
+                                            <li class="analysis-a1 "><a href="/A01_HowOften">How Often?</a></li>
+                                            <li class="analysis-a4 "><a href="/A04_HowWetN">How Wet/Nitrate?</a></li>
+                                            <li class="analysis-a9 "><a href="/A09_WhatYield">Potential Yield?</a></li>
+                                            <li class="analysis-a8 "><a href="/A08_HowsTheDrought">Drought?</a></li>
+                                            <li class="analysis-a2 "><a href="/A02_HowHotCold">How Hot/Cold?</a></li>
+                                            <li class="analysis-a5 "><a href="/A05_HowLikely">How Likely?</a></li>
+                                            <li class="analysis-a6 "><a href="/A06_HowsENSO">How&#39;s El Nino?</a></li>
+                                            <li class="analysis-a7 "><a href="/A07_HowsThePast">How&#39;s the Past?</a></li>
+                                            <li class="analysis-a10 "><a href="/A10_WhatTrend">What Trend?</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="analysis-a3 small-screen-only"><a href="/A03_HowsTheSeason">How&#39;s the Season?</a></li>
+                                    <li class="analysis-a1 small-screen-only"><a href="/A01_HowOften">How Often?</a></li>
+                                    <li class="analysis-a4 small-screen-only"><a href="/A04_HowWetN">How Wet/Nitrate?</a></li>
+                                    <li class="analysis-a9 small-screen-only"><a href="/A09_WhatYield">Potential Yield?</a></li>
+                                    <li class="analysis-a8 small-screen-only"><a href="/A08_HowsTheDrought">Drought?</a></li>
+                                    <li class="analysis-a2 small-screen-only"><a href="/A02_HowHotCold">How Hot/Cold?</a></li>
+                                    <li class="analysis-a5 small-screen-only"><a href="/A05_HowLikely">How Likely?</a></li>
+                                    <li class="analysis-a6 small-screen-only"><a href="/A06_HowsENSO">How&#39;s El Nino?</a></li>
+                                    <li class="analysis-a7 small-screen-only"><a href="/A07_HowsThePast">How&#39;s the Past?</a></li>
+                                    <li class="analysis-a10 small-screen-only"><a href="/A10_WhatTrend">What Trend?</a></li>
+                                    <li class="main-menu-item main-news"><a href="/News">News</a></li>
+                                    <li class="main-menu-item main-library"><a href="/LIbrary">Library</a></li>
+                                    <li class="main-menu-item main-links"><a href="/Links">Links</a></li>
+                                    <li class="main-menu-item main-contact"><a href="/WebContact">Contact</a></li>
+
+
+
+                                </ul>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="body">
+
+            
+            <section class="content-wrapper main-content clear-fix">
+
+                
+
+<div id="map-tooltip" style="display: none"></div>
+
+<div class="row clearfix">
+    <div class="col-md-2 large-display-menu-system">
+        <div >
+            <div class="metis-sidebar">
+                <nav class="metis-sidebar-nav" style="margin-top: 10px;">
+                    <ul class="metismenu"  id="analysis-metismenu">
+                        <li class="analysis-a3"><a href="/A03_HowsTheSeason">How&#39;s the Season?</a></li>
+                        <li class="analysis-a1"><a href="/A01_HowOften">How Often?</a></li>
+                        <li class="analysis-a4"><a href="/A04_HowWetN">How Wet/Nitrate?</a></li>
+                        <li class="analysis-a9"><a href="/A09_WhatYield">Potential Yield?</a></li>
+                        <li class="analysis-a8"><a href="/A08_HowsTheDrought">Drought?</a></li>
+                        <li class="analysis-a2"><a href="/A02_HowHotCold">How Hot/Cold?</a></li>
+                        
+                        <li class="analysis-a7"><a href="/A07_HowsThePast">How&#39;s the Past?</a></li>
+                        <li class="analysis-a10"><a href="/A10_WhatTrend">What Trend?</a></li>
+
+
+                    </ul>
+                </nav><!--/.well -->
+            </div><!--/span-->
+            <p style="font-size: 0.7em; line-height: 1em;color: silver; text-align: center; margin-top: 20px;">
+                Version: 2.0.8619.25385
+                <br/>
+                Dated: 07/08/2023</p>
+            <br />
+            <div style="text-align: center;">
+                <button class="btn btn-info btn-sidebar" onclick="javascript:getHelp();" ><i class="fa fa-question-circle" aria-hidden="true"></i> Help</button><br/>
+                <button class="btn btn-success btn-sidebar" onclick="javascript:sendFeedback();" > <i class="fa fa-envelope-o" aria-hidden="true"></i> Feedback</button>
+                
+            </div>
+            <div id="analytics-controls"></div>
+        </div>
+    </div>
+    <div class="col-md-10 col-xs-12">
+        
+        <!-- Right (content) side -->
+        <section class="content-block" role="main">
+
+            <section>
+
+                
+
+
+
+
+
+<div class="analysis-page">
+    <div class="row">
+        <div class="col-md-6"><p class="analysis-title">How Hot/Cold?</p></div>
+        <div class="col-md-6 analysis-logo"><img src="/Content/Images/ClimateLogoSmall2.png" /></div>
+    </div>
+    <div class="loading-message  animated rollIn">
+        <div style="margin-top: 40px;"><p style="text-align: center; font-size: 1.4em;color:blue">Preparing analysis...</p><p style="text-align: center; font-size: 1.0em;">Please wait while we retrieve your settings.</p><p style="text-align: center;"><i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i></p></div>
+    </div>
+<div class="analysis-content">
+    <div id="presentation1">
+        <div class="row question-container-2">
+            <div class="col-sm-6 equalise">
+                <div class="question-panel" id="analysis-inputs" style="height: 100%"></div>
+            </div>
+            <div class="col-sm-6 equalise">
+                <div class="answer-panel" style="height: 100%">
+                    <div class="answer" id="Answer1"></div>
+                    <div class="firegauge-container" id="FireGauge1"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="presentation2">
+        <div class="row">
+            <div class="col-md-12 ">
+                <div class="question-panel" id="analysis-inputs2" style="height: 100%"></div>
+            </div>
+        </div>
+        <div class="row firegauge-outputs">
+            <div class="col-md-12">
+
+                <div class="answer-panel">
+                    <div class="row">
+                        <div class="col-sm-6 ">
+                            <div class="answer" id="Answer1-off"></div>
+                            <div class="firegauge-container" id="FireGauge1-off"></div>
+                        </div>
+                        <div class="col-sm-6  ">
+                            <div class="answer" id="Answer2"></div>
+                            <div class="firegauge-container" id="FireGauge2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div id="Chart1" style="width: 100%;"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div id="HowDoWeKnowThis" class="howdoweknowthis-panel"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div id="Footer" class="footer-panel"></div>
+        </div>
+    </div>
+    
+</div>
+</div>
+
+
+<script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXR_I4pEIGjerJX6goxPaeZNVWE5lVVSU">
+
+</script>
+<style>
+    .ui-widget button.btn-select-state {
+        padding: 2px;
+        margin: 0px;
+        font-size: 10pt;
+    }
+    .btn-qld {
+        background: maroon;
+        color: gold;
+    }
+     .btn-nsw {
+        background: skyblue;
+        color: white;
+    }
+
+    .btn-vic {
+        background: navy;
+        color: silver;
+    }
+
+    .btn-nt {
+        background: #E65A00;
+        color: white;
+    }
+
+    .btn-sa {
+        background: red;
+        color: gold;
+    }
+
+    .btn-wa {
+        background: black;
+        color: gold;
+    }
+    .btn-tas {
+        background: #006A4E;
+        color: yellow;
+    }
+
+    .spinner-div {
+        text-align: center;
+        width: 100%;
+        /*position: absolute;
+        left: 0;
+        top: 0;*/
+
+    }
+    .select-location-dialog { z-index: 3 !important ;}
+
+
+
+
+</style>
+<div id="select-location-dialog" class="climateapp-dialog" title="Select a climate location..." style="display: none; table-layout:fixed;width: 100%;">
+
+    <div class="container" style="width: 99%">
+        <div id="select-location-dialog-tabs" style="min-height:300px">
+            <ul>
+                <li><a href="#location-dialog-tabs-1"><i class="fa fa-heart" aria-hidden="true" style="color: red;"></i> Select/Edit Favourites</a></li>
+                <li><a href="#location-dialog-tabs-2"><i class="fa fa-search" aria-hidden="true"  style="color: blue;"></i> Search</a></li>
+                <li><a href="#location-dialog-tabs-3"><i class="fa fa-globe" aria-hidden="true"  style="color: green;"></i> <span id="map-tab-caption">From Map <i class="fa fa-spinner fa-spin fa-fw"></i></span></a></li>
+              
+            </ul>
+
+            <div id="location-dialog-tabs-1">
+                
+                
+                <div class="row" style="position: relative;">
+                    <div class="spinner-div" style="display: none;">
+                        <p><i class="fa fa-spinner fa-spin fa-3x fa-fw"></i></p>
+                        <p>Processing Geolocation...</p>
+                        <p>Please wait</p>
+                        <p><button class="btn btn-success" onclick="javascript:continueWithoutGeolocation();">Continue without<br/>Geolocation...</button></p>
+                        
+                    </div>
+                    <table id="favourites-table" class="table table-striped" style="width: 100%; display: none;">
+                        <thead>
+                        <tr>
+                            <th style="width: 65%">Station Name</th>
+                            
+                            <th style="width: 10%">State</th>
+                            <th style="width: 10%">Elev.</th>
+                            <th style="width: 10%">Dist</th>
+                            <th style="width: 5%"></th>
+                        </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="location-dialog-tabs-2">
+                <div class="row" style="position: relative;">
+                    <div class="spinner-div" style="display: none;">
+                        <p><i class="fa fa-spinner fa-spin fa-3x fa-fw"></i></p>
+                        <p>Processing Geolocation...</p>
+                        <p>Please wait</p>
+                        <p><button class="btn btn-success" onclick="javascript: continueWithoutGeolocation();">Continue without<br />Geolocation...</button></p>
+                    </div>
+                    <table id="search-table" class="table table-striped" style="width: 100%;display:none;">
+                        <thead>
+                        <tr>
+                            <th style="width: 65%">Station Name</th>
+                            
+                            <th style="width: 10%">State</th>
+                            <th style="width: 10%">Elev.</th>
+                            <th style="width: 10%">Dist</th>
+                            <th style="width: 5%"></th>
+                        </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+
+                </div>
+            </div>
+            <div id="location-dialog-tabs-3">
+                <div style="float: right">
+                    <button class="btn btn-default btn-select-state btn-qld"  onclick="javascript: selectQLD();">QLD</button>
+                    <button class="btn btn-default btn-select-state btn-nsw"  onclick="javascript: selectNSW();">NSW</button>
+                    <button class="btn btn-default btn-select-state btn-sa"  onclick="javascript: selectSA();">SA</button>
+                    <button class="btn btn-default btn-select-state btn-vic"  onclick="javascript: selectVIC();">VIC</button>
+                    <button class="btn btn-default btn-select-state btn-wa"  onclick="javascript: selectWA();">WA</button>
+                    <button class="btn btn-default btn-select-state btn-tas"  onclick="javascript: selectTAS();">TAS</button>
+                    <button class="btn btn-default btn-select-state btn-nt"  onclick="javascript: selectNT();">NT</button>
+                </div>
+                <p>Click a location to select...</p>
+                
+                <div id="climate-stations-map" style="height: 380px;"></div>
+
+            </div>
+        </div>
+        <div id="update-all-checkbox-container" style="display: none;">
+        <input type="checkbox" name="allLocations"  id="update-all-checkbox" style="margin-top: 12px;  "><label for="allLocations" style="margin-left: 8px;">Update all analyses with this location</label>
+        </div>
+        
+    </div>
+</div>
+
+
+
+
+
+            </section>
+        </section>
+    </div>
+</div>
+
+<div id="feedback-dialog" class="climateapp-dialog" title="Send us some feedback..." style="display: none;">
+    <textarea style="width: 100%; height: 350px;" id="user-feedback-text"></textarea>
+
+
+</div>
+
+<!-- The overlay -->
+<div id="myNav" class="overlay">
+
+
+    <!-- Button to close the overlay navigation -->
+    <a href="javascript:void(0)" class="closebtn" onclick="closeHelp()">&times;</a>
+
+    <!-- Overlay content -->
+    <div class="overlay-content">
+        <div id="overlay-header">
+            
+            <img  id="overlay-logo" src="/Content/Images/ClimateLogoSmall.png" />
+            
+            <h2 id="help-title">Help is at hand</h2>
+        </div>
+        <img id="help-image"/>
+        <div id="help-content"></div>
+            
+        <div style="text-align: center;">
+            <a href="#" onclick="javascript:closeHelp();"><i class="fa fa-times-circle" aria-hidden="true"></i> Close</a>
+        </div>
+    </div>
+</div>
+
+
+            </section>
+        </div>
+
+        <div class="footer">
+            <br />
+            <img src="/Content/Images/MCV_logo.jpg" style="display:block;margin:0 auto" />
+            <p style="text-align:center; font-size:0.8em">&copy; Commonwealth of Australia 2023 </p>
+        </div>
+    </div>
+    
+    <div class="ajax_spinner">
+        <div id="calculating_caption"></div>
+    </div>
+    
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="/Scripts/CliMate_Tools.js"></script>
+<script src="/bundles/modernizr?v=inCVuEFe6J4Q07A0AcRsbJic_UE5MwpRMNGcOtk94TE1"></script>
+
+    
+    <script src="/Plugins/metisMenu-master/dist/metisMenu.min.js"></script>
+    <script src="/Plugins/jQuery-dataTables-1.10.12/media/js/jquery.dataTables.min.js"></script>
+    <script src="/Scripts/CliMate_FeedbackDialog.js"></script>
+
+    
+    <script src="/Scripts/CliMate_SelectLocationDialog.js"></script>
+    <script src="/Scripts/Climate_InputsUI.js"></script>
+    <script src="/Scripts/CliMate_Outputs_UI.js"></script>
+    <script src="/Scripts/CliMate_Outputs_FireGauge.js"></script>
+    <script src="/Scripts/CliMate_Outputs_FlotChart.js"></script>
+    <script src="/Scripts/CliMate_Calculations.js"></script>
+    <script src="/Plugins/flot-0.8.3/flot/jquery.flot.min.js"></script>
+    <script src="/Plugins/flot-axislabels-master/jquery.flot.axislabels.js"></script>
+    <script src="/Plugins/flot-labels-master/jquery.flot.labels.js"></script>
+    <script src="/Plugins/flot-0.8.3/flot/jquery.flot.time.min.js"></script>
+    <script src="/Plugins/flot-0.8.3/flot/jquery.flot.resize.js"></script>
+
+    <script>
+        var mydatasource = {"InputConfig":{"StressType":{"Id":"15101e4a-c80a-4fad-abb7-2cea75d0ec05","Items":[{"Key":"Heat Stress","Value":"0","OrderIndex":0,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"Cold Stress","Value":"1","OrderIndex":1,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"Heat \u0026 Cold Stress","Value":"2","OrderIndex":2,"parentId":"00000000-0000-0000-0000-000000000000"}],"Label":null,"Type":"EnumeratedInput","DefaultValue":2,"Name":"StressType","Units":null,"parentId":"00000000-0000-0000-0000-000000000000"},"Location":{"Id":"e4296ae2-7464-471a-9f48-cf5870789588","Items":[{"Key":"ABERDEEN (ROSSGOLE)","Value":"63a804e2-e348-4288-ab69-9427741f000e","OrderIndex":0,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"MERINGUR","Value":"6521ca20-1ddb-4d9a-884a-59dd5da0480a","OrderIndex":0,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"WAGGA WAGGA AGRICULTURAL INSTITUTE","Value":"3457371d-f70f-4502-bb6b-2db1f56862f0","OrderIndex":0,"parentId":"00000000-0000-0000-0000-000000000000"}],"Label":"at","Identifier":"Location","Type":"DataRecord","parentId":"00000000-0000-0000-0000-000000000000"},"TargetDateIndex":{"Id":"1034ca93-4101-4f15-9dde-02d365353875","Items":[{"Key":"Today","Value":"-1","OrderIndex":0,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"01 January","Value":"0","OrderIndex":1,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"02 January","Value":"1","OrderIndex":2,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"03 January","Value":"2","OrderIndex":3,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"04 January","Value":"3","OrderIndex":4,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"05 January","Value":"4","OrderIndex":5,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"06 January","Value":"5","OrderIndex":6,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"07 January","Value":"6","OrderIndex":7,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"08 January","Value":"7","OrderIndex":8,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"09 January","Value":"8","OrderIndex":9,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"10 January","Value":"9","OrderIndex":10,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"11 January","Value":"10","OrderIndex":11,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"12 January","Value":"11","OrderIndex":12,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"13 January","Value":"12","OrderIndex":13,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"14 January","Value":"13","OrderIndex":14,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"15 January","Value":"14","OrderIndex":15,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"16 January","Value":"15","OrderIndex":16,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"17 January","Value":"16","OrderIndex":17,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"18 January","Value":"17","OrderIndex":18,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"19 January","Value":"18","OrderIndex":19,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"20 January","Value":"19","OrderIndex":20,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"21 January","Value":"20","OrderIndex":21,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"22 January","Value":"21","OrderIndex":22,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"23 January","Value":"22","OrderIndex":23,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"24 January","Value":"23","OrderIndex":24,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"25 January","Value":"24","OrderIndex":25,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"26 January","Value":"25","OrderIndex":26,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"27 January","Value":"26","OrderIndex":27,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"28 January","Value":"27","OrderIndex":28,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"29 January","Value":"28","OrderIndex":29,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"30 January","Value":"29","OrderIndex":30,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"31 January","Value":"30","OrderIndex":31,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"01 February","Value":"31","OrderIndex":32,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"02 February","Value":"32","OrderIndex":33,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"03 February","Value":"33","OrderIndex":34,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"04 February","Value":"34","OrderIndex":35,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"05 February","Value":"35","OrderIndex":36,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"06 February","Value":"36","OrderIndex":37,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"07 February","Value":"37","OrderIndex":38,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"08 February","Value":"38","OrderIndex":39,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"09 February","Value":"39","OrderIndex":40,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"10 February","Value":"40","OrderIndex":41,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"11 February","Value":"41","OrderIndex":42,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"12 February","Value":"42","OrderIndex":43,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"13 February","Value":"43","OrderIndex":44,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"14 February","Value":"44","OrderIndex":45,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"15 February","Value":"45","OrderIndex":46,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"16 February","Value":"46","OrderIndex":47,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"17 February","Value":"47","OrderIndex":48,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"18 February","Value":"48","OrderIndex":49,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"19 February","Value":"49","OrderIndex":50,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"20 February","Value":"50","OrderIndex":51,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"21 February","Value":"51","OrderIndex":52,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"22 February","Value":"52","OrderIndex":53,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"23 February","Value":"53","OrderIndex":54,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"24 February","Value":"54","OrderIndex":55,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"25 February","Value":"55","OrderIndex":56,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"26 February","Value":"56","OrderIndex":57,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"27 February","Value":"57","OrderIndex":58,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"28 February","Value":"58","OrderIndex":59,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"01 March","Value":"59","OrderIndex":60,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"02 March","Value":"60","OrderIndex":61,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"03 March","Value":"61","OrderIndex":62,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"04 March","Value":"62","OrderIndex":63,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"05 March","Value":"63","OrderIndex":64,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"06 March","Value":"64","OrderIndex":65,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"07 March","Value":"65","OrderIndex":66,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"08 March","Value":"66","OrderIndex":67,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"09 March","Value":"67","OrderIndex":68,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"10 March","Value":"68","OrderIndex":69,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"11 March","Value":"69","OrderIndex":70,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"12 March","Value":"70","OrderIndex":71,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"13 March","Value":"71","OrderIndex":72,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"14 March","Value":"72","OrderIndex":73,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"15 March","Value":"73","OrderIndex":74,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"16 March","Value":"74","OrderIndex":75,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"17 March","Value":"75","OrderIndex":76,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"18 March","Value":"76","OrderIndex":77,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"19 March","Value":"77","OrderIndex":78,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"20 March","Value":"78","OrderIndex":79,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"21 March","Value":"79","OrderIndex":80,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"22 March","Value":"80","OrderIndex":81,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"23 March","Value":"81","OrderIndex":82,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"24 March","Value":"82","OrderIndex":83,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"25 March","Value":"83","OrderIndex":84,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"26 March","Value":"84","OrderIndex":85,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"27 March","Value":"85","OrderIndex":86,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"28 March","Value":"86","OrderIndex":87,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"29 March","Value":"87","OrderIndex":88,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"30 March","Value":"88","OrderIndex":89,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"31 March","Value":"89","OrderIndex":90,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"01 April","Value":"90","OrderIndex":91,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"02 April","Value":"91","OrderIndex":92,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"03 April","Value":"92","OrderIndex":93,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"04 April","Value":"93","OrderIndex":94,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"05 April","Value":"94","OrderIndex":95,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"06 April","Value":"95","OrderIndex":96,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"07 April","Value":"96","OrderIndex":97,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"08 April","Value":"97","OrderIndex":98,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"09 April","Value":"98","OrderIndex":99,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"10 April","Value":"99","OrderIndex":100,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"11 April","Value":"100","OrderIndex":101,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"12 April","Value":"101","OrderIndex":102,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"13 April","Value":"102","OrderIndex":103,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"14 April","Value":"103","OrderIndex":104,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"15 April","Value":"104","OrderIndex":105,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"16 April","Value":"105","OrderIndex":106,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"17 April","Value":"106","OrderIndex":107,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"18 April","Value":"107","OrderIndex":108,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"19 April","Value":"108","OrderIndex":109,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"20 April","Value":"109","OrderIndex":110,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"21 April","Value":"110","OrderIndex":111,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"22 April","Value":"111","OrderIndex":112,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"23 April","Value":"112","OrderIndex":113,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"24 April","Value":"113","OrderIndex":114,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"25 April","Value":"114","OrderIndex":115,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"26 April","Value":"115","OrderIndex":116,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"27 April","Value":"116","OrderIndex":117,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"28 April","Value":"117","OrderIndex":118,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"29 April","Value":"118","OrderIndex":119,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"30 April","Value":"119","OrderIndex":120,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"01 May","Value":"120","OrderIndex":121,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"02 May","Value":"121","OrderIndex":122,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"03 May","Value":"122","OrderIndex":123,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"04 May","Value":"123","OrderIndex":124,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"05 May","Value":"124","OrderIndex":125,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"06 May","Value":"125","OrderIndex":126,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"07 May","Value":"126","OrderIndex":127,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"08 May","Value":"127","OrderIndex":128,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"09 May","Value":"128","OrderIndex":129,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"10 May","Value":"129","OrderIndex":130,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"11 May","Value":"130","OrderIndex":131,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"12 May","Value":"131","OrderIndex":132,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"13 May","Value":"132","OrderIndex":133,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"14 May","Value":"133","OrderIndex":134,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"15 May","Value":"134","OrderIndex":135,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"16 May","Value":"135","OrderIndex":136,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"17 May","Value":"136","OrderIndex":137,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"18 May","Value":"137","OrderIndex":138,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"19 May","Value":"138","OrderIndex":139,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"20 May","Value":"139","OrderIndex":140,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"21 May","Value":"140","OrderIndex":141,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"22 May","Value":"141","OrderIndex":142,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"23 May","Value":"142","OrderIndex":143,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"24 May","Value":"143","OrderIndex":144,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"25 May","Value":"144","OrderIndex":145,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"26 May","Value":"145","OrderIndex":146,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"27 May","Value":"146","OrderIndex":147,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"28 May","Value":"147","OrderIndex":148,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"29 May","Value":"148","OrderIndex":149,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"30 May","Value":"149","OrderIndex":150,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"31 May","Value":"150","OrderIndex":151,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"01 June","Value":"151","OrderIndex":152,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"02 June","Value":"152","OrderIndex":153,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"03 June","Value":"153","OrderIndex":154,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"04 June","Value":"154","OrderIndex":155,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"05 June","Value":"155","OrderIndex":156,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"06 June","Value":"156","OrderIndex":157,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"07 June","Value":"157","OrderIndex":158,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"08 June","Value":"158","OrderIndex":159,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"09 June","Value":"159","OrderIndex":160,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"10 June","Value":"160","OrderIndex":161,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"11 June","Value":"161","OrderIndex":162,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"12 June","Value":"162","OrderIndex":163,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"13 June","Value":"163","OrderIndex":164,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"14 June","Value":"164","OrderIndex":165,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"15 June","Value":"165","OrderIndex":166,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"16 June","Value":"166","OrderIndex":167,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"17 June","Value":"167","OrderIndex":168,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"18 June","Value":"168","OrderIndex":169,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"19 June","Value":"169","OrderIndex":170,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"20 June","Value":"170","OrderIndex":171,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"21 June","Value":"171","OrderIndex":172,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"22 June","Value":"172","OrderIndex":173,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"23 June","Value":"173","OrderIndex":174,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"24 June","Value":"174","OrderIndex":175,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"25 June","Value":"175","OrderIndex":176,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"26 June","Value":"176","OrderIndex":177,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"27 June","Value":"177","OrderIndex":178,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"28 June","Value":"178","OrderIndex":179,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"29 June","Value":"179","OrderIndex":180,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"30 June","Value":"180","OrderIndex":181,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"01 July","Value":"181","OrderIndex":182,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"02 July","Value":"182","OrderIndex":183,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"03 July","Value":"183","OrderIndex":184,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"04 July","Value":"184","OrderIndex":185,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"05 July","Value":"185","OrderIndex":186,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"06 July","Value":"186","OrderIndex":187,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"07 July","Value":"187","OrderIndex":188,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"08 July","Value":"188","OrderIndex":189,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"09 July","Value":"189","OrderIndex":190,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"10 July","Value":"190","OrderIndex":191,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"11 July","Value":"191","OrderIndex":192,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"12 July","Value":"192","OrderIndex":193,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"13 July","Value":"193","OrderIndex":194,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"14 July","Value":"194","OrderIndex":195,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"15 July","Value":"195","OrderIndex":196,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"16 July","Value":"196","OrderIndex":197,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"17 July","Value":"197","OrderIndex":198,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"18 July","Value":"198","OrderIndex":199,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"19 July","Value":"199","OrderIndex":200,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"20 July","Value":"200","OrderIndex":201,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"21 July","Value":"201","OrderIndex":202,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"22 July","Value":"202","OrderIndex":203,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"23 July","Value":"203","OrderIndex":204,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"24 July","Value":"204","OrderIndex":205,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"25 July","Value":"205","OrderIndex":206,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"26 July","Value":"206","OrderIndex":207,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"27 July","Value":"207","OrderIndex":208,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"28 July","Value":"208","OrderIndex":209,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"29 July","Value":"209","OrderIndex":210,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"30 July","Value":"210","OrderIndex":211,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"31 July","Value":"211","OrderIndex":212,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"01 August","Value":"212","OrderIndex":213,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"02 August","Value":"213","OrderIndex":214,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"03 August","Value":"214","OrderIndex":215,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"04 August","Value":"215","OrderIndex":216,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"05 August","Value":"216","OrderIndex":217,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"06 August","Value":"217","OrderIndex":218,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"07 August","Value":"218","OrderIndex":219,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"08 August","Value":"219","OrderIndex":220,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"09 August","Value":"220","OrderIndex":221,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"10 August","Value":"221","OrderIndex":222,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"11 August","Value":"222","OrderIndex":223,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"12 August","Value":"223","OrderIndex":224,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"13 August","Value":"224","OrderIndex":225,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"14 August","Value":"225","OrderIndex":226,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"15 August","Value":"226","OrderIndex":227,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"16 August","Value":"227","OrderIndex":228,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"17 August","Value":"228","OrderIndex":229,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"18 August","Value":"229","OrderIndex":230,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"19 August","Value":"230","OrderIndex":231,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"20 August","Value":"231","OrderIndex":232,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"21 August","Value":"232","OrderIndex":233,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"22 August","Value":"233","OrderIndex":234,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"23 August","Value":"234","OrderIndex":235,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"24 August","Value":"235","OrderIndex":236,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"25 August","Value":"236","OrderIndex":237,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"26 August","Value":"237","OrderIndex":238,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"27 August","Value":"238","OrderIndex":239,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"28 August","Value":"239","OrderIndex":240,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"29 August","Value":"240","OrderIndex":241,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"30 August","Value":"241","OrderIndex":242,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"31 August","Value":"242","OrderIndex":243,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"01 September","Value":"243","OrderIndex":244,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"02 September","Value":"244","OrderIndex":245,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"03 September","Value":"245","OrderIndex":246,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"04 September","Value":"246","OrderIndex":247,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"05 September","Value":"247","OrderIndex":248,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"06 September","Value":"248","OrderIndex":249,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"07 September","Value":"249","OrderIndex":250,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"08 September","Value":"250","OrderIndex":251,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"09 September","Value":"251","OrderIndex":252,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"10 September","Value":"252","OrderIndex":253,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"11 September","Value":"253","OrderIndex":254,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"12 September","Value":"254","OrderIndex":255,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"13 September","Value":"255","OrderIndex":256,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"14 September","Value":"256","OrderIndex":257,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"15 September","Value":"257","OrderIndex":258,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"16 September","Value":"258","OrderIndex":259,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"17 September","Value":"259","OrderIndex":260,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"18 September","Value":"260","OrderIndex":261,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"19 September","Value":"261","OrderIndex":262,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"20 September","Value":"262","OrderIndex":263,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"21 September","Value":"263","OrderIndex":264,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"22 September","Value":"264","OrderIndex":265,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"23 September","Value":"265","OrderIndex":266,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"24 September","Value":"266","OrderIndex":267,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"25 September","Value":"267","OrderIndex":268,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"26 September","Value":"268","OrderIndex":269,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"27 September","Value":"269","OrderIndex":270,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"28 September","Value":"270","OrderIndex":271,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"29 September","Value":"271","OrderIndex":272,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"30 September","Value":"272","OrderIndex":273,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"01 October","Value":"273","OrderIndex":274,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"02 October","Value":"274","OrderIndex":275,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"03 October","Value":"275","OrderIndex":276,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"04 October","Value":"276","OrderIndex":277,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"05 October","Value":"277","OrderIndex":278,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"06 October","Value":"278","OrderIndex":279,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"07 October","Value":"279","OrderIndex":280,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"08 October","Value":"280","OrderIndex":281,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"09 October","Value":"281","OrderIndex":282,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"10 October","Value":"282","OrderIndex":283,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"11 October","Value":"283","OrderIndex":284,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"12 October","Value":"284","OrderIndex":285,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"13 October","Value":"285","OrderIndex":286,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"14 October","Value":"286","OrderIndex":287,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"15 October","Value":"287","OrderIndex":288,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"16 October","Value":"288","OrderIndex":289,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"17 October","Value":"289","OrderIndex":290,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"18 October","Value":"290","OrderIndex":291,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"19 October","Value":"291","OrderIndex":292,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"20 October","Value":"292","OrderIndex":293,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"21 October","Value":"293","OrderIndex":294,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"22 October","Value":"294","OrderIndex":295,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"23 October","Value":"295","OrderIndex":296,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"24 October","Value":"296","OrderIndex":297,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"25 October","Value":"297","OrderIndex":298,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"26 October","Value":"298","OrderIndex":299,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"27 October","Value":"299","OrderIndex":300,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"28 October","Value":"300","OrderIndex":301,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"29 October","Value":"301","OrderIndex":302,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"30 October","Value":"302","OrderIndex":303,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"31 October","Value":"303","OrderIndex":304,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"01 November","Value":"304","OrderIndex":305,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"02 November","Value":"305","OrderIndex":306,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"03 November","Value":"306","OrderIndex":307,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"04 November","Value":"307","OrderIndex":308,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"05 November","Value":"308","OrderIndex":309,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"06 November","Value":"309","OrderIndex":310,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"07 November","Value":"310","OrderIndex":311,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"08 November","Value":"311","OrderIndex":312,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"09 November","Value":"312","OrderIndex":313,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"10 November","Value":"313","OrderIndex":314,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"11 November","Value":"314","OrderIndex":315,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"12 November","Value":"315","OrderIndex":316,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"13 November","Value":"316","OrderIndex":317,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"14 November","Value":"317","OrderIndex":318,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"15 November","Value":"318","OrderIndex":319,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"16 November","Value":"319","OrderIndex":320,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"17 November","Value":"320","OrderIndex":321,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"18 November","Value":"321","OrderIndex":322,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"19 November","Value":"322","OrderIndex":323,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"20 November","Value":"323","OrderIndex":324,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"21 November","Value":"324","OrderIndex":325,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"22 November","Value":"325","OrderIndex":326,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"23 November","Value":"326","OrderIndex":327,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"24 November","Value":"327","OrderIndex":328,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"25 November","Value":"328","OrderIndex":329,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"26 November","Value":"329","OrderIndex":330,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"27 November","Value":"330","OrderIndex":331,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"28 November","Value":"331","OrderIndex":332,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"29 November","Value":"332","OrderIndex":333,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"30 November","Value":"333","OrderIndex":334,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"01 December","Value":"334","OrderIndex":335,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"02 December","Value":"335","OrderIndex":336,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"03 December","Value":"336","OrderIndex":337,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"04 December","Value":"337","OrderIndex":338,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"05 December","Value":"338","OrderIndex":339,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"06 December","Value":"339","OrderIndex":340,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"07 December","Value":"340","OrderIndex":341,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"08 December","Value":"341","OrderIndex":342,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"09 December","Value":"342","OrderIndex":343,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"10 December","Value":"343","OrderIndex":344,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"11 December","Value":"344","OrderIndex":345,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"12 December","Value":"345","OrderIndex":346,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"13 December","Value":"346","OrderIndex":347,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"14 December","Value":"347","OrderIndex":348,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"15 December","Value":"348","OrderIndex":349,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"16 December","Value":"349","OrderIndex":350,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"17 December","Value":"350","OrderIndex":351,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"18 December","Value":"351","OrderIndex":352,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"19 December","Value":"352","OrderIndex":353,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"20 December","Value":"353","OrderIndex":354,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"21 December","Value":"354","OrderIndex":355,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"22 December","Value":"355","OrderIndex":356,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"23 December","Value":"356","OrderIndex":357,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"24 December","Value":"357","OrderIndex":358,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"25 December","Value":"358","OrderIndex":359,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"26 December","Value":"359","OrderIndex":360,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"27 December","Value":"360","OrderIndex":361,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"28 December","Value":"361","OrderIndex":362,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"29 December","Value":"362","OrderIndex":363,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"30 December","Value":"363","OrderIndex":364,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"31 December","Value":"364","OrderIndex":365,"parentId":"00000000-0000-0000-0000-000000000000"}],"Label":"occurring","Type":"EnumeratedInput","DefaultValue":-1,"Name":"TargetDateIndex","Units":null,"parentId":"00000000-0000-0000-0000-000000000000"},"HeatStressThreshold":{"Id":"7ddcf9be-d4ba-4655-a2e6-7efefc5e04da","Name":"HeatStressThreshold","DefaultValue":30,"Label":"with max temp \u003e","Max":45,"Max2":0,"Min":10,"Step":1,"Step2":0,"Units":"°C","Type":"ValueInput","parentId":"00000000-0000-0000-0000-000000000000"},"ColdStressThreshold":{"Id":"47273600-844e-4614-bd98-b9970d97e393","Name":"ColdStressThreshold","DefaultValue":2,"Label":"with min temp \u003c","Max":25,"Max2":0,"Min":-10,"Step":1,"Step2":0,"Units":"°C","Type":"ValueInput","parentId":"00000000-0000-0000-0000-000000000000"},"Risk":{"Id":"aef15781-0bdc-459e-9993-28146ed70b98","Items":[{"Key":"1 in 2yrs","Value":"2","OrderIndex":0,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1 in 3yrs","Value":"3","OrderIndex":1,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1 in 4yrs","Value":"4","OrderIndex":2,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1 in 5yrs","Value":"5","OrderIndex":3,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1 in 10yrs","Value":"10","OrderIndex":4,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1 in 15yrs","Value":"15","OrderIndex":5,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1 in 20yrs","Value":"20","OrderIndex":6,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1 in 30yrs","Value":"30","OrderIndex":7,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1 in 40yrs","Value":"40","OrderIndex":8,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1 in 50yrs","Value":"50","OrderIndex":9,"parentId":"00000000-0000-0000-0000-000000000000"}],"Label":"using risk of","Type":"EnumeratedInput","DefaultValue":2,"Name":"Risk","Units":null,"parentId":"00000000-0000-0000-0000-000000000000"},"YearsRange":{"Id":"3b207306-7b24-4856-9f2a-d17ed6c9584f","Items":[{"Key":"1900 to present","Value":"0","OrderIndex":0,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1910 to present","Value":"1","OrderIndex":1,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1920 to present","Value":"2","OrderIndex":2,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1930 to present","Value":"3","OrderIndex":3,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1940 to present","Value":"4","OrderIndex":4,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1950 to present","Value":"5","OrderIndex":5,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1960 to present","Value":"6","OrderIndex":6,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1970 to present","Value":"7","OrderIndex":7,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1980 to present","Value":"8","OrderIndex":8,"parentId":"00000000-0000-0000-0000-000000000000"},{"Key":"1990 to present","Value":"9","OrderIndex":9,"parentId":"00000000-0000-0000-0000-000000000000"}],"Label":"using data from","Type":"EnumeratedInput","DefaultValue":8,"Name":"YearsRange","Units":null,"parentId":"00000000-0000-0000-0000-000000000000"}},"InputValues":{"ShowConditionsAtDate":false,"StressType":2,"TargetDateIndex":-1,"HeatStressThreshold":30,"ColdStressThreshold":2,"Risk":2,"Id":"63afa4ce-cc89-443e-a805-9aa3ae5c548e","DataType":1,"Location":"63a804e2-e348-4288-ab69-9427741f000e","LocationName":"ABERDEEN (ROSSGOLE)","YearsRange":5,"getDataUnits":"°C"},"Outputs":{"Question1":{"Text":"What is the likelihood of...","Identifier":null,"Type":"SimpleText"},"Answer1":{"Text":"\u003ci class=\u0027fa fa-spinner fa-spin fa-fw\u0027\u003e\u003c/i\u003e Calculating, Please wait...","Identifier":null,"Type":"SimpleText"},"Answer2":{"Text":"\u003ci class=\u0027fa fa-spinner fa-spin fa-fw\u0027\u003e\u003c/i\u003e Calculating, Please wait...","Identifier":null,"Type":"SimpleText"},"HowDoWeKnowThis":{"Text":"By looking through historical minimum and maximum temperature data, probabilities of exceeding heat or less than cold values are calculated for each day of the year. \u003cbr\u003eA level of risk can be specified (e.g. 1 in 2 years or 50% risk, 1 in 10 years or 10% risk)  and when not reached, will be shaded green. \u003cbr\u003eAn acceptable risk is how often you are prepared for the specified temperature(s) to be exceeded (hot) or be below (cold).","Identifier":null,"Type":"SimpleText"},"FooterText":{"Text":"","Identifier":null,"Type":"SimpleText"},"FireGauge1":null,"FireGauge2":null,"Chart1":{"legend":{"show":false,"labelBoxBorderColor":"none","noColumns":1,"position":"ne","margin":10,"backgroundColor":"white","backgroundOpacity":0.66},"xaxis":{"mode":"time","monthNames":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"timeformat":null,"show":true,"tickLength":0,"tickSize":[1,"month"],"axisLabelUseCanvas":true,"axisLabelFontSizePixels":12,"axisLabelPadding":5,"min":null,"max":null,"ticks":null,"minTickSize":null,"axisLabel":null,"font":{"size":16,"color":"black"}},"LegendPlaceholder":null,"yaxes":[{"position":"left","labelWidth":null,"show":true,"tickLength":null,"tickSize":null,"axisLabelUseCanvas":true,"axisLabelFontSizePixels":12,"axisLabelPadding":5,"min":0,"max":100,"ticks":null,"minTickSize":null,"axisLabel":"Probability (%)","font":{"size":16,"color":"black"}}],"Title":"Probability of  for [Location]","Footer":null,"Height":500,"YAxisLabel":null,"grid":{"hoverable":true,"clickable":true,"backgroundColor":"white","markings":[]},"Data":[],"Annotations":null,"DataUnits":"%","DataUnits2":null,"Identifier":null,"Type":"FlotChart"}}};
+        var calculationsUrl = '/A02_HowHotCold/Calculate';
+
+        $(function() {
+            if (!mydatasource.InputValues.ShowConditionsAtDate)
+                $(".firegauge-outputs").hide();
+            initLocationSelector();
+            hideShowEditorPanels();
+            generateInputsUI();
+            generateOutputsUI();
+            calculate(mydatasource, calculationsUrl);
+        });
+
+        function generateInputsUI() {
+            $("#analysis-inputs").empty();
+            addQuestion("Question1");
+            var row = 0;
+            var stressType = Number(mydatasource.InputValues.StressType);
+            if (mydatasource.InputValues.ShowConditionsAtDate === true) {
+
+
+                if (stressType !== 2) {
+
+                    //Row1 ******************************
+                    ++row;
+                    addInputEditor("StressType", row, 4, 4);
+                    addInputLabel("Location", row, 1, 1, "right");
+                    addInputEditor("Location", row, 7, 7);
+
+                    //Row2 ******************************
+                    ++row;
+                    addInputLabel("TargetDateIndex", row, 7, 7);
+                    addInputEditor("TargetDateIndex", row, 5, 5);
+
+                    //Row3 ******************************
+                    ++row;
+                    addInputLabel("HeatStressThreshold", row, 7, 7);
+                    addInputEditor("HeatStressThreshold", row, 5, 5);
+                    addInputLabel("ColdStressThreshold", row, 7, 7);
+                    addInputEditor("ColdStressThreshold", row, 5, 5);
+                    //Row4 ******************************
+                    ++row;
+                    addInputLabel("Risk", row, 7, 7);
+                    addInputEditor("Risk", row, 5, 5);
+                    //Row5 ******************************
+                    ++row;
+                    addInputLabel("YearsRange", row, 7, 7);
+                    addInputEditor("YearsRange", row, 5, 5);
+                } else {
+                    //Row1 ******************************
+                    ++row;
+                    
+                    addInputEditor("StressType", row, 3, 4);
+                    addInputLabel("Location", row, 1, 1);
+                    addInputEditor("Location", row, 3, 7);
+                    addInputLabel("TargetDateIndex", row, 3, 7);
+                    addInputEditor("TargetDateIndex", row, 2, 5);
+                  
+                    //Row2 ******************************
+                    ++row;
+                    addInputLabel("HeatStressThreshold", row, 5, 7);
+                    addInputEditor("HeatStressThreshold", row, 2, 5);
+                    addInputLabel("ColdStressThreshold", row, 3, 7);
+                    addInputEditor("ColdStressThreshold", row, 2, 5);
+                    //Row2 ******************************
+                    ++row;
+                    addInputLabel("Risk", row, 5, 7);
+                    addInputEditor("Risk", row, 2, 5);
+                    addInputLabel("YearsRange", row, 3, 7);
+                    addInputEditor("YearsRange", row, 2, 5);
+                }
+            } else {
+                ++row;
+                addInputLabel("StressType", row, 3, 1);
+                addInputEditor("StressType", row, 3, 11);
+                addInputLabel("Location", row, 3, 1);
+                addInputEditor("Location", row, 3, 11);
+
+               
+                //Row2 ******************************
+                ++row;
+                addInputLabel("HeatStressThreshold", row, 3, 7);
+                addInputEditor("HeatStressThreshold", row, 3, 5);
+                addInputLabel("ColdStressThreshold", row, 3, 7);
+                addInputEditor("ColdStressThreshold", row, 3, 5);
+                //Row2 ******************************
+                ++row;
+                addInputLabel("Risk", row, 3, 7);
+                addInputEditor("Risk", row, 3, 5);
+                addInputLabel("YearsRange", row,3, 7);
+                addInputEditor("YearsRange", row, 3, 5);
+            }
+            // **********************************
+            hideShowThresholdEditors();
+            //Change Events *********************
+            $(".input-control").change(function() {
+               
+                if (updateInputValue(mydatasource, $(this))) {
+                    hideShowEditorPanels();
+                    generateInputsUI();
+                    calculate(mydatasource, calculationsUrl);
+                }
+            });
+        }
+
+        function generateOutputsUI() {
+
+            addOutput("Question1");
+            addOutput("Answer1");
+            if (mydatasource.InputValues.ShowConditionsAtDate) {
+                addOutput("FireGauge1");
+                if (Number(mydatasource.InputValues.StressType) === 2) {
+                    addOutput("Answer2");
+                    addOutput("FireGauge2");
+                }
+            }
+            addOutput("Chart1");
+            addOutput("HowDoWeKnowThis");
+            var documentWidth = $(document).width();
+            if (documentWidth < 700) {
+                $("#Chart1 .flotchart-canvas").css("height", "260px");
+            }
+        }
+
+        function hideShowThresholdEditors() {
+            var stressType = Number(mydatasource.InputValues.StressType);
+            hideShowElement("HeatStressThreshold", stressType !== 1);
+            hideShowElement("ColdStressThreshold", stressType !== 0);
+        }
+
+        function hideShowEditorPanels() {
+
+            var stressType = Number(mydatasource.InputValues.StressType);
+
+            if (mydatasource.InputValues.ShowConditionsAtDate && stressType !== 2) {
+                //Hide Presentation 2
+                $("#presentation2").hide();
+                $("#presentation2 .question-panel").empty();
+                $("#presentation2 .firegauge-container").empty();
+                $("#presentation2 .answer").empty();
+                $("#presentation2 .question-panel").attr("id", "analysis-inputs-off");
+                $("#presentation2 #FireGauge1").attr("id", "FireGauge1-off");
+                $("#presentation2 #Answer1").attr("id", "Answer1-off");
+
+                //Activate Presentation 1
+                $("#presentation1").show();
+                $("#presentation1 .question-panel").attr("id", "analysis-inputs");
+                $("#presentation1 #Answer1-off").attr("id", "Answer1");
+                $("#presentation1 #FireGauge1-off").attr("id", "FireGauge1");
+
+
+            } else {
+                //Hide Presentation 1
+                $("#presentation1").hide();
+                $("#presentation1 .question-panel").empty();
+                $("#presentation1 .firegauge-container").empty();
+                $("#presentation1 .answer").empty();
+                $("#presentation1 .question-panel").attr("id", "analysis-inputs-off");
+                $("#presentation1 #Answer1").attr("id", "Answer1-off");
+                $("#presentation1 #FireGauge1").attr("id", "FireGauge1-off");
+
+                //Activate Presentation 2
+                $("#presentation2").show();
+                $("#presentation2 .question-panel").attr("id", "analysis-inputs");
+                $("#presentation2 #Answer1-off").attr("id", "Answer1");
+                $("#presentation2 #FireGauge1-off").attr("id", "FireGauge1");
+
+
+            }
+
+            generateInputsUI();
+        }
+
+
+    </script>
+
+
+    <script type="text/javascript">
+        $(function() {
+            var $metismenu = $("#analysis-metismenu");
+            var $selectedli = $(".analysis-a2");
+            var $parentlis = $selectedli.parents("li");
+            $selectedli.addClass("active");
+            $selectedli.addClass("selected");
+            $parentlis.addClass("active");
+            $metismenu.metisMenu();
+        });
+        window.addEventListener('resize', posFix, false);
+
+        function posFix() {
+            generateOutputsUI();
+
+        }
+
+        function sendFeedback() {
+            openFeedbackDialog("HowHotCold", "63afa4ce-cc89-443e-a805-9aa3ae5c548e");
+        }
+
+        function getHelp() {
+            $('.ajax_spinner').show();
+            $.getJSON("/Analyses/GetHelp",null, function (results) {
+                if (results.success) {
+                    $("#help-title").text(results.title);
+                    if (results.image && results.image.length > 0) {
+                        $("#help-image").attr('src', results.image);
+
+                    } else {
+                        $("#help-image").hide();
+                    }
+                    $("#help-content").html(results.content);
+                    $('.ajax_spinner').hide();
+                    openNav();
+                } else {
+                    $('.ajax_spinner').hide();
+                    custom_alert("Sorry - couldn't find any help for this analysis.", "Help not at hand...");
+                }
+                
+            });
+        }
+        function openNav() {
+           
+            //$("#myNav").css("width", "100%");
+            $("#myNav").css("left", "0");
+        }
+
+        function closeHelp() {
+            //$("#myNav").css("width","0%");
+            $("#myNav").css("left", "-100%");
+        }
+
+        function custom_alert(message, title) {
+            if (!title)
+                title = 'Alert';
+
+            if (!message)
+                message = 'No Message to Display.';
+
+            $('<div></div>').html(message).dialog({
+                title: title,
+                resizable: false,
+                modal: true,
+                buttons: {
+                    'Ok': function () {
+                        $(this).dialog('close');
+                    }
+                }
+            });
+        }
+
+    </script>
+
+
+    <script type="text/javascript">
+    $(function () {
+        var $selectedmainli = $(".main-analyses");
+        
+        $selectedmainli.addClass("active");
+        //if($selectedsubmenuli) {
+        //    $selectedsubmenuli.addClass("active");
+        //}
+    });
+    </script>
+   
+
+</body>
+</html>

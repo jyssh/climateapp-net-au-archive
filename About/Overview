@@ -48,11 +48,13 @@
                             <div class="row">
                                 <div class=" login_menu">
                                     <section id="login" class="user-profile">
-                                            <ul class="nav navbar-nav navbar-right">
-        <li><a href="/Account/Register" id="registerLink">Register</a></li>
-        <li><a href="/Account/Login" id="loginLink">Log in</a></li>
+                                        <form action="/Account/LogOff" class="navbar-right" id="logoutForm" method="post"><input name="__RequestVerificationToken" type="hidden" value="qvMrWImtEA48f6gRimIqWodXGU9A7BaBCjaSDomuDfxn8zjA4USAlWNQi5_0qcXM0vk9ZfpJfSpAvOphypchiioA7NJDrgWVVoIGZecHyoyJ3yKvSNoKVhT9GuFgD_YeUEeZsW6GwgQH8_xSyVDB8Q2" />    <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a href="/Manage" title="Manage">dalerschilling@yahoo.com.au</a>
+        </li>
+        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
     </ul>
-
+</form>
                                     </section>
                                 </div>
                             </div>
